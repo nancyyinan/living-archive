@@ -71,7 +71,7 @@ const questionText = [
   'What do you like about foggy weathers, how do they make you feel?',
   'Do you ever want to design lamps.',
   'why do you like gore? what does it make you feel?',
-  '[unclear handwritten Chinese text including “build”]',
+  '我以为你会说build',
 ];
 
 export const initialArchive: ArchiveItem[] = [
@@ -109,8 +109,8 @@ export const initialArchive: ArchiveItem[] = [
       collection: 'questions',
       type: 'question',
       title: `QUESTION ${n}`,
-      mediaUrl: sitePath(`/archive/questions/full/question-${n}.jpg`),
-      mimeType: 'image/jpeg',
+      mediaUrl: sitePath(`/archive/questions/full/question-${n}.png`),
+      mimeType: 'image/png',
       transcription,
       note: 'Peer response / class activity',
       date: 'SEP 2026',
