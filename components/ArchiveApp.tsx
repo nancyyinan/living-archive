@@ -7,6 +7,11 @@ import { AddPanel } from '@/components/AddPanel';
 import { BrainstormViewer } from '@/components/BrainstormViewer';
 import { Header } from '@/components/Header';
 import {
+  ImageSectionNav,
+  OrderingsIndex,
+  OrderingStudio,
+} from '@/components/OrderingStudio';
+import {
   ArchiveItem,
   brainstormTitle,
   CollectionType,
@@ -14,6 +19,7 @@ import {
   itemMedia,
   itemNumber,
 } from '@/data/archive';
+import { findOrderingApproach } from '@/data/orderings';
 import {
   deleteStoredFile,
   loadArchive,
@@ -67,7 +73,13 @@ export function ArchiveApp() {
       .sort((a, b) => a.order - b.order);
   const brainstorm = ordered('brainstorm')[0];
   const questions = ordered('questions');
-  const images = ordered('images');
+  const images = useMemo(
+    () =>
+      items
+        .filter((item) => item.collection === 'images')
+        .sort((a, b) => a.order - b.order),
+    [items],
+  );
 
   const navigate = (nextPath: string) => {
     const query = editMode ? '?edit=true' : '';
@@ -220,6 +232,8 @@ export function ArchiveApp() {
   const segments = path.split('/').filter(Boolean);
   const collection = segments[0];
   const detailId = segments[1];
+  const orderingId = segments[2];
+  const orderingApproach = findOrderingApproach(orderingId);
   const detailItem = detailId
     ? items.find((item) => item.id === detailId)
     : undefined;
@@ -253,6 +267,24 @@ export function ArchiveApp() {
         setDraggedId={setDraggedId}
         onDrop={(id) => reorder(id, 'questions')}
       />
+    );
+  } else if (
+    collection === 'images' &&
+    detailId === 'orderings' &&
+    orderingApproach
+  ) {
+    content = (
+      <OrderingStudio
+        key={orderingApproach.id}
+        approach={orderingApproach}
+        images={images}
+        onNavigate={navigate}
+        onNotify={notify}
+      />
+    );
+  } else if (collection === 'images' && detailId === 'orderings') {
+    content = (
+      <OrderingsIndex images={images} onNavigate={navigate} onNotify={notify} />
     );
   } else if (collection === 'images' && detailItem) {
     content = (
@@ -525,6 +557,7 @@ function ImagesPage(props: ListingProps) {
         view={props.view}
         setView={props.setView}
       />
+      <ImageSectionNav active="images" onNavigate={props.onNavigate} />
       {props.items.length === 0 ? (
         <div className="empty-collection">
           <span>NO IMAGE FILES WERE SUPPLIED.</span>
