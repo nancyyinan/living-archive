@@ -161,8 +161,8 @@ const imageItems: ArchiveItem[] = [
     collection: 'images',
     type: 'image',
     title: 'Assorted Fishing Hooks',
-    mediaUrl: sitePath('/archive/images/assorted-fishing-hooks.jpg'),
-    mimeType: 'image/jpeg',
+    mediaUrl: sitePath('/archive/images/assorted-fishing-hooks.png'),
+    mimeType: 'image/png',
     orientation: 'landscape',
     caption:
       'A studio-style photograph showing five fishing hooks of different sizes and forms suspended individually from transparent fishing line against a neutral background.',
