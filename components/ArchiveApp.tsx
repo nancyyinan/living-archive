@@ -581,6 +581,17 @@ function BlockGrid(props: ListingProps & { collection: CollectionType }) {
                   >
                     Archive PDF
                   </object>
+                ) : item.collection === 'images' ? (
+                  <div className="image-print-frame">
+                    <img
+                      src={itemMedia(item)}
+                      alt={
+                        item.transcription ||
+                        item.title ||
+                        `Archive block ${number}`
+                      }
+                    />
+                  </div>
                 ) : (
                   <img
                     src={itemMedia(item)}
@@ -599,7 +610,9 @@ function BlockGrid(props: ListingProps & { collection: CollectionType }) {
                 {item.title && item.collection === 'images' && (
                   <span>{item.title}</span>
                 )}
-                <time>{item.date || item.dateAdded}</time>
+                {item.collection !== 'images' && (
+                  <time>{item.date || item.dateAdded}</time>
+                )}
               </div>
             </a>
             {props.editMode && (
@@ -746,11 +759,15 @@ function DetailView({
               <p>{item.note}</p>
             </section>
           )}
+          {item.date && (
+            <section>
+              <h2>DATE</h2>
+              <p>{item.date}</p>
+            </section>
+          )}
           <section>
-            <h2>
-              {item.collection === 'images' && item.date ? 'DATE' : 'ADDED'}
-            </h2>
-            <p>{item.date || item.dateAdded}</p>
+            <h2>ADDED</h2>
+            <p>{item.dateAdded}</p>
           </section>
           {editMode && (
             <button className="detail-edit" onClick={() => onEdit(item)}>

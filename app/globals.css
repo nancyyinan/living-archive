@@ -471,14 +471,22 @@ img {
 .image-grid .block-media {
   display: grid;
   place-items: center;
+  aspect-ratio: 1;
 }
-.image-grid .archive-block.image-landscape .block-media {
+.image-grid .archive-block.image-landscape .image-print-frame {
+  width: 100%;
   aspect-ratio: 3 / 2;
 }
-.image-grid .archive-block.image-portrait .block-media {
+.image-grid .archive-block.image-portrait .image-print-frame {
+  height: 100%;
   aspect-ratio: 2 / 3;
 }
-.image-grid .block-media img {
+.image-grid .image-print-frame {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.image-grid .image-print-frame img {
   width: 100%;
   height: 100%;
   object-fit: contain;
