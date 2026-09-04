@@ -727,9 +727,15 @@ function DetailView({
               <p>{item.transcription}</p>
             </section>
           )}
+          {item.collection === 'images' && item.note && (
+            <section className="detail-primary-note">
+              <h2>SHORT CAPTION</h2>
+              <p>{item.note}</p>
+            </section>
+          )}
           {item.caption && (
             <section>
-              <h2>CAPTION</h2>
+              <h2>DESCRIPTION</h2>
               <p>{item.caption}</p>
             </section>
           )}
@@ -751,11 +757,9 @@ function DetailView({
               <p>{item.creator}</p>
             </section>
           )}
-          {item.note && (
+          {item.collection !== 'images' && item.note && (
             <section>
-              <h2>
-                {item.collection === 'images' ? 'WHY I SAVED THIS' : 'SOURCE'}
-              </h2>
+              <h2>SOURCE</h2>
               <p>{item.note}</p>
             </section>
           )}

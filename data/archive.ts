@@ -86,6 +86,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'An illustration of the Milky Way viewed from outside the galaxy. The inset square represents the field of view from the previous scale in Boeke’s tenfold zoom-out sequence.',
+    note: 'My first reaction to this image is how small humanity is in relation to the universe. Then it immediately becomes a record of myself: I last saw Cosmic View: The Universe in 40 Jumps in my first-semester seminar in college, and I may have first watched it in elementary school. This image has become a marker in my life. Past, present, or future, my scale in relation to the universe does not change—and in that sense, neither have I.',
     sourceName:
       'Immediate source: The Last Whole Earth Catalog, 1971. “Cosmos,” Whole Systems, p. 5.\n\nOriginal source: Kees Boeke, Cosmic View: The Universe in 40 Jumps. New York: The John Day Company, 1957. Picture 22.',
     creator: 'Kees Boeke',
@@ -102,6 +103,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'An instructional diagram showing four positions of the same foot during a pedal stroke, illustrating the cycling technique known as “ankling.”',
+    note: 'I find this image interesting because it simply breaks down the process of riding a bicycle. Yet it carries a deeper meaning for me: with just a gentle push of the pedal, the bicycle moves forward, and so do I. Moving forward may require far less effort than I imagine.',
     sourceName:
       'Immediate source: The Last Whole Earth Catalog, 1971. “Bicycles,” Nomadics, p. 253.\n\nOriginal source: Eugene A. Sloane, The Complete Book of Bicycling. New York: Trident Press, 1970. Figure 36, p. 105.',
     creator: 'Eugene A. Sloane',
@@ -118,6 +120,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'portrait',
     caption:
       'A black-and-white archival photograph showing Wenley operating a large-format camera during the Freer Gallery’s archaeological research in China. The image documents not only the expedition but also the act of photographic field documentation itself.',
+    note: 'What interests me is that this photograph records not only the expedition, but also the process of documenting it. It records the past of my home country through a foreigner’s perspective, and now I come to know that place through their records—another kind of cycle.',
     sourceName:
       'Immediate source: Emily Billett, “A Very Fine and Unusual Statue: Fruits of the Freer Gallery Field Expeditions in China,” The Bigger Picture, Smithsonian Institution Archives, May 5, 2016.\n\nArchival source: Archibald Wenley Papers, 1924–1926, FSA.A1996.05, National Museum of Asian Art Archives, Smithsonian Institution.\n\nSubject: Archibald Gibson Wenley during his work in China.',
     dateAdded: '2026-09-03',
@@ -133,6 +136,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'portrait',
     caption:
       'A photographic record of a sea anemone specimen made by the United States National Museum Photographic Laboratory. The specimen is isolated within a controlled photographic setup rather than shown in its natural environment.',
+    note: 'This image interests me because it shows one way of making a record: displayed in a museum as an object to be viewed, a creature that belonged to the sea has been removed from its home forever.',
     sourceName:
       'Smithsonian Institution Archives.\n\nTitle: Sea Anemone Specimen.\nMedium: Glass negative, 10 × 8 in.\nCollection reference: SIA Acc. 11-007, Box 014, Image No. MNH-3468.\nRights: CC0 / Public Domain.',
     creator: 'United States National Museum Photographic Laboratory',
@@ -150,6 +154,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'portrait',
     caption:
       'An aerial photograph showing a braided river repeatedly dividing and reconnecting around sediment bars. Braided rivers form where sediment deposition redirects the flow into multiple shallow, shifting channels, creating a constantly changing pattern across the landscape.',
+    note: 'River channels are the source of everything.',
     sourceName:
       'Immediate source: MailOnline Travel / Daily Mail, “Nature’s masterpiece: Incredible images reveal the stunning beauty of braided rivers that look like inky watercolour paintings,” March 2016.\n\nImage credit: © Paul A. Souders / CORBIS.\nSubject: Braided river channels viewed from above.\nExact location: Toklat River in the Denali National Park and Preserve, Alaska.',
     creator: 'Paul A. Souders',
@@ -166,6 +171,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'A studio-style photograph showing five fishing hooks of different sizes and forms suspended individually from transparent fishing line against a neutral background.',
+    note: 'Ha—fishhooks! There is a Chinese saying: “Only the willing fish takes the bait.” What I am thinking here is that no one can ever record an entire life. I can only record the traces life leaves as it passes through me; these things simply happened to bite my hook. That lets me ask: Why did this thing get caught by me? And then go one step further: if I stop biting any hooks, what will I become?',
     sourceName: 'Pinterest.',
     dateAdded: '2026-09-03',
     order: 5,
@@ -180,6 +186,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'A group of weathered wooden pilings standing in the water beside a waterfront building. The remnants of the old structure contrast with the maintained architecture across the water, showing different layers of use, decay, and time within the same site.',
+    note: 'It shows the traces left by time. More personally, I really want to stand on top of the pilings and experience them, but I cannot.',
     sourceName: 'Personal photograph by Yinan Xue.',
     creator: 'Yinan Xue',
     date: '12/10/2024',
@@ -196,6 +203,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'portrait',
     caption:
       'Steam rises from a street vent between dark brick buildings and passing cars. The temporary cloud partially obscures the surrounding architecture, making a familiar urban infrastructure visible through something constantly forming and disappearing.',
+    note: 'I am drawn to things with no fixed form; they are difficult to record.',
     sourceName: 'Personal photograph by Yinan Xue.',
     creator: 'Yinan Xue',
     date: '11/28/2024',
@@ -212,6 +220,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'portrait',
     caption:
       'A pedestrian walking signal glows in the shadow between tall buildings, while a narrow opening reveals bright sky, glass towers, and construction beyond. The image frames movement through the city through the contrast between darkness and light.',
+    note: 'Even the little figure in the sun’s shadow must keep moving forward.',
     sourceName: 'Personal photograph by Yinan Xue.',
     creator: 'Yinan Xue',
     date: '10/25/2024',
@@ -228,6 +237,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'An illuminated New York City subway sign gives directions for the 4 and 6 trains, including service toward the Bronx. The photograph records a system designed to organize movement through the city through text, symbols, routes, and destinations.',
+    note: 'This records one of the forms of transportation I use most often in New York—the subway, beneath the city.',
     sourceName: 'Personal photograph by Yinan Xue.',
     creator: 'Yinan Xue',
     date: '10/20/2024',
@@ -244,6 +254,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'A bus-stop information panel stands beside a digital Cartier advertisement on a busy Manhattan street. Transportation information, commercial imagery, pedestrians, vehicles, and architecture overlap within the same urban field.',
+    note: 'This records one of the forms of transportation I use most often in New York—the bus, above ground in the city.',
     sourceName: 'Personal photograph by Yinan Xue.',
     creator: 'Yinan Xue',
     date: '9/21/2024',
@@ -260,6 +271,7 @@ const imageItems: ArchiveItem[] = [
     orientation: 'landscape',
     caption:
       'A group of pigeons gathers along the narrow ledge of an urban building. Their repeated forms create an almost linear arrangement against the architecture, showing how nonhuman life occupies and adapts to built space.',
+    note: 'This records a row of pigeons at rest, preparing for their next flight.',
     sourceName: 'Personal photograph by Yinan Xue.',
     creator: 'Yinan Xue',
     date: '10/23/2024',

@@ -1,6 +1,7 @@
 import { ArchiveItem, initialArchive } from '@/data/archive';
 
-const META_KEY = 'living-archive:v2:items';
+const META_KEY = 'living-archive:v3:items';
+const LEGACY_META_KEY = 'living-archive:v2:items';
 const DB_NAME = 'living-archive-media';
 const STORE_NAME = 'files';
 
@@ -66,7 +67,24 @@ async function hydrate(items: ArchiveItem[]) {
 
 export async function loadArchive() {
   const saved = localStorage.getItem(META_KEY);
-  const items: ArchiveItem[] = saved ? JSON.parse(saved) : initialArchive;
+  const legacySaved = saved ? null : localStorage.getItem(LEGACY_META_KEY);
+  let items: ArchiveItem[];
+
+  if (saved) {
+    items = JSON.parse(saved);
+  } else if (legacySaved) {
+    const initialById = new Map(initialArchive.map((item) => [item.id, item]));
+    items = (JSON.parse(legacySaved) as ArchiveItem[]).map((item) => {
+      const initial = initialById.get(item.id);
+      return initial?.collection === 'images'
+        ? { ...item, note: initial.note }
+        : item;
+    });
+    localStorage.setItem(META_KEY, JSON.stringify(items));
+  } else {
+    items = initialArchive;
+  }
+
   return hydrate(items);
 }
 

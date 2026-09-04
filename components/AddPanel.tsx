@@ -324,7 +324,17 @@ export function AddPanel({
                 <>
                   <label className="field">
                     <span>
-                      CAPTION <small>OPTIONAL</small>
+                      SHORT CAPTION <small>OPTIONAL</small>
+                    </span>
+                    <textarea
+                      rows={4}
+                      value={note}
+                      onChange={(event) => setNote(event.target.value)}
+                    />
+                  </label>
+                  <label className="field">
+                    <span>
+                      DESCRIPTION <small>OPTIONAL</small>
                     </span>
                     <textarea
                       rows={3}
@@ -383,17 +393,18 @@ export function AddPanel({
                   />
                 </label>
               )}
-              <label className="field">
-                <span>
-                  {collection === 'images' ? 'WHY I SAVED THIS' : 'NOTE'}{' '}
-                  <small>OPTIONAL</small>
-                </span>
-                <textarea
-                  rows={3}
-                  value={note}
-                  onChange={(event) => setNote(event.target.value)}
-                />
-              </label>
+              {collection !== 'images' && (
+                <label className="field">
+                  <span>
+                    NOTE <small>OPTIONAL</small>
+                  </span>
+                  <textarea
+                    rows={3}
+                    value={note}
+                    onChange={(event) => setNote(event.target.value)}
+                  />
+                </label>
+              )}
             </div>
           )}
 
