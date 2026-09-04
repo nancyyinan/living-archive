@@ -4,5 +4,897 @@
     "width": 1680,
     "height": 1100
   },
-  "layouts": {}
+  "exportedAt": "2026-09-04T04:14:27.136Z",
+  "layouts": {
+    "easiest-to-hardest-to-record": {
+      "orderingId": "easiest-to-hardest-to-record",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 1182.7533410369776,
+          "y": 782.3087067926044,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 490,
+          "y": 65,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 621.0848321945338,
+          "y": 723.6169865353698,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 295.34817122186496,
+          "y": 723.2439459405144,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 920.0002512057877,
+          "y": 700.6070387861737,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 139.17604501607718,
+          "y": 87.07269895498393,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 1053.0670970659164,
+          "y": 405.77371382636653,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 585.870804863344,
+          "y": 372.3865805868167,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 821.8491258038584,
+          "y": 362.7577371382637,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 1141.4255928456594,
+          "y": 99.96445438102893,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 216.2265122588424,
+          "y": 387.0330084405145,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 798.2979551848875,
+          "y": 86.27939107717037,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "trace-survival": {
+      "orderingId": "trace-survival",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 1315.175844051447,
+          "y": 763.4908812299036,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 1199.1916197749197,
+          "y": 149.18973573151126,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 411.8159666398714,
+          "y": 428.3139067524115,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 857.6377863745981,
+          "y": 725.8621382636655,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 1111.0108520900321,
+          "y": 725.3106159565916,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 831.4081340434083,
+          "y": 147.6572548231511,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 723.1748643488745,
+          "y": 476.23002913987136,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 194.08837419614133,
+          "y": 97.17242765273312,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 140,
+          "y": 745,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 449.2487690916399,
+          "y": 812.4374497588425,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 1157.0970659163986,
+          "y": 472.1967946141479,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 455.9710359726688,
+          "y": 159.1121131430868,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "captured-to-free-movement": {
+      "orderingId": "captured-to-free-movement",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 1275.3572146302251,
+          "y": 821.2085510450161,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 552.3806772508038,
+          "y": 100.64610128617356,
+          "width": 300,
+          "z": 9
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 736.8034063504825,
+          "y": 394.67807978295815,
+          "width": 200,
+          "z": 2
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 94.57634143890675,
+          "y": 50.54813102893888,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 1006.932526125402,
+          "y": 760.8807274919615,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 261.43664590032154,
+          "y": 107.15471764469449,
+          "width": 300,
+          "z": 5
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 69.1863444533762,
+          "y": 802.7510801848875,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 737.6154290594856,
+          "y": 742.4221262057878,
+          "width": 200,
+          "z": 7
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 823.3551045016077,
+          "y": 45.030772709003216,
+          "width": 200,
+          "z": 10
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 1272.521729300643,
+          "y": 109.7809485530546,
+          "width": 300,
+          "z": 12
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 995.8122739147907,
+          "y": 109.22138766077168,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 403.5450160771704,
+          "y": 800.1063856511254,
+          "width": 300,
+          "z": 8
+        }
+      ]
+    },
+    "vertical-section-of-the-world": {
+      "orderingId": "vertical-section-of-the-world",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 167.01215836012864,
+          "y": 0,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 716.7921020900321,
+          "y": 527.3962520096463,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 751.8383239549839,
+          "y": 262.30531551446944,
+          "width": 200,
+          "z": 12
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 1289.4571442926044,
+          "y": 290.3413886655949,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 730.6807676848875,
+          "y": 715.0547628617363,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 1260.4863344051448,
+          "y": 34.371734324758734,
+          "width": 300,
+          "z": 5
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 694.5764670418007,
+          "y": 44.56817725080384,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 1285.4200160771704,
+          "y": 605.977692926045,
+          "width": 200,
+          "z": 7
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 201.07918006430873,
+          "y": 172.90218046623795,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 1238.6261555466237,
+          "y": 900,
+          "width": 300,
+          "z": 9
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 184.0745578778135,
+          "y": 746.8071744372991,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 158.5430064308681,
+          "y": 459.673683681672,
+          "width": 300,
+          "z": 11
+        }
+      ]
+    },
+    "layers-of-mediation": {
+      "orderingId": "layers-of-mediation",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 1278.8941921221865,
+          "y": 772.2918760048232,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 118.16833299839226,
+          "y": 83.6382134244373,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 988.9926647909969,
+          "y": 717.9246633842444,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 619.0576014871383,
+          "y": 713.7521352491963,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 269.0305968649518,
+          "y": 708.3441770498392,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 862.3843197347267,
+          "y": 418.8853999196141,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 1250.7302552250806,
+          "y": 418.4778185289389,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 504.67921020900314,
+          "y": 379.4950763665595,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 175.03127512057878,
+          "y": 352.33332495980704,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 867.613796221865,
+          "y": 111.54943729903539,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 537.5595357717042,
+          "y": 98.38939409163987,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 1243.280119573955,
+          "y": 94.00962118167195,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "belonging-to-displacement": {
+      "orderingId": "belonging-to-displacement",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 90,
+          "y": 65,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 567.9171272106109,
+          "y": 74.18094352893891,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 479.1705184887458,
+          "y": 739.3744975884246,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 955.8165444131832,
+          "y": 735.0085409967845,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 367.8587218649518,
+          "y": 38.957370377813504,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 479.0574758842444,
+          "y": 456.548683681672,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 1229.7639921623795,
+          "y": 433.1921975482315,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 194.2127210610931,
+          "y": 392.85545618971065,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 851.2088022508038,
+          "y": 47.2551999598071,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 1306.4615152733118,
+          "y": 86.21721764469453,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 1061.0391127411576,
+          "y": 77.5543860530546,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 877.8592242765271,
+          "y": 457.8554561897106,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "repetition-to-irreversibility": {
+      "orderingId": "repetition-to-irreversibility",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 1293.8503567122186,
+          "y": 809.2505275321544,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 128.01245980707392,
+          "y": 70.1051296221865,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 864.7977793408359,
+          "y": 405.7173181270096,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 1063.2246030948554,
+          "y": 756.1336917202573,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 1302.359952773312,
+          "y": 66.57619071543405,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 490,
+          "y": 405,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 599.7398764067524,
+          "y": 792.0088926848875,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 338.04750301446944,
+          "y": 737.5035168810289,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 1042.2055868167204,
+          "y": 64.58777130225076,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 435.7018689710611,
+          "y": 69.65145196945332,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 736.2727341237942,
+          "y": 92.94576467041793,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 203.30511454983917,
+          "y": 396.70443127009634,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "continuous-path": {
+      "orderingId": "continuous-path",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 0,
+          "y": 411.996834807074,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 228.92684887459808,
+          "y": 417.64080084405145,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 1454.6371332395497,
+          "y": 368.4132586414791,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 1357.5812650723474,
+          "y": 371.77753215434086,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 137.4301647909968,
+          "y": 366.0034415192926,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 1237.096689107717,
+          "y": 439.38190815916397,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 1093.2863997186496,
+          "y": 426.0837017684888,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 1037.0357717041802,
+          "y": 378.8318930868167,
+          "width": 209.132586414791,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 743.9319985932475,
+          "y": 378.142207596463,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 537.2241760450161,
+          "y": 435.97040795819936,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 437.743544011254,
+          "y": 368.7125703376206,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 874.8610831993569,
+          "y": 416.70355204983923,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "visible-to-caption-dependent": {
+      "orderingId": "visible-to-caption-dependent",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 994.1321944742353,
+          "y": 769.2617843828201,
+          "width": 300,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 617.2126040549512,
+          "y": 774.4511260916195,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 210.76055870486698,
+          "y": 711.1748633879782,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 117.30963689290638,
+          "y": 34.502962055053366,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 372.01764465553345,
+          "y": 388.56123282774115,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 1323.616132986058,
+          "y": 781.315050303866,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 1071.626959807977,
+          "y": 405,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 91.86852050457065,
+          "y": 373.57604310300803,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 1250.4559266636024,
+          "y": 22.389433634645798,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 413.39576630407026,
+          "y": 95.27194729584801,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 846.3716102344108,
+          "y": 90.48286604361368,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 710.7177876512947,
+          "y": 445.05043154077936,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    },
+    "everyday-life-to-larger-systems": {
+      "orderingId": "everyday-life-to-larger-systems",
+      "placements": [
+        {
+          "imageId": "cosmic-view",
+          "x": 1294.6240705385853,
+          "y": 801.9693277733119,
+          "width": 292.9961628315916,
+          "z": 1
+        },
+        {
+          "imageId": "cycling-diagram",
+          "x": 432.7935339630225,
+          "y": 65,
+          "width": 300,
+          "z": 2
+        },
+        {
+          "imageId": "archibald-wenley-in-china",
+          "x": 683.2651728295821,
+          "y": 753.9507134244374,
+          "width": 200,
+          "z": 3
+        },
+        {
+          "imageId": "sea-anemone-specimen",
+          "x": 356.23668609324756,
+          "y": 751.1598171221865,
+          "width": 200,
+          "z": 4
+        },
+        {
+          "imageId": "toklat-river",
+          "x": 968.6613243569132,
+          "y": 749.9727441720257,
+          "width": 200,
+          "z": 5
+        },
+        {
+          "imageId": "assorted-fishing-hooks",
+          "x": 96.89120277331187,
+          "y": 58.804511655948545,
+          "width": 300,
+          "z": 6
+        },
+        {
+          "imageId": "weathered-pier-pilings",
+          "x": 1326.23643488746,
+          "y": 374.57646704180064,
+          "width": 300,
+          "z": 7
+        },
+        {
+          "imageId": "steam-in-the-city",
+          "x": 1028.1656953376207,
+          "y": 327.3661073151126,
+          "width": 200,
+          "z": 8
+        },
+        {
+          "imageId": "walking-signal-urban-canyon",
+          "x": 765.0226085209003,
+          "y": 345.03140072347264,
+          "width": 200,
+          "z": 9
+        },
+        {
+          "imageId": "subway-direction-sign",
+          "x": 105.54712620578778,
+          "y": 409.3601788585209,
+          "width": 300,
+          "z": 10
+        },
+        {
+          "imageId": "bus-stop-at-fifth-avenue",
+          "x": 444.3546523311897,
+          "y": 414.73472668810285,
+          "width": 300,
+          "z": 11
+        },
+        {
+          "imageId": "pigeons-on-a-ledge",
+          "x": 793.4207948151125,
+          "y": 62.729476487138186,
+          "width": 300,
+          "z": 12
+        }
+      ]
+    }
+  }
 }
