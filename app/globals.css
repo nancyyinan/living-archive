@@ -2,7 +2,7 @@
 
 :root {
   --font-geist-sans: Arial, Helvetica, sans-serif;
-  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-geist-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
   --background: #000;
   --surface: #0c0c0c;
   --surface-hover: #131313;
@@ -468,6 +468,21 @@ img {
 .image-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.image-grid .block-media {
+  display: grid;
+  place-items: center;
+}
+.image-grid .archive-block.image-landscape .block-media {
+  aspect-ratio: 3 / 2;
+}
+.image-grid .archive-block.image-portrait .block-media {
+  aspect-ratio: 2 / 3;
+}
+.image-grid .block-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .archive-block {
   position: relative;
   min-width: 0;
@@ -565,6 +580,9 @@ img {
   min-height: 54px;
   padding-right: 20px;
 }
+.index-row.image-index-row a {
+  grid-template-columns: 1fr auto;
+}
 .index-row a > span {
   color: var(--tertiary);
   font:
@@ -624,6 +642,26 @@ img {
 .detail-media object {
   width: 100%;
   height: calc(100vh - 190px);
+}
+.detail-media.image-landscape,
+.detail-media.image-portrait {
+  width: 100%;
+  min-height: 0;
+  height: auto;
+}
+.detail-media.image-landscape {
+  aspect-ratio: 3 / 2;
+}
+.detail-media.image-portrait {
+  width: min(100%, calc((100vh - 190px) * 2 / 3));
+  aspect-ratio: 2 / 3;
+  justify-self: center;
+}
+.detail-media.image-landscape img,
+.detail-media.image-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .detail-meta {
   padding-right: 10px;

@@ -556,7 +556,7 @@ function BlockGrid(props: ListingProps & { collection: CollectionType }) {
         return (
           <article
             key={item.id}
-            className={`archive-block ${props.draggedId === item.id ? 'is-dragged' : ''}`}
+            className={`archive-block ${item.collection === 'images' ? `image-${item.orientation || 'landscape'}` : ''} ${props.draggedId === item.id ? 'is-dragged' : ''}`}
             draggable={props.editMode}
             onDragStart={() => props.setDraggedId(item.id)}
             onDragEnd={() => props.setDraggedId(null)}
@@ -593,10 +593,9 @@ function BlockGrid(props: ListingProps & { collection: CollectionType }) {
                 )}
               </div>
               <div className="block-meta">
-                <span>
-                  {item.collection === 'questions' ? 'QUESTION' : 'IMAGE'}{' '}
-                  {number}
-                </span>
+                {item.collection === 'questions' && (
+                  <span>QUESTION {number}</span>
+                )}
                 {item.title && item.collection === 'images' && (
                   <span>{item.title}</span>
                 )}
@@ -620,7 +619,7 @@ function IndexList(props: ListingProps) {
     <div className="index-list">
       {props.items.map((item) => (
         <div
-          className="index-row"
+          className={`index-row ${item.collection === 'images' ? 'image-index-row' : ''}`}
           key={item.id}
           draggable={props.editMode}
           onDragStart={() => props.setDraggedId(item.id)}
@@ -634,7 +633,9 @@ function IndexList(props: ListingProps) {
               props.onNavigate(`/${item.collection}/${item.id}`);
             }}
           >
-            <span>{itemNumber(item, props.items)}</span>
+            {item.collection === 'questions' && (
+              <span>{itemNumber(item, props.items)}</span>
+            )}
             <p>{item.transcription || item.title || 'UNTITLED'}</p>
             <span>OPEN →</span>
           </a>
@@ -682,10 +683,13 @@ function DetailView({
     <article className="detail-view">
       <div className="detail-breadcrumb">
         LIVING ARCHIVE /{' '}
-        {item.collection === 'questions' ? 'QUESTIONS' : '12 IMAGES'} / {number}
+        {item.collection === 'questions' ? 'QUESTIONS' : '12 IMAGES'} /{' '}
+        {item.collection === 'questions' ? number : item.title}
       </div>
       <div className="detail-layout">
-        <div className="detail-media">
+        <div
+          className={`detail-media ${item.collection === 'images' ? `image-${item.orientation || 'landscape'}` : ''}`}
+        >
           {item.mimeType === 'application/pdf' ? (
             <object
               data={itemMedia(item)}
@@ -702,9 +706,7 @@ function DetailView({
           )}
         </div>
         <aside className="detail-meta">
-          <span>
-            {item.collection === 'questions' ? 'QUESTION' : 'IMAGE'} {number}
-          </span>
+          {item.collection === 'questions' && <span>QUESTION {number}</span>}
           {item.title && <h1>{item.title}</h1>}
           {item.transcription && (
             <section>
@@ -745,7 +747,9 @@ function DetailView({
             </section>
           )}
           <section>
-            <h2>ADDED</h2>
+            <h2>
+              {item.collection === 'images' && item.date ? 'DATE' : 'ADDED'}
+            </h2>
             <p>{item.date || item.dateAdded}</p>
           </section>
           {editMode && (
