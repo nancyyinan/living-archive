@@ -31,19 +31,19 @@ export function Header({
       <a className="site-title" href={sitePath('/')} onClick={go('/')}>
         LIVING ARCHIVE
       </a>
-      <nav aria-label="Archive collections">
-        <a href={sitePath('/images')} onClick={go('/images')}>
-          01 IMAGES
+      <nav aria-label="Archive index">
+        <a href={sitePath('/')} onClick={go('/')}>
+          INDEX
         </a>
-        <a href={sitePath('/brainstorm')} onClick={go('/brainstorm')}>
-          02 BRAINSTORM
+        <a href={sitePath('/week-01')} onClick={go('/week-01')}>
+          WEEK 01
         </a>
-        <a href={sitePath('/questions')} onClick={go('/questions')}>
-          03 QUESTIONS
+        <a href={sitePath('/week-02')} onClick={go('/week-02')}>
+          WEEK 02
         </a>
       </nav>
       <div className="header-actions">
-        <span className="updated">UPDATED SEP 02 2026</span>
+        <span className="updated">UPDATED SEP 10 2026</span>
         <button
           className="text-button theme-trigger"
           onClick={onToggleTheme}
@@ -62,14 +62,14 @@ export function Header({
         <details className="mobile-index">
           <summary>{editMode ? '+ / INDEX' : 'INDEX'}</summary>
           <div>
-            <a href={sitePath('/images')} onClick={go('/images')}>
-              01 IMAGES
+            <a href={sitePath('/')} onClick={go('/')}>
+              INDEX
             </a>
-            <a href={sitePath('/brainstorm')} onClick={go('/brainstorm')}>
-              02 BRAINSTORM
+            <a href={sitePath('/week-01')} onClick={go('/week-01')}>
+              WEEK 01 / SEP 02 2026
             </a>
-            <a href={sitePath('/questions')} onClick={go('/questions')}>
-              03 QUESTIONS
+            <a href={sitePath('/week-02')} onClick={go('/week-02')}>
+              WEEK 02 / SEP 10 2026
             </a>
             <button className="text-button" onClick={onToggleTheme}>
               SWITCH TO {theme === 'dark' ? 'WHITE' : 'BLACK'} MODE

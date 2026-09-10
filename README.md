@@ -4,9 +4,10 @@ Communication Design thesis archive for Yinan Xue.
 
 ## Content
 
-- `01 IMAGES` contains the existing `12 IMAGES` archive and a separate `10 ORDERINGS` branch. The source images live in `public/archive/images`, with citations and captions defined in `data/archive.ts`.
-- `02 BRAINSTORM` uses the original rendered brainstorm scan and a secondary, uncertainty-marked transcription.
-- `03 QUESTIONS` uses all 15 pages of the supplied questions PDF as individual archive blocks.
+- The home page is a chronological index. Each update is labeled by week, date, title, and contents.
+- `WEEK 01` contains the original `12 IMAGES`, thesis brainstorm, and 15 questions from others. The image collection retains its separate `10 ORDERINGS` branch.
+- `WEEK 02` contains the everyday-object study: a student ID photograph, 10 unseen actions, and a 200-word reflection connecting the object to the 256 book and thesis.
+- Source metadata for Week 1 lives in `data/archive.ts`; weekly index and Week 2 writing live in `data/weeks.ts`.
 
 ## Owner mode
 

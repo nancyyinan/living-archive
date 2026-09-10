@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { AddPanel } from '@/components/AddPanel';
 import { BrainstormViewer } from '@/components/BrainstormViewer';
 import { Header } from '@/components/Header';
+import { WeekOnePage, WeekTwoPage } from '@/components/WeekPages';
 import {
   ImageSectionNav,
   OrderingsIndex,
@@ -13,13 +14,13 @@ import {
 } from '@/components/OrderingStudio';
 import {
   ArchiveItem,
-  brainstormTitle,
   CollectionType,
   initialArchive,
   itemMedia,
   itemNumber,
 } from '@/data/archive';
 import { findOrderingApproach } from '@/data/orderings';
+import { archiveWeeks } from '@/data/weeks';
 import {
   deleteStoredFile,
   loadArchive,
@@ -239,7 +240,11 @@ export function ArchiveApp() {
     : undefined;
 
   let content: React.ReactNode;
-  if (collection === 'brainstorm' && brainstorm) {
+  if (collection === 'week-01') {
+    content = <WeekOnePage items={items} onNavigate={navigate} />;
+  } else if (collection === 'week-02') {
+    content = <WeekTwoPage />;
+  } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />
     );
@@ -351,21 +356,20 @@ function Home({
   items: ArchiveItem[];
   onNavigate: (path: string) => void;
 }) {
-  const questions = useMemo(
-    () =>
-      items
-        .filter((item) => item.collection === 'questions')
-        .sort((a, b) => a.order - b.order),
-    [items],
+  const imageCount = items.filter(
+    (item) => item.collection === 'images',
+  ).length;
+  const questionCount = items.filter(
+    (item) => item.collection === 'questions',
+  ).length;
+  const weeks = archiveWeeks.map((week) =>
+    week.number === '01'
+      ? {
+          ...week,
+          contents: `${imageCount} IMAGES / 1 MAP / ${questionCount} QUESTIONS`,
+        }
+      : week,
   );
-  const images = useMemo(
-    () =>
-      items
-        .filter((item) => item.collection === 'images')
-        .sort((a, b) => a.order - b.order),
-    [items],
-  );
-  const brainstorm = items.find((item) => item.collection === 'brainstorm');
   const go = (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     onNavigate(path);
@@ -390,83 +394,31 @@ function Home({
           references, and visual thinking.
         </p>
       </section>
-      <section
-        className="collection-grid"
-        aria-label="Three archive collections"
-      >
-        <a
-          className="collection-card"
-          href={sitePath('/images')}
-          onClick={go('/images')}
-        >
-          <div
-            className={`collection-preview images-preview ${images.length ? 'has-images' : ''}`}
+      <section className="update-index" aria-label="Archive updates by week">
+        <div className="update-index-labels" aria-hidden="true">
+          <span>UPDATE</span>
+          <span>DATE</span>
+          <span>ENTRY</span>
+          <span>CONTENTS</span>
+          <span></span>
+        </div>
+        {weeks.map((week, index) => (
+          <a
+            className={`update-row ${index === 0 ? 'current' : ''}`}
+            href={sitePath(week.href)}
+            onClick={go(week.href)}
+            key={week.number}
           >
-            {images.length ? (
-              images
-                .slice(0, 4)
-                .map((item) => (
-                  <img
-                    key={item.id}
-                    src={itemMedia(item)}
-                    alt={item.title || 'Collected archive image'}
-                  />
-                ))
-            ) : (
-              <span>
-                12 IMAGE FILES
-                <br />
-                NOT SUPPLIED
-              </span>
-            )}
-          </div>
-          <div className="collection-meta">
-            <span>01 / 12 IMAGES</span>
-            <span>
-              {images.length} {images.length === 1 ? 'IMAGE' : 'IMAGES'}
-            </span>
-            <span className="open-label">OPEN →</span>
-          </div>
-        </a>
-        <a
-          className="collection-card"
-          href={sitePath('/brainstorm')}
-          onClick={go('/brainstorm')}
-        >
-          <div className="collection-preview brainstorm-preview">
-            {brainstorm && (
-              <img
-                src={itemMedia(brainstorm)}
-                alt="Handwritten brainstorm map about recording a life"
-              />
-            )}
-          </div>
-          <div className="collection-meta">
-            <span>02 / {brainstormTitle}</span>
-            <span>{brainstorm ? '1 MAP' : '0 MAPS'}</span>
-            <span className="open-label">OPEN →</span>
-          </div>
-        </a>
-        <a
-          className="collection-card"
-          href={sitePath('/questions')}
-          onClick={go('/questions')}
-        >
-          <div className="collection-preview question-preview">
-            {questions.slice(0, 4).map((item) => (
-              <img
-                key={item.id}
-                src={itemMedia(item)}
-                alt={item.transcription || item.title}
-              />
-            ))}
-          </div>
-          <div className="collection-meta">
-            <span>03 / QUESTIONS FROM OTHERS</span>
-            <span>{questions.length} QUESTIONS</span>
-            <span className="open-label">OPEN →</span>
-          </div>
-        </a>
+            <span className="update-number">WEEK {week.number}</span>
+            <time dateTime={week.isoDate}>{week.date}</time>
+            <div className="update-title">
+              <h2>{week.title}</h2>
+              <p>{week.description}</p>
+            </div>
+            <span className="update-contents">{week.contents}</span>
+            <span className="update-open">OPEN →</span>
+          </a>
+        ))}
       </section>
     </div>
   );
