@@ -3,7 +3,13 @@
 /* oxlint-disable next/no-img-element, next/no-html-link-for-pages */
 
 import { ArchiveItem, brainstormTitle, itemMedia } from '@/data/archive';
-import { reflection, studentIdImage, unseenActions } from '@/data/weeks';
+import {
+  reflection,
+  studentIdImage,
+  unseenActions,
+  weekThreeArchiveImage,
+  weekThreeEmailImage,
+} from '@/data/weeks';
 import { sitePath } from '@/lib/site-path';
 
 interface WeekPageProps {
@@ -178,6 +184,246 @@ export function WeekTwoPage() {
         </div>
       </section>
     </article>
+  );
+}
+
+const aiPrompt = `I am researching my university student ID as both an everyday object and an interface that may produce an institutional record.
+
+A March 1980 issue of Parsonspaper describes a Parsons Photo Lab that kept students' names on file and used paper cards to record which equipment they used and on what day. In 2026, I am asking whether my own Design Lab access records - such as dates, times, or visit counts across four years - can be retrieved from my student ID activity.
+
+Analyze these two moments without inventing facts about The New School's current systems. What assumptions am I making when I treat access data as a personal archive? Discuss who creates the record, who owns or controls it, what the record includes and excludes, and how security, privacy, and institutional memory complicate its meaning.
+
+End with one sharper research question.`;
+
+export function WeekThreePage() {
+  return (
+    <article className="week-three-page">
+      <WeekHeading
+        number="03"
+        date="SEP 17 2026"
+        isoDate="2026-09-17"
+        title="ACCESS / RECORD"
+        description="Three encounters with the traces produced by a student ID."
+      />
+
+      <section className="week-three-opening" aria-labelledby="access-question">
+        <p>STUDENT ID / ACCESS / INSTITUTIONAL MEMORY</p>
+        <h1 id="access-question">
+          WHO REMEMBERS EVERY TIME I ENTERED THE LAB?
+        </h1>
+        <p>
+          My student ID opens doors and verifies that I belong. Each use may
+          also create a record - about me, but not necessarily visible to me.
+        </p>
+      </section>
+
+      <EncounterSection
+        number="01"
+        kind="A HUMAN BEING"
+        title="ASKING FOR THE RECORD"
+        description="An email to Henry Portillo, Senior Technician, Print Media."
+      >
+        <div className="encounter-evidence-grid">
+          <figure className="encounter-figure email-evidence">
+            <img
+              src={weekThreeEmailImage}
+              alt="Sent email to Henry Portillo asking about four years of Design Lab access records"
+            />
+            <figcaption>
+              EVIDENCE 01 / SENT EMAIL / SEP 17 2026 / 9:08 PM
+            </figcaption>
+          </figure>
+          <div className="encounter-copy">
+            <p className="encounter-label">QUESTION</p>
+            <h3>
+              Does The New School retain a record of when my student ID was used
+              to access the Design Lab?
+            </h3>
+            <p>
+              I asked whether dates, times, or visit counts connected to my own
+              ID could be retrieved across four years. I also asked who controls
+              the record and whether retention or privacy policies limit access.
+            </p>
+            <dl className="encounter-facts">
+              <div>
+                <dt>PERSON</dt>
+                <dd>Henry Portillo</dd>
+              </div>
+              <div>
+                <dt>ROLE</dt>
+                <dd>Senior Technician, Print Media</dd>
+              </div>
+              <div>
+                <dt>STATUS</dt>
+                <dd>Message sent / response pending</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </EncounterSection>
+
+      <EncounterSection
+        number="02"
+        kind="AN ARCHIVE"
+        title="A PAPER ACCESS SYSTEM"
+        description="Parsonspaper shows that lab use was recorded long before digital ID cards."
+      >
+        <div className="encounter-evidence-grid archive-evidence-grid">
+          <figure className="encounter-figure archive-evidence">
+            <img
+              src={weekThreeArchiveImage}
+              alt="Page four of Parsonspaper from March 1980, with three columns about laboratory policy and tuition"
+            />
+            <figcaption>
+              EVIDENCE 02 / PARSONSPAPER / PHOTO LAB 1980 / PAGE 4
+            </figcaption>
+          </figure>
+          <div className="encounter-copy">
+            <p className="encounter-label">QUESTION ASKED OF THE ARCHIVE</p>
+            <h3>
+              How were students’ identities and lab use recorded before digital
+              access systems - and why?
+            </h3>
+            <p>
+              The article describes a paper card system that held a student’s
+              name, department, and address while a separate sheet recorded
+              equipment and dates. The system was created for security, but it
+              also made patterns of presence and frequency visible.
+            </p>
+            <blockquote>
+              “Helmond has on file the names of all students who use the
+              facilities and equipment.”
+            </blockquote>
+            <p className="source-note">
+              Susan Magnus, “Photo Lab 1980,” <i>Parsonspaper</i>, Vol. 5, No.
+              1, March 1980. The New School Archives and Special Collections.
+            </p>
+            <a
+              className="source-link"
+              href="https://digital.archives.newschool.edu/index.php/Detail/objects/NS050601_ParsonsPaper_1980_001"
+              target="_blank"
+              rel="noreferrer"
+            >
+              VIEW ARCHIVE SOURCE ↗
+            </a>
+          </div>
+        </div>
+      </EncounterSection>
+
+      <EncounterSection
+        number="03"
+        kind="A PROMPT FOR AI"
+        title="WHAT THE TIMESTAMP CANNOT SAY"
+        description="A prompt tests whether access data can function as personal memory."
+      >
+        <div className="ai-encounter-grid">
+          <div className="prompt-record">
+            <p className="encounter-label">EXACT PROMPT</p>
+            <pre>{aiPrompt}</pre>
+          </div>
+          <div className="ai-reading">
+            <p className="encounter-label">EVIDENCE 03 / RESPONSE TRACE</p>
+            <blockquote>
+              An access log may document that a credential was used, but it
+              cannot explain what the visit meant.
+            </blockquote>
+            <p>
+              The response exposed four assumptions: that the record exists,
+              that it has been retained for four years, that I am allowed to see
+              it, and that a timestamp can stand in for a lived visit.
+            </p>
+            <p>
+              AI could interpret the gap between data and memory, but it could
+              not verify The New School’s present system. That answer still
+              depends on the human encounter.
+            </p>
+          </div>
+        </div>
+      </EncounterSection>
+
+      <section
+        className="connection-section"
+        aria-labelledby="connection-heading"
+      >
+        <header>
+          <p>04 / CONNECT THE THREE ENCOUNTERS</p>
+          <h2 id="connection-heading">THREE RECORDS, THREE LIMITS</h2>
+        </header>
+        <div className="connection-grid">
+          <article>
+            <span>HUMAN</span>
+            <h3>ACCESS TO THE PRESENT</h3>
+            <p>
+              Henry may confirm whether a current record exists, who controls
+              it, and whether I can see my own data.
+            </p>
+          </article>
+          <article>
+            <span>ARCHIVE</span>
+            <h3>A HISTORICAL PRECEDENT</h3>
+            <p>
+              The 1980 paper card shows that recording lab use began as a tool
+              for security, access, and resource management.
+            </p>
+          </article>
+          <article>
+            <span>AI</span>
+            <h3>THE MISSING EXPERIENCE</h3>
+            <p>
+              AI separates an administrative trace from the reasons, duration,
+              work, and meaning of an actual visit.
+            </p>
+          </article>
+        </div>
+        <div className="encounter-gap">
+          <span>GAP</span>
+          <p>
+            The archive proves that tracking has a history. The email asks what
+            is tracked now. Until a reply or access log arrives, the present-day
+            record remains absent.
+          </p>
+        </div>
+        <div className="next-question">
+          <p>NEXT RESEARCH QUESTION</p>
+          <blockquote>
+            IF AN INSTITUTION RECORDS MY PRESENCE BUT I CANNOT ACCESS OR
+            INTERPRET THAT RECORD, IN WHAT SENSE IS IT PART OF MY PERSONAL
+            HISTORY?
+          </blockquote>
+        </div>
+      </section>
+    </article>
+  );
+}
+
+function EncounterSection({
+  number,
+  kind,
+  title,
+  description,
+  children,
+}: {
+  number: string;
+  kind: string;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section
+      className="encounter-section"
+      aria-labelledby={`encounter-${number}`}
+    >
+      <header className="encounter-heading">
+        <span>{number}</span>
+        <div>
+          <p>{kind}</p>
+          <h2 id={`encounter-${number}`}>{title}</h2>
+        </div>
+        <p>{description}</p>
+      </header>
+      {children}
+    </section>
   );
 }
 

@@ -6,7 +6,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { AddPanel } from '@/components/AddPanel';
 import { BrainstormViewer } from '@/components/BrainstormViewer';
 import { Header } from '@/components/Header';
-import { WeekOnePage, WeekTwoPage } from '@/components/WeekPages';
+import {
+  WeekOnePage,
+  WeekThreePage,
+  WeekTwoPage,
+} from '@/components/WeekPages';
 import {
   ImageSectionNav,
   OrderingsIndex,
@@ -244,6 +248,8 @@ export function ArchiveApp() {
     content = <WeekOnePage items={items} onNavigate={navigate} />;
   } else if (collection === 'week-02') {
     content = <WeekTwoPage />;
+  } else if (collection === 'week-03') {
+    content = <WeekThreePage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />

@@ -12,6 +12,15 @@ export interface ArchiveWeek {
 
 export const archiveWeeks: ArchiveWeek[] = [
   {
+    number: '03',
+    date: 'SEP 17 2026',
+    isoDate: '2026-09-17',
+    title: 'ACCESS / RECORD',
+    description: 'Three encounters with the traces produced by a student ID.',
+    contents: '3 ENCOUNTERS / 3 TRACES / 1 QUESTION',
+    href: '/week-03',
+  },
+  {
     number: '02',
     date: 'SEP 10 2026',
     isoDate: '2026-09-10',
@@ -33,6 +42,14 @@ export const archiveWeeks: ArchiveWeek[] = [
 
 export const studentIdImage = sitePath(
   '/archive/week-02/student-id-redacted.png',
+);
+
+export const weekThreeEmailImage = sitePath(
+  '/archive/week-03/email-to-henry.png',
+);
+
+export const weekThreeArchiveImage = sitePath(
+  '/archive/week-03/parsonspaper-photo-lab-1980.png',
 );
 
 export const unseenActions = [
