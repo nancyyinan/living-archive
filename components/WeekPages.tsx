@@ -4,6 +4,7 @@
 
 import { ArchiveItem, brainstormTitle, itemMedia } from '@/data/archive';
 import {
+  researchDirections,
   reflection,
   studentIdImage,
   unseenActions,
@@ -391,6 +392,81 @@ export function WeekThreePage() {
             HISTORY?
           </blockquote>
         </div>
+      </section>
+    </article>
+  );
+}
+
+export function WeekFourPage() {
+  return (
+    <article className="week-four-page">
+      <WeekHeading
+        number="04"
+        date="SEP 24 2026"
+        isoDate="2026-09-24"
+        title="POSSIBLE THESIS DIRECTIONS"
+        description="Three ways to read one intergenerational living archive."
+      />
+
+      <section
+        className="week-four-opening"
+        aria-labelledby="research-field-heading"
+      >
+        <p>WORKING FIELD OF INTEREST</p>
+        <h1 id="research-field-heading">
+          EVERYDAY RECORDS AS AN INTERGENERATIONAL LIVING ARCHIVE
+        </h1>
+        <div>
+          <p>
+            My grandfather turned years of handwritten diaries into four edited
+            books. I inherited his habit of recording life, but my own four
+            years in New York are scattered across paper, apps, images, objects,
+            and data.
+          </p>
+          <p>
+            One shared corpus. Three possible directions. Each asks how records
+            move between media, generations, places, and future readers.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="direction-sheets"
+        aria-label="Three research directions"
+      >
+        {researchDirections.map((direction) => (
+          <article className="direction-sheet" key={direction.number}>
+            <header className="direction-sheet-header">
+              <div>
+                <span>DIRECTION {direction.number}</span>
+                <span>WORKING TITLE</span>
+              </div>
+              <h2>{direction.title}</h2>
+            </header>
+
+            <section className="direction-question">
+              <span>WORKING QUESTION</span>
+              <p>{direction.question}</p>
+            </section>
+
+            <ol className="direction-responses">
+              {direction.responses.map((response, index) => (
+                <li key={response.prompt}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3>{response.prompt}</h3>
+                    <p>{response.answer}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <footer className="direction-action">
+              <span>FIRST RESEARCH ACTION</span>
+              <p>{direction.firstAction}</p>
+            </footer>
+          </article>
+        ))}
       </section>
     </article>
   );

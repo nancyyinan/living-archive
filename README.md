@@ -7,7 +7,9 @@ Communication Design thesis archive for Yinan Xue.
 - The home page is a chronological index. Each update is labeled by week, date, title, and contents.
 - `WEEK 01` contains the original `12 IMAGES`, thesis brainstorm, and 15 questions from others. The image collection retains its separate `10 ORDERINGS` branch.
 - `WEEK 02` contains the everyday-object study: a student ID photograph, 10 unseen actions, and a 200-word reflection connecting the object to the 256 book and thesis.
-- Source metadata for Week 1 lives in `data/archive.ts`; weekly index and Week 2 writing live in `data/weeks.ts`.
+- `WEEK 03` follows three encounters with the institutional traces produced by a student ID.
+- `WEEK 04` presents three possible thesis directions as individual letter-size editorial sheets.
+- Source metadata for Week 1 lives in `data/archive.ts`; the weekly index and writing for Weeks 2 and 4 live in `data/weeks.ts`.
 
 ## Owner mode
 
