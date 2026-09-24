@@ -16,8 +16,9 @@ export const archiveWeeks: ArchiveWeek[] = [
     date: 'SEP 24 2026',
     isoDate: '2026-09-24',
     title: 'POSSIBLE THESIS DIRECTIONS',
-    description: 'Three ways to read one intergenerational living archive.',
-    contents: '3 DIRECTIONS / 12 QUESTIONS / 3 FIRST ACTIONS',
+    description:
+      'One project, two complete archives, and three research lenses.',
+    contents: '2 ARCHIVES / 3 LENSES / 3 DIRECTIONS',
     href: '/week-04',
   },
   {
@@ -53,6 +54,7 @@ export interface ResearchDirection {
   number: string;
   title: string;
   question: string;
+  premise: string;
   responses: {
     prompt: string;
     answer: string;
@@ -60,96 +62,152 @@ export interface ResearchDirection {
   firstAction: string;
 }
 
-export const researchDirections: ResearchDirection[] = [
+export const weekFourArchives = [
+  {
+    marker: 'A',
+    title: 'FOUR DIARY BOOKS',
+    owner: 'MY GRANDFATHER / FOUR EDITED BOOKS',
+    description:
+      'All four books remain primary material. The project will study how he recorded, selected, edited, titled, sequenced, and compiled his life.',
+    items: [
+      'REMEMBERING MY PARENTS / 《忆双亲》',
+      'MY TEN YEARS DURING THE CULTURAL REVOLUTION / 《我的文革十年》',
+      'JIACHEN COLLECTION / 《甲辰集萃》',
+      'YISI COLLECTION / 《乙巳集萃》',
+    ],
+  },
+  {
+    marker: 'B',
+    title: 'FOUR NEW YORK YEARS',
+    owner: 'MY LIFE / FOUR IDENTIFIABLE YEARS',
+    description:
+      'All four years remain visible through records dispersed across paper, objects, interfaces, platforms, and available institutional data.',
+    items: [
+      'PLANNERS / NOTEBOOKS / CALENDARS',
+      'PLAYLISTS / PHOTOGRAPHS / OBJECTS',
+      'TICKETS / RECEIPTS / MENUS / EXHIBITIONS',
+      'INTERFACES / PLATFORM DATA / SCHOOL RECORDS',
+    ],
+  },
+];
+
+export const weekFourLenses = [
   {
     number: '01',
-    title: 'INHERITING THE HABIT OF RECORDING',
-    question:
-      'How does a practice of recording everyday life pass between generations, and how is it transformed when the medium changes from handwritten diaries and edited books to scattered paper and digital traces?',
-    responses: [
-      {
-        prompt: 'Which resource do I want to interact with?',
-        answer:
-          "I want to study my grandfather's four diary books as designed objects and interview him about the process behind them: why he recorded daily life, how he later selected and edited entries, what he omitted, and whom he imagined as his reader. I will compare this process with a small, clearly defined sample from my own New York records, including planners, calendars, playlists, photographs, and objects.",
-      },
-      {
-        prompt: 'What do I want to find out?',
-        answer:
-          "I want to understand whether the habit of recording can be inherited even when its form changes. What values or gestures continue across generations? What changes when one person's record becomes a bound, linear narrative while another person's life is distributed across platforms and media? I am interested in the tension between continuity of habit and discontinuity of form.",
-      },
-      {
-        prompt: 'How will I document and circulate what I find?',
-        answer:
-          "I will create a paired publication that places selected pages, structures, and editing decisions from my grandfather's books beside selected records from my New York life. Short interview excerpts and annotations from both of us will reveal how each record was made, edited, and interpreted. A small digital index may connect related dates, subjects, and recurring habits across the two archives.",
-      },
-      {
-        prompt: 'Who could be interested in this?',
-        answer:
-          'This project could interest families who preserve personal histories, people who keep diaries, intergenerational and diasporic families, designers working with archives and publications, and researchers interested in autobiography, memory, or vernacular recordkeeping.',
-      },
-    ],
-    firstAction:
-      'Select one recurring act—such as commuting, meals, work, or calling family—and trace how it appears in both archives.',
+    title: 'INHERITANCE + MEDIA',
+    description:
+      'How did a recording practice pass between generations, and how did its form change?',
   },
   {
     number: '02',
-    title: 'THE NEW YORK I LEAVE BEHIND',
-    question:
-      'How can four years of personal records construct a lived image of New York for people who were not here—my grandfather now and my future children decades from now?',
-    responses: [
-      {
-        prompt: 'Which resource do I want to interact with?',
-        answer:
-          'I want to work with records from my four years in New York: planners, calendars, photographs, playlists, tickets, receipts, menus, exhibition material, and, if it becomes available, my New School access history. I also want to ask my grandfather how he currently imagines New York and what sources shaped that image, then invite him to respond to a small sample of my archive.',
-      },
-      {
-        prompt: 'What do I want to find out?',
-        answer:
-          'I want to investigate how an everyday, first-person New York differs from the city represented through news, films, tourism, or institutional narratives. More importantly, I want to understand how ordinary records change over time: something made for the present can later become evidence of a city, an era, and a way of life for someone who was not there. The tension is between immediate use and future historical meaning.',
-      },
-      {
-        prompt: 'How will I document and circulate what I find?',
-        answer:
-          'I will develop a four-part New York time capsule, with one section for each year. Instead of organizing it around landmarks, I will use recurring routes, rooms, sounds, routines, relationships, and turning points. A printed publication will preserve the material experience of the archive, while a digital map or index will allow readers to enter through a date, place, person, song, or object. Responses from my grandfather can become a second layer.',
-      },
-      {
-        prompt: 'Who could be interested in this?',
-        answer:
-          'This project could interest international students, families separated by geography or generation, future members of my own family, personal and community archivists, and readers interested in everyday histories of New York that sit outside official city narratives.',
-      },
-    ],
-    firstAction:
-      'Build one prototype day from a calendar event, notebook entry, song, photograph or location, object, and a short response from my grandfather.',
+    title: 'PLACE + TIME + TRANSMISSION',
+    description:
+      'How do two archives preserve two lived worlds for people who were not there?',
   },
   {
     number: '03',
-    title: 'WHO RECORDED MY LIFE?',
+    title: 'AUTHORSHIP + CONTROL',
+    description:
+      'Who creates, edits, owns, and withholds the records that become a life archive?',
+  },
+];
+
+export const researchDirections: ResearchDirection[] = [
+  {
+    number: '01',
+    title: 'ONE HABIT, TWO RECORDING SYSTEMS',
     question:
-      'What changes when a personal archive includes not only records I intentionally made, but also data automatically produced, stored, restricted, or deleted by platforms and institutions?',
+      "How is a habit of recording everyday life inherited and transformed across my grandfather's four bound diary books and my four years of fragmented New York records?",
+    premise:
+      'This direction treats the two complete archives as evidence of one family habit continuing through two generations, while changing its material and organizational form.',
     responses: [
       {
         prompt: 'Which resource do I want to interact with?',
         answer:
-          "I want to request and examine data connected to my own everyday activities: calendar exports, music listening histories, photo metadata, app records, and any New School student-ID or Design Lab access history that the university is able to share. I will compare these machine-made traces with my intentional records and with my grandfather's handwritten and edited diary books. If data is unavailable, I will document the request process, retention rules, and gaps as part of the research.",
+          "I want to work with all four of my grandfather's diary books and the full range of records from all four of my New York years. I will study the books' covers, tables of contents, handwriting or typography, chapter structures, images, revisions, and signs of selection. I will interview my grandfather about why he recorded his life and how he turned earlier diaries into these four edited books. I will also inventory where each year of my New York life currently exists: planners, notebooks, calendars, playlists, photographs, objects, apps, and data.",
       },
       {
         prompt: 'What do I want to find out?',
         answer:
-          'I want to learn who participates in recording a life and who controls what can later be remembered. What do platforms or institutions capture that I do not write down? What do their records misunderstand or leave out? Who can access, interpret, or erase these traces? The central tension is between self-authorship and systems that quietly produce an archive on my behalf.',
+          'I want to understand what it means to inherit a recording habit when the media are different. Which intentions, routines, and values continue between us? Which ones change when a continuous handwritten practice becomes a mixture of paper records, interfaces, images, music, and automatic timestamps? I want to investigate the tension between the continuity of a family habit and the discontinuity of its forms.',
       },
       {
         prompt: 'How will I document and circulate what I find?',
         answer:
-          'I will create a visual audit of one selected month, layering intentional entries with automatic timestamps, access logs, listening histories, and missing or inaccessible data. The result could circulate as a printed data diary and a searchable digital companion. The design will make provenance visible: each item will show who produced it, where it was stored, whether I could retrieve it, and what context is absent.',
+          'I will create a paired intergenerational publication or archive in which the four diary books and the four New York years are both visible as complete structures. Overview pages will establish each book and each year before selected cross-sections connect recurring activities, subjects, or editorial decisions. A digital index could allow readers to move between the two archives by date, theme, medium, or repeated action without forcing them into a false one-to-one chronology.',
       },
       {
         prompt: 'Who could be interested in this?',
         answer:
-          'This project could interest students whose lives are mediated by campus systems and apps, university archivists and administrators, designers working with personal data, and researchers or communities concerned with privacy, digital preservation, data ownership, and platform memory.',
+          'This direction could interest families who preserve personal histories, people who keep diaries, intergenerational or diasporic families, publication and archive designers, and researchers interested in autobiography, memory, vernacular recordkeeping, and changing media.',
       },
     ],
     firstAction:
-      'Choose one month and make an inventory of every intentional record, automatic trace, failed export, and missing piece that can be found.',
+      'Create two collection-level inventories: one describing the contents and structure of each of the four diary books, and one describing the available material from each of the four New York years. Then choose one repeated action, such as commuting, eating, working, or contacting family, for the first paired prototype.',
+  },
+  {
+    number: '02',
+    title: 'FOUR BOOKS, FOUR YEARS: TWO LIVED WORLDS',
+    question:
+      "How can my grandfather's four diary books and my four years of New York records preserve two different lived worlds for family members who were not there?",
+    premise:
+      'This direction treats both archives as personal portraits of a place and an era: the China and historical periods my grandfather lived through, and the New York I have experienced as an international student.',
+    responses: [
+      {
+        prompt: 'Which resource do I want to interact with?',
+        answer:
+          "I want to work with the full content and physical structure of my grandfather's four diary books, paying attention to how they describe everyday places, routines, relationships, objects, and historical conditions. I will place them in dialogue with records from each of my four New York years, including planners, photographs, calendars, playlists, tickets, receipts, menus, exhibition materials, and available school records. Conversations with my grandfather will help identify what each of us assumes, explains, or leaves unstated when describing a world familiar to us but unfamiliar to another generation.",
+      },
+      {
+        prompt: 'What do I want to find out?',
+        answer:
+          "I want to understand how ordinary personal records gradually become evidence of a place, an era, and a way of life. How do my grandfather's books allow me to imagine periods of China that I did not experience? How might my New York archive allow him, or my future children, to encounter the city I lived in rather than an official or touristic image of it? The central tension is between a record made for the present and the historical meaning it acquires for a later reader.",
+      },
+      {
+        prompt: 'How will I document and circulate what I find?',
+        answer:
+          'I will create an eight-part intergenerational atlas or time capsule: four sections that introduce and re-present the four diary books, and four sections that construct my four New York years. Connections will be made through shared themes such as home, movement, food, work, separation, family contact, political atmosphere, or ordinary objects, rather than pretending the two lives follow matching timelines. A printed publication can preserve material differences, while a digital map or index can reveal connections across place, period, and generation.',
+      },
+      {
+        prompt: 'Who could be interested in this?',
+        answer:
+          'This direction could interest families separated by geography or generation, international students and immigrants, future members of my own family, community archivists, and readers interested in everyday histories of China and New York that sit outside official historical narratives.',
+      },
+    ],
+    firstAction:
+      'Choose one passage or episode from each of the four diary books and one representative day or object from each of the four New York years. Test how these eight entries can be introduced individually and then connected through one shared theme.',
+  },
+  {
+    number: '03',
+    title: 'WHO MAKES A LIFE ARCHIVE?',
+    question:
+      "How does authorship change between my grandfather's four self-recorded and edited diary books and my four New York years, which have been recorded jointly by me, paper objects, platforms, apps, and institutions?",
+    premise:
+      'This direction keeps both complete archives at the center but examines the different systems of power, access, editing, and ownership behind them.',
+    responses: [
+      {
+        prompt: 'Which resource do I want to interact with?',
+        answer:
+          'I want to study all four diary books as deliberately authored and edited archives: what my grandfather included, rewrote, organized, titled, or omitted. I will compare this with material from all four New York years, including my intentional records and data produced by calendars, music platforms, photo metadata, location systems, and The New School. If university or platform data cannot be retrieved, the request process, retention policy, refusal, deletion, or absence will remain part of the research rather than removing that year from the archive.',
+      },
+      {
+        prompt: 'What do I want to find out?',
+        answer:
+          'I want to investigate who is able to make a life legible as an archive. My grandfather controlled much of the writing and later editing of his books, but my New York record has many co-authors and storage systems. What did each system capture, distort, or leave out? Who decides what is preserved? What does "complete" mean when one archive has already been edited into books and the other is dispersed across private memory, paper objects, corporations, and institutions?',
+      },
+      {
+        prompt: 'How will I document and circulate what I find?',
+        answer:
+          'I will create a provenance-based publication and digital index that presents all four diary books and all four New York years. Each record or section will identify who produced it, who edited it, where it was stored, whether I can access it, and what context is missing. Rather than treating the books as a neutral past and the data as a neutral present, the design will expose the different decisions and systems that constructed both archives.',
+      },
+      {
+        prompt: 'Who could be interested in this?',
+        answer:
+          'This direction could interest students whose lives are mediated by campus systems and apps, families building personal archives, university archivists and administrators, designers working with personal data, and researchers concerned with privacy, digital preservation, data ownership, autobiography, and archival power.',
+      },
+    ],
+    firstAction:
+      'Select one passage from each of the four diary books and one date from each of the four New York years. For all eight entries, identify the recorder, editor, storage location, access conditions, missing context, and intended reader.',
   },
 ];
 

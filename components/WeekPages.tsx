@@ -8,6 +8,8 @@ import {
   reflection,
   studentIdImage,
   unseenActions,
+  weekFourArchives,
+  weekFourLenses,
   weekThreeArchiveImage,
   weekThreeEmailImage,
 } from '@/data/weeks';
@@ -405,28 +407,71 @@ export function WeekFourPage() {
         date="SEP 24 2026"
         isoDate="2026-09-24"
         title="POSSIBLE THESIS DIRECTIONS"
-        description="Three ways to read one intergenerational living archive."
+        description="One project, two complete archives, and three research lenses."
       />
 
       <section
         className="week-four-opening"
         aria-labelledby="research-field-heading"
       >
-        <p>WORKING FIELD OF INTEREST</p>
+        <p>ONE PROJECT / TWO REQUIRED ARCHIVES</p>
         <h1 id="research-field-heading">
-          EVERYDAY RECORDS AS AN INTERGENERATIONAL LIVING ARCHIVE
+          FOUR BOOKS. FOUR YEARS. BOTH MUST REMAIN VISIBLE.
         </h1>
         <div>
           <p>
-            My grandfather turned years of handwritten diaries into four edited
-            books. I inherited his habit of recording life, but my own four
-            years in New York are scattered across paper, apps, images, objects,
-            and data.
+            My grandfather&apos;s four diary books and my four years in New York
+            are the two required archives. Neither is background information,
+            and neither can be replaced by a small sample.
           </p>
           <p>
-            One shared corpus. Three possible directions. Each asks how records
-            move between media, generations, places, and future readers.
+            A prototype may begin with one day, one month, one repeated action,
+            or one passage from each book. The final project still commits to
+            presenting all four books and all four years.
           </p>
+        </div>
+      </section>
+
+      <section className="required-archives" aria-label="Two required archives">
+        {weekFourArchives.map((archive) => (
+          <article className="required-archive" key={archive.marker}>
+            <header>
+              <span>ARCHIVE {archive.marker}</span>
+              <div>
+                <p>{archive.owner}</p>
+                <h2>{archive.title}</h2>
+              </div>
+            </header>
+            <p className="required-archive-description">
+              {archive.description}
+            </p>
+            <ol>
+              {archive.items.map((item, index) => (
+                <li key={item}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ol>
+          </article>
+        ))}
+      </section>
+
+      <section className="research-lenses" aria-labelledby="lenses-heading">
+        <header>
+          <p>WHAT CHANGES BETWEEN THE THREE DIRECTIONS?</p>
+          <h2 id="lenses-heading">
+            THE MATERIAL DOES NOT CHANGE. THE RESEARCH LENS CHANGES.
+          </h2>
+        </header>
+        <div>
+          {weekFourLenses.map((lens) => (
+            <article key={lens.number}>
+              <span>{lens.number}</span>
+              <h3>{lens.title}</h3>
+              <p>{lens.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -446,7 +491,10 @@ export function WeekFourPage() {
 
             <section className="direction-question">
               <span>WORKING QUESTION</span>
-              <p>{direction.question}</p>
+              <div>
+                <p>{direction.question}</p>
+                <p className="direction-premise">{direction.premise}</p>
+              </div>
             </section>
 
             <ol className="direction-responses">
