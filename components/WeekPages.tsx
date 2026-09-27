@@ -522,6 +522,11 @@ export function WeekFourPage() {
 
 const weekFiveSpreads = [
   {
+    file: '02-spread-text.jpg',
+    title: 'INSTRUCTION / IMAGE COUNTS',
+    alt: 'An open spread showing the project instruction and a list of layout types',
+  },
+  {
     file: '03-spread-sky.jpg',
     title: 'SKY / VOID',
     alt: 'An open book spread pairing a cropped building facade with blue sky and a dark vertical field',
@@ -556,7 +561,64 @@ const weekFiveSpreads = [
 const weekFiveAsset = (file: string) =>
   sitePath(`/archive/week-05/256/${file}`);
 
-export function WeekFivePage() {
+export function WeekFivePage({
+  onNavigate,
+}: {
+  onNavigate: (path: string) => void;
+}) {
+  const openBook = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    onNavigate('/week-05/256');
+  };
+
+  return (
+    <div className="week-five-page">
+      <WeekHeading
+        number="05"
+        date="OCT 01 2026"
+        isoDate="2026-10-01"
+        title="256 + BOOK FAIR"
+        description="Two collections: documentation of the 256 book and visual research from the New York Art Book Fair."
+      />
+
+      <section
+        className="week-five-collection-grid"
+        aria-label="Week 5 collections"
+      >
+        <a
+          className="collection-card"
+          href={sitePath('/week-05/256')}
+          onClick={openBook}
+        >
+          <div className="collection-preview week-five-book-preview">
+            <img
+              src={weekFiveAsset('09-fanned-book.png')}
+              alt="The completed narrow-format book opened into a fan"
+            />
+          </div>
+          <div className="collection-meta">
+            <span>01 / 256 BOOK</span>
+            <span>220 PAGES / 9 DOCUMENTATION VIEWS</span>
+            <span className="open-label">OPEN →</span>
+          </div>
+        </a>
+
+        <article className="collection-card week-five-pending-card">
+          <div className="collection-preview week-five-pending-preview">
+            <span>BOOK FAIR MATERIALS</span>
+            <span>TO BE ADDED</span>
+          </div>
+          <div className="collection-meta">
+            <span>02 / NEW YORK ART BOOK FAIR</span>
+            <span>MATERIALS PENDING</span>
+          </div>
+        </article>
+      </section>
+    </div>
+  );
+}
+
+export function WeekFiveBookPage() {
   return (
     <article className="week-five-page">
       <WeekHeading
@@ -567,7 +629,7 @@ export function WeekFivePage() {
         description="A photographic book about reading New York through edges, intervals, and repeated frames."
       />
 
-      <section className="week-five-hero" aria-labelledby="book-heading">
+      <section className="week-five-book-hero" aria-labelledby="book-heading">
         <figure>
           <img
             src={weekFiveAsset('09-fanned-book.png')}
@@ -575,9 +637,11 @@ export function WeekFivePage() {
           />
           <figcaption>OBJECT VIEW 01 / FAN / COMPLETED BOOK</figcaption>
         </figure>
-        <div>
-          <p>256-PAGE PHOTOGRAPHIC BOOK / NEW YORK</p>
-          <h1 id="book-heading">THE CITY BECOMES A HORIZONTAL SCAN.</h1>
+        <div className="week-five-book-hero-copy">
+          <div>
+            <p>220-PAGE PHOTOGRAPHIC BOOK / NEW YORK</p>
+            <h1 id="book-heading">THE CITY BECOMES A HORIZONTAL SCAN.</h1>
+          </div>
           <p>
             A narrow book built from street photographs, architectural edges,
             and the changing pieces of sky between them.
@@ -602,7 +666,7 @@ export function WeekFivePage() {
           </blockquote>
           <div>
             <p>
-              <i>256</i> is a 256-page photographic sequence drawn from moving
+              <i>256</i> is a 220-page photographic sequence drawn from moving
               through New York. It studies how buildings, signs, trees, traffic
               lights, and passing figures divide the sky into changing
               fragments.
@@ -629,7 +693,7 @@ export function WeekFivePage() {
           </div>
           <div>
             <dt>LENGTH</dt>
-            <dd>256 PAGES</dd>
+            <dd>220 PAGES</dd>
           </div>
           <div>
             <dt>MATERIAL</dt>
@@ -642,32 +706,21 @@ export function WeekFivePage() {
         </dl>
       </section>
 
-      <section className="week-five-object" aria-labelledby="object-heading">
+      <section className="week-five-cover" aria-labelledby="cover-heading">
         <header>
           <span>02</span>
           <div>
-            <p>BOOK AS OBJECT</p>
-            <h2 id="object-heading">CLOSED FORM / OPEN SYSTEM</h2>
+            <p>COVER</p>
+            <h2 id="cover-heading">THE BOOK AS A CLOSED OBJECT</h2>
           </div>
         </header>
-        <div>
-          <figure>
-            <img
-              src={weekFiveAsset('01-cover-closed.jpg')}
-              alt="The closed 256 book with a white cover and photographic strip along its lower edge"
-            />
-            <figcaption>OBJECT VIEW 02 / CLOSED COVER</figcaption>
-          </figure>
-          <figure>
-            <img
-              src={weekFiveAsset('02-spread-text.jpg')}
-              alt="An open spread showing the project instruction and a list of layout types"
-            />
-            <figcaption>
-              SPREAD 026-027 / GENERATIVE INSTRUCTION + IMAGE COUNTS
-            </figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={weekFiveAsset('01-cover-closed.jpg')}
+            alt="The closed book with a white cover and photographic strip along its lower edge"
+          />
+          <figcaption>OBJECT VIEW 02 / CLOSED COVER</figcaption>
+        </figure>
       </section>
 
       <section className="week-five-spreads" aria-labelledby="spreads-heading">
@@ -675,7 +728,7 @@ export function WeekFivePage() {
           <span>03</span>
           <div>
             <p>SELECTED SPREADS</p>
-            <h2 id="spreads-heading">ONE FORMAT, MULTIPLE WAYS OF SEEING</h2>
+            <h2 id="spreads-heading">SEVEN SPREADS / ONE VISUAL LEVEL</h2>
           </div>
           <p>
             The white field holds fragments apart; the narrow page keeps them
@@ -710,7 +763,7 @@ export function WeekFivePage() {
           <p>
             Two excerpts from the source PDF preserve the photographs as
             continuous street-level sequences before they are redistributed
-            across the 256-page edit.
+            across the 220-page edit.
           </p>
         </header>
         <div>

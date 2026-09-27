@@ -9,7 +9,7 @@ Communication Design thesis archive for Yinan Xue.
 - `WEEK 02` contains the everyday-object study: a student ID photograph, 10 unseen actions, and a 200-word reflection connecting the object to the 256 book and thesis.
 - `WEEK 03` follows three encounters with the institutional traces produced by a student ID.
 - `WEEK 04` presents two complete intergenerational archives through three possible research lenses, each set as an individual letter-size editorial sheet.
-- `WEEK 05` documents the 256-page photographic book through its project statement, finished-object photographs, selected spreads, and two source sequences extracted from the project PDF.
+- `WEEK 05` opens as a two-collection index for the 220-page 256 book and the New York Art Book Fair. The 256 detail page contains its project statement, finished-object photographs, seven equally weighted spreads, and two source sequences extracted from the project PDF; the Book Fair collection remains reserved for incoming material.
 - Source metadata for Week 1 lives in `data/archive.ts`; the weekly index and writing for Weeks 2, 4, and 5 live in `data/weeks.ts` and `components/WeekPages.tsx`.
 
 ## Owner mode

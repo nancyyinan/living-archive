@@ -288,27 +288,83 @@ img {
   padding-bottom: 40px;
 }
 
-.week-five-hero {
+.week-five-page {
+  max-width: 100%;
+  overflow-x: clip;
+}
+.week-five-page .week-heading > div,
+.week-five-statement > header > div,
+.week-five-cover > header > div,
+.week-five-spreads > header > div,
+.week-five-source > header > div {
+  min-width: 0;
+}
+.week-five-page .week-heading h1,
+.week-five-statement h2,
+.week-five-cover h2,
+.week-five-spreads h2,
+.week-five-source h2 {
+  overflow-wrap: anywhere;
+}
+.week-five-collection-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
-  min-height: min(720px, calc(100vh - 174px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 14px 20px 0;
+}
+.week-five-book-preview {
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 3vw, 48px);
+  background: #deded8;
+}
+.week-five-book-preview img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+}
+.week-five-pending-card {
+  cursor: default;
+}
+.week-five-pending-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--media-surface);
+  color: var(--tertiary);
+  font:
+    10px/1.5 var(--font-geist-mono),
+    monospace;
+}
+.week-five-pending-preview span:last-child {
+  align-self: flex-end;
+  color: var(--secondary);
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(28px, 4vw, 64px);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+.week-five-book-hero {
   border-bottom: 1px solid var(--border);
 }
-.week-five-hero figure {
+.week-five-book-hero figure {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 20px;
   background: #deded8;
 }
-.week-five-hero figure img {
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
+.week-five-book-hero figure img {
+  width: min(100%, 1600px);
+  max-height: calc(100vh - 220px);
+  margin: 0 auto;
   object-fit: contain;
 }
-.week-five-hero figcaption,
-.week-five-object figcaption,
+.week-five-book-hero figcaption,
+.week-five-cover figcaption,
 .week-five-spread-grid figcaption,
 .week-five-source figcaption {
   margin-top: 10px;
@@ -317,15 +373,19 @@ img {
     9px/1.45 var(--font-geist-mono),
     monospace;
 }
-.week-five-hero > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 32px 28px;
+.week-five-book-hero-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+  gap: 40px;
+  align-items: end;
+  padding: clamp(28px, 4vw, 64px) 20px;
 }
-.week-five-hero > div > p:first-child,
+.week-five-book-hero-copy > * {
+  min-width: 0;
+}
+.week-five-book-hero-copy > div > p,
 .week-five-statement header p,
-.week-five-object header p,
+.week-five-cover header p,
 .week-five-spreads header p,
 .week-five-source header p {
   margin: 0;
@@ -334,15 +394,16 @@ img {
     10px/1.5 var(--font-geist-mono),
     monospace;
 }
-.week-five-hero h1 {
-  max-width: 720px;
-  margin: 28px 0;
-  font-size: clamp(48px, 6.7vw, 106px);
+.week-five-book-hero h1 {
+  max-width: 1160px;
+  margin: 18px 0 0;
+  overflow-wrap: break-word;
+  font-size: clamp(36px, 4vw, 72px);
   font-weight: 500;
-  line-height: 0.88;
-  letter-spacing: -0.07em;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
 }
-.week-five-hero > div > p:last-child {
+.week-five-book-hero-copy > p {
   max-width: 520px;
   margin: 0;
   color: var(--secondary);
@@ -350,17 +411,17 @@ img {
   line-height: 1.48;
 }
 .week-five-statement,
-.week-five-object,
+.week-five-cover,
 .week-five-spreads,
 .week-five-source {
   border-bottom: 1px solid var(--border);
 }
 .week-five-statement > header,
-.week-five-object > header,
+.week-five-cover > header,
 .week-five-spreads > header,
 .week-five-source > header {
   display: grid;
-  grid-template-columns: 100px minmax(280px, 1fr) minmax(300px, 0.65fr);
+  grid-template-columns: 100px minmax(0, 1fr) minmax(240px, 0.65fr);
   gap: 20px;
   align-items: end;
   min-height: 156px;
@@ -368,7 +429,7 @@ img {
   border-bottom: 1px solid var(--border);
 }
 .week-five-statement > header > span,
-.week-five-object > header > span,
+.week-five-cover > header > span,
 .week-five-spreads > header > span,
 .week-five-source > header > span {
   color: var(--tertiary);
@@ -377,7 +438,7 @@ img {
     monospace;
 }
 .week-five-statement h2,
-.week-five-object h2,
+.week-five-cover h2,
 .week-five-spreads h2,
 .week-five-source h2 {
   margin: 7px 0 0;
@@ -393,7 +454,7 @@ img {
 }
 .week-five-statement-copy {
   display: grid;
-  grid-template-columns: minmax(320px, 0.8fr) minmax(420px, 1.2fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: 1px;
   background: var(--border);
 }
@@ -406,7 +467,8 @@ img {
   min-height: 510px;
   margin: 0;
   padding: 30px 20px;
-  font-size: clamp(32px, 4.6vw, 72px);
+  overflow-wrap: break-word;
+  font-size: clamp(30px, 3.8vw, 60px);
   font-weight: 500;
   line-height: 0.94;
   letter-spacing: -0.055em;
@@ -457,26 +519,27 @@ img {
 .week-five-facts dd {
   margin-top: 28px;
 }
-.week-five-object > div {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--border);
-}
-.week-five-object figure,
+.week-five-cover figure,
 .week-five-spread-grid figure,
 .week-five-source figure {
   margin: 0;
   background: var(--background);
 }
-.week-five-object figure {
-  padding: 20px;
+.week-five-cover figure {
+  padding: clamp(20px, 4vw, 64px) 20px;
 }
-.week-five-object figure img {
+.week-five-cover figure img {
   width: 100%;
+  max-width: 1200px;
   aspect-ratio: 3 / 2;
+  margin: 0 auto;
   object-fit: contain;
   background: #deded8;
+}
+.week-five-cover figcaption {
+  width: min(100%, 1200px);
+  margin-right: auto;
+  margin-left: auto;
 }
 .week-five-spread-grid {
   display: grid;
@@ -486,9 +549,6 @@ img {
 }
 .week-five-spread-grid figure {
   padding: 20px;
-}
-.week-five-spread-grid figure:nth-child(3n) {
-  grid-column: 1 / -1;
 }
 .week-five-spread-grid img {
   width: 100%;
@@ -2377,6 +2437,9 @@ img {
 }
 
 @media (max-width: 1100px) {
+  .site-header nav {
+    gap: 16px;
+  }
   .question-grid,
   .image-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2461,18 +2524,26 @@ img {
   .week-four-opening > div {
     grid-column: 2;
   }
-  .week-five-hero {
+  .week-five-collection-grid {
     grid-template-columns: 1fr;
+    padding-right: 12px;
+    padding-left: 12px;
   }
-  .week-five-hero figure img {
-    min-height: 0;
-  }
-  .week-five-hero > div {
-    min-height: 520px;
+  .week-five-book-hero-copy {
+    grid-template-columns: 1fr;
+    gap: 28px;
     padding: 28px 12px;
   }
+  .week-five-book-hero h1 {
+    font-size: clamp(34px, 9vw, 54px);
+  }
+  .week-five-book-hero figure,
+  .week-five-cover figure {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
   .week-five-statement > header,
-  .week-five-object > header,
+  .week-five-cover > header,
   .week-five-spreads > header,
   .week-five-source > header {
     grid-template-columns: 64px 1fr;
@@ -2484,7 +2555,6 @@ img {
     grid-column: 2;
   }
   .week-five-statement-copy,
-  .week-five-object > div,
   .week-five-spread-grid {
     grid-template-columns: 1fr;
   }
@@ -2504,14 +2574,11 @@ img {
   .week-five-facts > div:nth-child(-n + 2) {
     border-bottom: 1px solid var(--border);
   }
-  .week-five-object figure,
+  .week-five-cover figure,
   .week-five-spread-grid figure,
   .week-five-source figure {
     padding-right: 12px;
     padding-left: 12px;
-  }
-  .week-five-spread-grid figure:nth-child(3n) {
-    grid-column: auto;
   }
   .required-archives {
     grid-template-columns: 1fr;

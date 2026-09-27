@@ -15,10 +15,10 @@ export const archiveWeeks: ArchiveWeek[] = [
     number: '05',
     date: 'OCT 01 2026',
     isoDate: '2026-10-01',
-    title: '256 / BUILDINGS CUTTING THE SKY',
+    title: '256 + BOOK FAIR',
     description:
-      'A 256-page photographic sequence turns New York streets into a continuous horizontal scan.',
-    contents: '1 BOOK / 8 VIEWS / 2 SOURCE SEQUENCES',
+      'Documentation of the 256 book and visual research from the New York Art Book Fair.',
+    contents: '2 COLLECTIONS / 256 + BOOK FAIR',
     href: '/week-05',
   },
   {
