@@ -520,6 +520,222 @@ export function WeekFourPage() {
   );
 }
 
+const weekFiveSpreads = [
+  {
+    file: '03-spread-sky.jpg',
+    title: 'SKY / VOID',
+    alt: 'An open book spread pairing a cropped building facade with blue sky and a dark vertical field',
+  },
+  {
+    file: '04-spread-flag.jpg',
+    title: 'FLAG / TREE / EDGE',
+    alt: 'An open book spread sequencing a building edge, American flag, tree canopy, and narrow image fragment',
+  },
+  {
+    file: '05-spread-towers.jpg',
+    title: 'TOWERS / INTERRUPTIONS',
+    alt: 'An open book spread using tall architectural fragments and repeated dark vertical frames',
+  },
+  {
+    file: '06-spread-fragments.jpg',
+    title: 'FRAGMENTS / INTERVALS',
+    alt: 'An open book spread with a row of small black and blue photographic fragments separated by white space',
+  },
+  {
+    file: '07-spread-blue-tree.jpg',
+    title: 'BLUE / TREE / BUILDING',
+    alt: 'An open book spread moving from a narrow tower fragment to blue sky, tree branches, and a building',
+  },
+  {
+    file: '08-spread-one-way.jpg',
+    title: 'ONE WAY / HORIZON',
+    alt: 'An open book spread combining a low blue skyline with a close view of a One Way street sign',
+  },
+];
+
+const weekFiveAsset = (file: string) =>
+  sitePath(`/archive/week-05/256/${file}`);
+
+export function WeekFivePage() {
+  return (
+    <article className="week-five-page">
+      <WeekHeading
+        number="05"
+        date="OCT 01 2026"
+        isoDate="2026-10-01"
+        title="256 / BUILDINGS CUTTING THE SKY"
+        description="A photographic book about reading New York through edges, intervals, and repeated frames."
+      />
+
+      <section className="week-five-hero" aria-labelledby="book-heading">
+        <figure>
+          <img
+            src={weekFiveAsset('09-fanned-book.png')}
+            alt="The completed narrow-format 256 book opened into a fan"
+          />
+          <figcaption>OBJECT VIEW 01 / FAN / COMPLETED BOOK</figcaption>
+        </figure>
+        <div>
+          <p>256-PAGE PHOTOGRAPHIC BOOK / NEW YORK</p>
+          <h1 id="book-heading">THE CITY BECOMES A HORIZONTAL SCAN.</h1>
+          <p>
+            A narrow book built from street photographs, architectural edges,
+            and the changing pieces of sky between them.
+          </p>
+        </div>
+      </section>
+
+      <section
+        className="week-five-statement"
+        aria-labelledby="statement-heading"
+      >
+        <header>
+          <span>01</span>
+          <div>
+            <p>PROJECT INTRODUCTION</p>
+            <h2 id="statement-heading">BUILDINGS CUTTING THE SKY</h2>
+          </div>
+        </header>
+        <div className="week-five-statement-copy">
+          <blockquote>
+            “GENERATE BUILDINGS CUTTING THE SKY INTO NEW SHAPES.”
+          </blockquote>
+          <div>
+            <p>
+              <i>256</i> is a 256-page photographic sequence drawn from moving
+              through New York. It studies how buildings, signs, trees, traffic
+              lights, and passing figures divide the sky into changing
+              fragments.
+            </p>
+            <p>
+              The book&apos;s unusually narrow landscape format turns every
+              spread into a lateral scan. Wide bleeds, tall views, small side
+              images, and repeated frames create a rhythm of looking again.
+              Rather than presenting the city as one complete view, the sequence
+              records it through edges, interruptions, returns, and shifts in
+              scale.
+            </p>
+            <p>
+              The result is both an urban record and an editing experiment: a
+              large collection of everyday photographs becomes one continuous
+              visual system.
+            </p>
+          </div>
+        </div>
+        <dl className="week-five-facts">
+          <div>
+            <dt>FORMAT</dt>
+            <dd>NARROW LANDSCAPE</dd>
+          </div>
+          <div>
+            <dt>LENGTH</dt>
+            <dd>256 PAGES</dd>
+          </div>
+          <div>
+            <dt>MATERIAL</dt>
+            <dd>STREET PHOTOGRAPHS</dd>
+          </div>
+          <div>
+            <dt>METHOD</dt>
+            <dd>SEQUENCE / CROP / REPEAT</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section className="week-five-object" aria-labelledby="object-heading">
+        <header>
+          <span>02</span>
+          <div>
+            <p>BOOK AS OBJECT</p>
+            <h2 id="object-heading">CLOSED FORM / OPEN SYSTEM</h2>
+          </div>
+        </header>
+        <div>
+          <figure>
+            <img
+              src={weekFiveAsset('01-cover-closed.jpg')}
+              alt="The closed 256 book with a white cover and photographic strip along its lower edge"
+            />
+            <figcaption>OBJECT VIEW 02 / CLOSED COVER</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={weekFiveAsset('02-spread-text.jpg')}
+              alt="An open spread showing the project instruction and a list of layout types"
+            />
+            <figcaption>
+              SPREAD 026-027 / GENERATIVE INSTRUCTION + IMAGE COUNTS
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="week-five-spreads" aria-labelledby="spreads-heading">
+        <header>
+          <span>03</span>
+          <div>
+            <p>SELECTED SPREADS</p>
+            <h2 id="spreads-heading">ONE FORMAT, MULTIPLE WAYS OF SEEING</h2>
+          </div>
+          <p>
+            The white field holds fragments apart; the narrow page keeps them
+            moving laterally.
+          </p>
+        </header>
+        <div className="week-five-spread-grid">
+          {weekFiveSpreads.map((spread, index) => (
+            <figure key={spread.file}>
+              <img src={weekFiveAsset(spread.file)} alt={spread.alt} />
+              <figcaption>
+                <span>SPREAD {String(index + 1).padStart(2, '0')}</span>
+                <span>{spread.title}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="week-five-source"
+        aria-labelledby="source-sequences-heading"
+      >
+        <header>
+          <span>04</span>
+          <div>
+            <p>SOURCE SEQUENCES / FROM PDF</p>
+            <h2 id="source-sequences-heading">
+              BEFORE THE BOOK BECOMES A BOOK
+            </h2>
+          </div>
+          <p>
+            Two excerpts from the source PDF preserve the photographs as
+            continuous street-level sequences before they are redistributed
+            across the 256-page edit.
+          </p>
+        </header>
+        <div>
+          <figure>
+            <img
+              src={weekFiveAsset('pdf-sequence-01.jpg')}
+              alt="A continuous source sequence of New York street photographs with open sky, towers, signs, and traffic"
+            />
+            <figcaption>PDF SEQUENCE 01 / OPEN SKY + STREET EDGES</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={weekFiveAsset('pdf-sequence-02.jpg')}
+              alt="A continuous source sequence of New York street photographs with tree canopies, pedestrians, signs, and buildings"
+            />
+            <figcaption>
+              PDF SEQUENCE 02 / TREES + PEDESTRIANS + SIGNS
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </article>
+  );
+}
+
 function EncounterSection({
   number,
   kind,

@@ -7,6 +7,7 @@ import { AddPanel } from '@/components/AddPanel';
 import { BrainstormViewer } from '@/components/BrainstormViewer';
 import { Header } from '@/components/Header';
 import {
+  WeekFivePage,
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
@@ -253,6 +254,8 @@ export function ArchiveApp() {
     content = <WeekThreePage />;
   } else if (collection === 'week-04') {
     content = <WeekFourPage />;
+  } else if (collection === 'week-05') {
+    content = <WeekFivePage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />
