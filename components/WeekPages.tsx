@@ -4,6 +4,12 @@
 
 import { ArchiveItem, brainstormTitle, itemMedia } from '@/data/archive';
 import {
+  bookFairCategories,
+  bookFairReflection,
+  findBookFairCategory,
+  findBookFairGroup,
+} from '@/data/book-fair';
+import {
   researchDirections,
   reflection,
   studentIdImage,
@@ -566,10 +572,14 @@ export function WeekFivePage({
 }: {
   onNavigate: (path: string) => void;
 }) {
-  const openBook = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const go = (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    onNavigate('/week-05/256');
+    onNavigate(path);
   };
+  const bookFairPreviewImages = [
+    bookFairCategories[0].groups[0].images[3],
+    bookFairCategories[1].groups[2].images[2],
+  ];
 
   return (
     <div className="week-five-page">
@@ -588,7 +598,7 @@ export function WeekFivePage({
         <a
           className="collection-card"
           href={sitePath('/week-05/256')}
-          onClick={openBook}
+          onClick={go('/week-05/256')}
         >
           <div className="collection-preview week-five-book-preview">
             <img
@@ -603,16 +613,22 @@ export function WeekFivePage({
           </div>
         </a>
 
-        <article className="collection-card week-five-pending-card">
-          <div className="collection-preview week-five-pending-preview">
-            <span>BOOK FAIR MATERIALS</span>
-            <span>TO BE ADDED</span>
+        <a
+          className="collection-card"
+          href={sitePath('/week-05/book-fair')}
+          onClick={go('/week-05/book-fair')}
+        >
+          <div className="collection-preview week-five-book-fair-preview">
+            {bookFairPreviewImages.map((image) => (
+              <img key={image.id} src={image.src} alt="" />
+            ))}
           </div>
           <div className="collection-meta">
             <span>02 / NEW YORK ART BOOK FAIR</span>
-            <span>MATERIALS PENDING</span>
+            <span>18 GROUPS / 94 IMAGES / 211-WORD REFLECTION</span>
+            <span className="open-label">OPEN →</span>
           </div>
-        </article>
+        </a>
       </section>
     </div>
   );
@@ -784,6 +800,213 @@ export function WeekFiveBookPage() {
             </figcaption>
           </figure>
         </div>
+      </section>
+    </article>
+  );
+}
+
+interface BookFairPageProps {
+  onNavigate: (path: string) => void;
+}
+
+export function WeekFiveBookFairPage({ onNavigate }: BookFairPageProps) {
+  const go = (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    onNavigate(path);
+  };
+
+  return (
+    <article className="week-five-page book-fair-page">
+      <WeekHeading
+        number="05"
+        date="SEP 27 2026"
+        isoDate="2026-09-27"
+        title="NEW YORK ART BOOK FAIR"
+        description="Books and zines grouped by publication, followed by a reflection on how communication design operates across them."
+      />
+
+      <section
+        className="week-five-collection-grid book-fair-category-cards"
+        aria-label="Book Fair categories"
+      >
+        {bookFairCategories.map((category, index) => {
+          const imageCount = category.groups.reduce(
+            (total, group) => total + group.images.length,
+            0,
+          );
+          return (
+            <a
+              className="collection-card"
+              href={sitePath(`/week-05/book-fair/${category.id}`)}
+              onClick={go(`/week-05/book-fair/${category.id}`)}
+              key={category.id}
+            >
+              <div className="collection-preview book-fair-category-preview">
+                {category.groups.slice(0, 4).map((group) => (
+                  <img key={group.id} src={group.images[0].src} alt="" />
+                ))}
+              </div>
+              <div className="collection-meta">
+                <span>
+                  {String(index + 1).padStart(2, '0')} / {category.title}
+                </span>
+                <span>
+                  {category.groups.length} GROUPS / {imageCount} IMAGES
+                </span>
+                <span className="open-label">OPEN →</span>
+              </div>
+            </a>
+          );
+        })}
+      </section>
+
+      <section
+        className="book-fair-reflection"
+        aria-labelledby="book-fair-reflection-heading"
+      >
+        <header>
+          <span>03</span>
+          <div>
+            <p>VISUAL RESEARCH REFLECTION</p>
+            <h2 id="book-fair-reflection-heading">
+              HOW IS COMMUNICATION DESIGN BEING USED?
+            </h2>
+          </div>
+          <p>Approximately 200 words / draft for review</p>
+        </header>
+        <div className="book-fair-reflection-layout">
+          <blockquote>READING BECOMES HANDLING.</blockquote>
+          <div>
+            {bookFairReflection.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <span>211 WORDS / DRAFT / SEP 27 2026</span>
+          </div>
+        </div>
+      </section>
+    </article>
+  );
+}
+
+export function WeekFiveBookFairCategoryPage({
+  categoryId,
+  onNavigate,
+}: BookFairPageProps & { categoryId: string }) {
+  const category = findBookFairCategory(categoryId);
+  if (!category) return <WeekFiveBookFairPage onNavigate={onNavigate} />;
+
+  const go = (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    onNavigate(path);
+  };
+  const imageCount = category.groups.reduce(
+    (total, group) => total + group.images.length,
+    0,
+  );
+
+  return (
+    <article className="week-five-page book-fair-page">
+      <WeekHeading
+        number="05"
+        date="SEP 27 2026"
+        isoDate="2026-09-27"
+        title={`BOOK FAIR / ${category.title}`}
+        description={`${category.groups.length} numbered groups / ${imageCount} photographs.`}
+      />
+
+      <section className="book-fair-category-intro">
+        <a
+          href={sitePath('/week-05/book-fair')}
+          onClick={go('/week-05/book-fair')}
+        >
+          ← BACK TO BOOK FAIR
+        </a>
+        <p>{category.description}</p>
+      </section>
+
+      <section
+        className="book-fair-group-grid"
+        aria-label={`${category.title} groups`}
+      >
+        {category.groups.map((group) => (
+          <a
+            className="book-fair-group-card"
+            aria-label={`Open ${category.title} group ${group.id}: ${group.title}`}
+            href={sitePath(`/week-05/book-fair/${category.id}/${group.id}`)}
+            onClick={go(`/week-05/book-fair/${category.id}/${group.id}`)}
+            key={group.id}
+          >
+            <div className="book-fair-group-preview">
+              <img src={group.images[0].src} alt="" />
+            </div>
+            <div className="book-fair-group-meta">
+              <span>GROUP {group.id.padStart(2, '0')}</span>
+              <h2>{group.title}</h2>
+              <p>{group.images.length} IMAGES</p>
+              <span>OPEN →</span>
+            </div>
+          </a>
+        ))}
+      </section>
+    </article>
+  );
+}
+
+export function WeekFiveBookFairGroupPage({
+  categoryId,
+  groupId,
+  onNavigate,
+}: BookFairPageProps & { categoryId: string; groupId: string }) {
+  const category = findBookFairCategory(categoryId);
+  const group = findBookFairGroup(categoryId, groupId);
+  if (!category || !group) {
+    return <WeekFiveBookFairPage onNavigate={onNavigate} />;
+  }
+
+  const backPath = `/week-05/book-fair/${category.id}`;
+  const go = (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    onNavigate(path);
+  };
+
+  return (
+    <article className="week-five-page book-fair-page">
+      <WeekHeading
+        number="05"
+        date="SEP 27 2026"
+        isoDate="2026-09-27"
+        title={`${category.title} / GROUP ${group.id.padStart(2, '0')}`}
+        description={group.title}
+      />
+
+      <section className="book-fair-group-intro">
+        <a href={sitePath(backPath)} onClick={go(backPath)}>
+          ← BACK TO {category.title}
+        </a>
+        <div>
+          <p>{group.description}</p>
+          <span>
+            {group.images.length} PHOTOGRAPHS / PERSONAL DOCUMENTATION
+          </span>
+        </div>
+      </section>
+
+      <section
+        className="book-fair-photo-grid"
+        aria-label={`${group.title} photographs`}
+      >
+        {group.images.map((image, index) => (
+          <figure key={image.id}>
+            <img
+              src={image.src}
+              alt={`${group.title}, documentation view ${index + 1}`}
+            />
+            <figcaption>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <span>{image.id}</span>
+            </figcaption>
+          </figure>
+        ))}
       </section>
     </article>
   );

@@ -7,8 +7,11 @@ import { AddPanel } from '@/components/AddPanel';
 import { BrainstormViewer } from '@/components/BrainstormViewer';
 import { Header } from '@/components/Header';
 import {
-  WeekFivePage,
+  WeekFiveBookFairCategoryPage,
+  WeekFiveBookFairGroupPage,
+  WeekFiveBookFairPage,
   WeekFiveBookPage,
+  WeekFivePage,
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
@@ -241,6 +244,8 @@ export function ArchiveApp() {
   const collection = segments[0];
   const detailId = segments[1];
   const orderingId = segments[2];
+  const weekFiveCategoryId = segments[2];
+  const weekFiveGroupId = segments[3];
   const orderingApproach = findOrderingApproach(orderingId);
   const detailItem = detailId
     ? items.find((item) => item.id === detailId)
@@ -257,6 +262,32 @@ export function ArchiveApp() {
     content = <WeekFourPage />;
   } else if (collection === 'week-05' && detailId === '256') {
     content = <WeekFiveBookPage />;
+  } else if (
+    collection === 'week-05' &&
+    detailId === 'book-fair' &&
+    weekFiveCategoryId &&
+    weekFiveGroupId
+  ) {
+    content = (
+      <WeekFiveBookFairGroupPage
+        categoryId={weekFiveCategoryId}
+        groupId={weekFiveGroupId}
+        onNavigate={navigate}
+      />
+    );
+  } else if (
+    collection === 'week-05' &&
+    detailId === 'book-fair' &&
+    weekFiveCategoryId
+  ) {
+    content = (
+      <WeekFiveBookFairCategoryPage
+        categoryId={weekFiveCategoryId}
+        onNavigate={navigate}
+      />
+    );
+  } else if (collection === 'week-05' && detailId === 'book-fair') {
+    content = <WeekFiveBookFairPage onNavigate={navigate} />;
   } else if (collection === 'week-05') {
     content = <WeekFivePage onNavigate={navigate} />;
   } else if (collection === 'brainstorm' && brainstorm) {
