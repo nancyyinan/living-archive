@@ -1,6 +1,7 @@
 (() => {
   const data = window.SELF_RECORD_DATA;
   const state = { lang: "zh", apple: true, notion: true, calendarSelected: null, musicSelected: null };
+  const maxSearchResults = 12;
   const calendarWidth = 3600;
   const calendarHeight = 650;
   const musicWidth = 3600;
@@ -12,6 +13,10 @@
   const pageEyebrow = $("page-eyebrow");
   const pageTitle = $("page-title");
   const pageLede = $("page-lede");
+  const searchLabel = $("search-label");
+  const searchInput = $("archive-search-input");
+  const searchCount = $("search-count");
+  const searchResults = $("search-results");
   const calendarTitle = $("calendar-title");
   const calendarCopy = $("calendar-copy");
   const hourAxis = $("hour-axis");
@@ -36,6 +41,14 @@
       eyebrow: "个人记录 / 2023—2026",
       title: "我如何记录自己",
       lede: "我选择安排什么、保存什么；平台决定这些选择以什么字段留下。",
+      searchLabel: "搜索个人记录",
+      searchPlaceholder: "搜索日历、事件、歌曲、歌手或专辑…",
+      searchIdle: "日历与音乐",
+      searchFound: (count) => `找到 ${count.toLocaleString("zh-CN")} 条`,
+      searchShowing: (shown, count) => `显示 ${shown} / ${count.toLocaleString("zh-CN")}`,
+      searchEmpty: "没有找到匹配的记录。",
+      searchCalendar: "日历",
+      searchMusic: "音乐",
       calendarTitle: "四年个人时间场",
       calendarCopy: "横轴是日期，纵轴是一天中的时间。每条线是一项日历事件，线长是持续时间。",
       calendarEmptyTitle: "选择一项日历事件",
@@ -55,6 +68,14 @@
       eyebrow: "PERSONAL RECORD / 2023—2026",
       title: "How I Record Myself",
       lede: "I chose what to schedule and save; the platforms determined which fields remained.",
+      searchLabel: "SEARCH PERSONAL RECORDS",
+      searchPlaceholder: "Search calendars, events, songs, artists, or albums…",
+      searchIdle: "CALENDAR + MUSIC",
+      searchFound: (count) => `${count.toLocaleString("en-US")} RESULTS`,
+      searchShowing: (shown, count) => `${shown} / ${count.toLocaleString("en-US")} SHOWN`,
+      searchEmpty: "No matching records.",
+      searchCalendar: "CALENDAR",
+      searchMusic: "MUSIC",
       calendarTitle: "Four years of personal time",
       calendarCopy: "The x-axis is date and the y-axis is time of day. Each line is one calendar event; its length is the event duration.",
       calendarEmptyTitle: "Select a calendar event",
@@ -289,12 +310,114 @@
     ]);
   }
 
+  function normalized(value) {
+    return String(value || "").normalize("NFKC").toLocaleLowerCase();
+  }
+
+  function scoreMatch(primary, secondary, query) {
+    const main = normalized(primary);
+    const supporting = normalized(secondary);
+    if (main === query) return 0;
+    if (main.startsWith(query)) return 1;
+    if (main.includes(query)) return 2;
+    if (supporting.includes(query)) return 3;
+    return -1;
+  }
+
+  function searchArchive(queryValue) {
+    const query = normalized(queryValue.trim());
+    if (!query) return [];
+    const results = [];
+    [...data.apple, ...data.notion].forEach((event) => {
+      const secondary = [event.calendar, event.location, event.source].join(" ");
+      const score = scoreMatch(event.title, secondary, query);
+      if (score >= 0) results.push({ kind: "calendar", item: event, score });
+    });
+    data.music.forEach((song) => {
+      const secondary = [song.artist, song.album].join(" ");
+      const score = scoreMatch(song.title, secondary, query);
+      if (score >= 0) results.push({ kind: "music", item: song, score });
+    });
+    return results.sort((a, b) => a.score - b.score || normalized(a.item.title).localeCompare(normalized(b.item.title)));
+  }
+
+  function renderSearchResults() {
+    const text = copy[state.lang];
+    const query = searchInput.value.trim();
+    if (!query) {
+      searchResults.hidden = true;
+      searchResults.innerHTML = "";
+      searchCount.textContent = text.searchIdle;
+      return;
+    }
+    const matches = searchArchive(query);
+    const visible = matches.slice(0, maxSearchResults);
+    searchResults.hidden = false;
+    searchCount.textContent = matches.length > maxSearchResults
+      ? text.searchShowing(visible.length, matches.length)
+      : text.searchFound(matches.length);
+    if (!visible.length) {
+      searchResults.innerHTML = `<p class="search-empty">${escapeHtml(text.searchEmpty)}</p>`;
+      return;
+    }
+    searchResults.innerHTML = visible.map(({ kind, item }) => {
+      const isCalendar = kind === "calendar";
+      const label = isCalendar ? text.searchCalendar : text.searchMusic;
+      const meta = isCalendar
+        ? `${item.calendar} / ${formatDate(item.start)}`
+        : `${item.artist} / ${item.album}`;
+      return `<button class="search-result" type="button" data-kind="${kind}" data-id="${escapeHtml(item.id)}"><span class="search-kind">${escapeHtml(label)}</span><span class="search-result-title">${escapeHtml(item.title)}</span><span class="search-result-meta">${escapeHtml(meta)}</span></button>`;
+    }).join("");
+  }
+
+  function showCalendarResult(item) {
+    const sourceKey = item.source === "Apple Calendar" ? "apple" : "notion";
+    state[sourceKey] = true;
+    const sourceButton = document.querySelector(`[data-source="${sourceKey}"]`);
+    sourceButton.classList.add("is-active");
+    sourceButton.setAttribute("aria-pressed", "true");
+    state.calendarSelected = item;
+    drawCalendar();
+    renderCalendarDetail();
+    const start = dateValue(item.start);
+    if (start) {
+      const scroll = $("calendar-scroll");
+      scroll.scrollTo({ left: Math.max(0, xForDate(start) - scroll.clientWidth / 2), behavior: "smooth" });
+    }
+    document.querySelector(".calendar-section .detail").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function showMusicResult(item) {
+    state.musicSelected = item;
+    drawMusic();
+    renderMusicDetail();
+    const index = Math.max(0, data.music.findIndex((song) => song.id === item.id));
+    const x = 18 + (index / Math.max(1, data.music.length - 1)) * (musicWidth - 36);
+    const scroll = $("music-scroll");
+    scroll.scrollTo({ left: Math.max(0, x - scroll.clientWidth / 2), behavior: "smooth" });
+    document.querySelector(".music-section .detail").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function openSearchResult(button) {
+    const kind = button.dataset.kind;
+    const id = button.dataset.id;
+    if (kind === "calendar") {
+      const item = [...data.apple, ...data.notion].find((event) => event.id === id);
+      if (item) showCalendarResult(item);
+    } else {
+      const item = data.music.find((song) => song.id === id);
+      if (item) showMusicResult(item);
+    }
+  }
+
   function renderLanguage() {
     const text = copy[state.lang];
     document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
     pageEyebrow.textContent = text.eyebrow;
     pageTitle.textContent = text.title;
     pageLede.textContent = text.lede;
+    searchLabel.textContent = text.searchLabel;
+    searchInput.placeholder = text.searchPlaceholder;
     calendarTitle.textContent = text.calendarTitle;
     calendarCopy.textContent = text.calendarCopy;
     musicEyebrow.textContent = text.musicEyebrow;
@@ -311,7 +434,29 @@
     });
     renderCalendarDetail();
     renderMusicDetail();
+    renderSearchResults();
   }
+
+  searchInput.addEventListener("input", renderSearchResults);
+  searchInput.addEventListener("search", renderSearchResults);
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      searchInput.value = "";
+      renderSearchResults();
+    }
+    if (event.key === "Enter") {
+      const first = searchResults.querySelector(".search-result");
+      if (first) {
+        event.preventDefault();
+        openSearchResult(first);
+      }
+    }
+  });
+
+  searchResults.addEventListener("click", (event) => {
+    const button = event.target.closest(".search-result");
+    if (button) openSearchResult(button);
+  });
 
   calendarCanvas.addEventListener("click", (event) => {
     const selected = closestMark(calendarMarks, event.offsetX, event.offsetY, "event");

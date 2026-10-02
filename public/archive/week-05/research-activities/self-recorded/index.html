@@ -18,6 +18,23 @@
         <p id="page-lede" class="lede">我选择安排什么、保存什么；平台决定这些选择以什么字段留下。</p>
       </header>
 
+      <section class="archive-search" aria-labelledby="search-label">
+        <div class="search-control">
+          <label id="search-label" for="archive-search-input">搜索个人记录</label>
+          <div class="search-input-wrap">
+            <input
+              id="archive-search-input"
+              type="search"
+              autocomplete="off"
+              placeholder="搜索日历、事件、歌曲、歌手或专辑…"
+              aria-describedby="search-count"
+            />
+            <span id="search-count" aria-live="polite">日历与音乐</span>
+          </div>
+        </div>
+        <div id="search-results" class="search-results" aria-live="polite" hidden></div>
+      </section>
+
       <section class="calendar-section" aria-labelledby="calendar-title">
         <div class="section-head">
           <div>
