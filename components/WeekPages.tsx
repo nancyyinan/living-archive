@@ -16,6 +16,8 @@ import {
   unseenActions,
   weekFourArchives,
   weekFourLenses,
+  weekFiveResearchActivities,
+  weekFiveResearchQuestions,
   weekThreeArchiveImage,
   weekThreeEmailImage,
 } from '@/data/weeks';
@@ -587,12 +589,12 @@ export function WeekFivePage({
         number="05"
         date="OCT 01 2026"
         isoDate="2026-10-01"
-        title="256 + BOOK FAIR"
-        description="Two collections: documentation of the 256 book and visual research from the New York Art Book Fair."
+        title="256 + BOOK FAIR + RESEARCH ACTIVITIES"
+        description="Three collections: the 256 book, visual research from the New York Art Book Fair, and two experiments in how a life becomes data."
       />
 
       <section
-        className="week-five-collection-grid"
+        className="week-five-collection-grid week-five-index-grid"
         aria-label="Week 5 collections"
       >
         <a
@@ -629,8 +631,150 @@ export function WeekFivePage({
             <span className="open-label">OPEN →</span>
           </div>
         </a>
+
+        <a
+          className="collection-card"
+          href={sitePath('/week-05/research-activities')}
+          onClick={go('/week-05/research-activities')}
+          aria-label="Open two research activities"
+        >
+          <div className="collection-preview week-five-research-preview">
+            <div>
+              <span>INSTITUTION</span>
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+            </div>
+            <div>
+              <span>SELF</span>
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+              <i aria-hidden="true" />
+            </div>
+          </div>
+          <div className="collection-meta">
+            <span>03 / TWO RESEARCH ACTIVITIES</span>
+            <span>2 VISUALIZATIONS / 10 QUESTIONS</span>
+            <span className="open-label">OPEN →</span>
+          </div>
+        </a>
       </section>
     </div>
+  );
+}
+
+function BracketStatement({ statement }: { statement: string }) {
+  return (
+    <p className="research-activity-statement">
+      {statement.split(/(\[[^\]]+\])/g).map((part, index) =>
+        part.startsWith('[') ? (
+          <strong key={`${part}-${index}`}>{part}</strong>
+        ) : (
+          <span key={`${part}-${index}`}>{part}</span>
+        ),
+      )}
+    </p>
+  );
+}
+
+export function WeekFiveResearchActivitiesPage() {
+  return (
+    <article className="week-five-page research-activities-page">
+      <WeekHeading
+        number="05"
+        date="OCT 01 2026"
+        isoDate="2026-10-01"
+        title="TWO RESEARCH ACTIVITIES"
+        description="The same four years, approached through records authored by an institution and records I chose to keep."
+      />
+
+      <section className="research-activities-opening">
+        <span>INSTITUTION / SELF / SYSTEM / MEMORY</span>
+        <h1>WHO WRITES THE RECORD OF A LIFE?</h1>
+        <p>
+          These two activities begin with the same person but not the same
+          author. One asks what institutional systems recorded about me. The
+          other asks what I tried to record about myself—and how platforms
+          changed what remained.
+        </p>
+      </section>
+
+      {weekFiveResearchActivities.map((activity) => (
+        <section
+          className="research-activity"
+          aria-labelledby={`research-activity-${activity.number}`}
+          key={activity.number}
+        >
+          <header>
+            <span>{activity.number}</span>
+            <div>
+              <p>RESEARCH ACTIVITY</p>
+              <h2 id={`research-activity-${activity.number}`}>
+                {activity.title}
+              </h2>
+            </div>
+          </header>
+
+          <div className="research-activity-body">
+            <div>
+              <BracketStatement statement={activity.statement} />
+              <p className="research-activity-statement-zh">
+                {activity.statementZh}
+              </p>
+            </div>
+            <div className="research-activity-outcome">
+              <p>{activity.description}</p>
+              <dl>
+                {activity.facts.map((fact) => (
+                  <div key={fact.label}>
+                    <dt>{fact.label}</dt>
+                    <dd>{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <a
+                className="research-visualization-link"
+                href={sitePath(activity.visualizationHref)}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {activity.visualizationLabel} ↗
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section
+        className="research-questions"
+        aria-labelledby="research-questions-heading"
+      >
+        <header>
+          <span>03</span>
+          <div>
+            <p>QUESTIONS THAT EMERGED</p>
+            <h2 id="research-questions-heading">10 QUESTIONS / 十个问题</h2>
+          </div>
+          <p>
+            Questions produced by the interview, the data request, the two
+            visualizations, and the contradictions inside their making.
+          </p>
+        </header>
+        <ol>
+          {weekFiveResearchQuestions.map((question, index) => (
+            <li key={question.en}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <p>{question.en}</p>
+                <p lang="zh-CN">{question.zh}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </article>
   );
 }
 

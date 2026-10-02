@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How the Design Lab Records Me</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="intro">
+        <p id="page-eyebrow" class="eyebrow">机构记录 / 2024—2026</p>
+        <div class="language-switch" role="group" aria-label="Language / 语言">
+          <button class="language-option is-active" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <h1 id="page-title">Design Lab 如何记录我</h1>
+        <p id="page-lede" class="lede"><span id="total-records">—</span> 条由六个机构系统生成的记录。我进行了这些活动，但没有决定它们如何被记录。</p>
+      </header>
+
+      <section class="plot-shell" aria-labelledby="plot-title">
+        <div class="plot-head">
+          <h2 id="plot-title">机构记录时间线</h2>
+          <p id="plot-hint">左右滚动。点击任意一点查看记录。</p>
+        </div>
+        <div id="timeline" class="timeline" aria-label="不同 Design Lab 系统在 2024 到 2026 年留下的记录时间线"></div>
+      </section>
+
+      <section class="record-stage" aria-live="polite">
+        <p id="stage-label" class="eyebrow">机构记录</p>
+        <div class="stage-copy">
+          <h2 id="record-title">选择一条记录</h2>
+          <p id="record-summary" class="record-summary">点击时间线上的数据点查看详细信息。</p>
+          <dl id="record-facts" class="facts"></dl>
+        </div>
+      </section>
+    </main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

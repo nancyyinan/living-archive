@@ -12,6 +12,7 @@ import {
   WeekFiveBookFairPage,
   WeekFiveBookPage,
   WeekFivePage,
+  WeekFiveResearchActivitiesPage,
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
@@ -262,6 +263,11 @@ export function ArchiveApp() {
     content = <WeekFourPage />;
   } else if (collection === 'week-05' && detailId === '256') {
     content = <WeekFiveBookPage />;
+  } else if (
+    collection === 'week-05' &&
+    detailId === 'research-activities'
+  ) {
+    content = <WeekFiveResearchActivitiesPage />;
   } else if (
     collection === 'week-05' &&
     detailId === 'book-fair' &&

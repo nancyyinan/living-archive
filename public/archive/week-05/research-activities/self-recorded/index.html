@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How I Record Myself</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="intro">
+        <p id="page-eyebrow" class="eyebrow">个人记录 / 2023—2026</p>
+        <div class="language-switch" role="group" aria-label="Language / 语言">
+          <button class="language-option is-active" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <h1 id="page-title">我如何记录自己</h1>
+        <p id="page-lede" class="lede">我选择安排什么、保存什么；平台决定这些选择以什么字段留下。</p>
+      </header>
+
+      <section class="calendar-section" aria-labelledby="calendar-title">
+        <div class="section-head">
+          <div>
+            <h2 id="calendar-title">四年个人时间场</h2>
+            <p id="calendar-copy">横轴是日期，纵轴是一天中的时间。每条线是一项日历事件，线长是持续时间。</p>
+          </div>
+          <div class="source-controls" role="group" aria-label="Calendar sources">
+            <button class="source-toggle apple is-active" type="button" data-source="apple" aria-pressed="true">Apple <span id="apple-count"></span></button>
+            <button class="source-toggle notion is-active" type="button" data-source="notion" aria-pressed="true">Notion <span id="notion-count"></span></button>
+          </div>
+        </div>
+
+        <div class="calendar-layout">
+          <div id="hour-axis" class="hour-axis" aria-hidden="true"></div>
+          <div id="calendar-scroll" class="canvas-scroll">
+            <canvas id="calendar-canvas" aria-label="Calendar events plotted by date and time of day"></canvas>
+          </div>
+        </div>
+
+        <section class="detail" aria-live="polite">
+          <p id="calendar-detail-label" class="eyebrow">由我创建或保存在我的日历中</p>
+          <div>
+            <h3 id="calendar-detail-title">选择一项日历事件</h3>
+            <p id="calendar-detail-summary" class="detail-summary">点击时间场中的线查看标题、来源日历和时间。</p>
+            <dl id="calendar-facts" class="facts"></dl>
+          </div>
+        </section>
+      </section>
+
+      <section class="music-section" aria-labelledby="music-title">
+        <div class="section-head">
+          <div>
+            <p id="music-eyebrow" class="eyebrow">收藏日期未被保存</p>
+            <h2 id="music-title">我喜欢的音乐</h2>
+            <p id="music-copy">每条线是一首歌。横向位置沿导出列表从 2026/10/1 回溯至 2023/8/20；线高代表歌曲时长。两端日期不是单曲的精确收藏日期。</p>
+          </div>
+          <p id="music-count" class="section-count"></p>
+        </div>
+
+        <div id="music-scroll" class="canvas-scroll music-scroll">
+          <canvas id="music-canvas" aria-label="Liked songs arranged by exported list order"></canvas>
+        </div>
+
+        <section class="detail" aria-live="polite">
+          <p id="music-detail-label" class="eyebrow">由我选择收藏，由平台保存</p>
+          <div>
+            <h3 id="music-detail-title">选择一首歌</h3>
+            <p id="music-detail-summary" class="detail-summary">点击线条查看歌曲、歌手、专辑与时长。</p>
+            <dl id="music-facts" class="facts"></dl>
+          </div>
+        </section>
+      </section>
+
+      <footer>
+        <p id="method-note"></p>
+      </footer>
+    </main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

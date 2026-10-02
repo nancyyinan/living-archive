@@ -15,10 +15,10 @@ export const archiveWeeks: ArchiveWeek[] = [
     number: '05',
     date: 'OCT 01 2026',
     isoDate: '2026-10-01',
-    title: '256 + BOOK FAIR',
+    title: '256 + BOOK FAIR + RESEARCH ACTIVITIES',
     description:
-      'Documentation of the 256 book and visual research from the New York Art Book Fair.',
-    contents: '2 COLLECTIONS / 256 + BOOK FAIR',
+      'The 256 book, the New York Art Book Fair, and two experiments in how a life becomes data.',
+    contents: '3 COLLECTIONS / 2 VISUALIZATIONS / 10 QUESTIONS',
     href: '/week-05',
   },
   {
@@ -57,6 +57,115 @@ export const archiveWeeks: ArchiveWeek[] = [
     description: 'Images, a thesis brainstorm, and questions from others.',
     contents: '12 IMAGES / 1 MAP / 15 QUESTIONS',
     href: '/week-01',
+  },
+];
+
+export interface WeekFiveResearchActivity {
+  number: string;
+  title: string;
+  action: string;
+  resource: string;
+  making: string;
+  investigation: string;
+  statement: string;
+  statementZh: string;
+  description: string;
+  visualizationHref: string;
+  visualizationLabel: string;
+  facts: { label: string; value: string }[];
+}
+
+export const weekFiveResearchActivities: WeekFiveResearchActivity[] = [
+  {
+    number: '01',
+    title: 'HOW THE INSTITUTION RECORDS ME',
+    action: 'INTERVIEW',
+    resource: 'JOE HIRSCH / DESIGN LAB / MAKING CENTER RECORDS',
+    making: 'AN INTERACTIVE TIMELINE OF INSTITUTIONAL RECORDS',
+    investigation:
+      'HOW AN INSTITUTION TRANSLATES MY PRESENCE, LABOR, AND CHOICES INTO SEARCHABLE DATA',
+    statement:
+      'I will [interview] [Joe Hirsch in the Design Lab about the records generated when I enter or use the Making Center] in order to make [an interactive timeline of my institutional records] and investigate [how an institution translates my presence, labor, and choices into searchable data].',
+    statementZh:
+      '我将采访 Design Lab 的 Joe Hirsch，了解我进入和使用 Making Center 时产生的记录；制作一条机构记录的互动时间线，并研究机构如何把我的在场、劳动与选择转化为可检索的数据。',
+    description:
+      'The interview moved from access and print logs to the larger systems that make activity visible: WebCheckout, PaperCut, store orders, reservations, waitlists, and work-completion records. The visualization brings those separate operational traces onto one timeline. It does not claim that the records describe my full experience; it asks what the institution could see, retain, search, and return to me.',
+    visualizationHref:
+      '/archive/week-05/research-activities/institutional-records/index.html',
+    visualizationLabel: 'OPEN INSTITUTIONAL RECORDS VISUALIZATION',
+    facts: [
+      { label: 'CONTACT', value: 'JOE HIRSCH / DESIGN LAB' },
+      { label: 'METHOD', value: 'INTERVIEW + DATA REQUEST' },
+      { label: 'OUTPUT', value: 'INTERACTIVE INSTITUTIONAL TIMELINE' },
+      { label: 'AUTHOR OF RECORD', value: 'THE MAKING CENTER SYSTEMS' },
+    ],
+  },
+  {
+    number: '02',
+    title: 'HOW I RECORD MYSELF',
+    action: 'COLLECT + COMPARE',
+    resource: 'APPLE CALENDAR / NOTION CALENDAR / NETEASE MUSIC',
+    making: 'AN INTERACTIVE FIELD OF SELF-KEPT RECORDS',
+    investigation:
+      'HOW MY CHOICES AND THE PLATFORMS’ STRUCTURES CO-AUTHOR A MEMORY OF FOUR YEARS',
+    statement:
+      'I will [collect and compare] [calendar events and saved music from my four years in New York] in order to make [an interactive field of records I chose to keep] and investigate [how my choices and the platforms’ structures co-author a memory of those four years].',
+    statementZh:
+      '我将收集并比较纽约四年里的日历事件与收藏音乐；制作一个由我主动保留的记录构成的互动时间场，并研究我的选择与平台结构如何共同书写这四年的记忆。',
+    description:
+      'The calendar becomes a four-year field: date runs horizontally, time of day vertically, and event duration becomes line length. The music export is kept separate because it preserves song order and duration but not the date each track was saved. That absence matters. This activity distinguishes what I intended to keep from the fields and omissions imposed by the platforms that stored it.',
+    visualizationHref:
+      '/archive/week-05/research-activities/self-recorded/index.html',
+    visualizationLabel: 'OPEN SELF-RECORDED VISUALIZATION',
+    facts: [
+      { label: 'SOURCES', value: '3 PERSONAL EXPORTS' },
+      { label: 'CALENDAR', value: '7,855 CLEANED EVENTS' },
+      { label: 'MUSIC', value: '1,295 SAVED TRACKS' },
+      { label: 'AUTHOR OF RECORD', value: 'ME + THE PLATFORMS' },
+    ],
+  },
+];
+
+export const weekFiveResearchQuestions = [
+  {
+    en: 'When my life is reconstructed from records, am I seeing myself—or the priorities of the systems that recorded me?',
+    zh: '当我的生活通过记录被重新拼起时，我看到的是自己，还是记录我的系统所重视的东西？',
+  },
+  {
+    en: 'Why does data appear objective when every field was designed for a particular operational purpose?',
+    zh: '当每一个数据字段都为了某种运营目的而被设计时，为什么数据仍然显得如此客观？',
+  },
+  {
+    en: 'If an institution keeps a record about me, what right do I have to retrieve, reinterpret, refuse, or delete it?',
+    zh: '如果机构保存着关于我的记录，我是否有权取回、重新解释、拒绝或删除它？',
+  },
+  {
+    en: 'If I need AI to read the scale of my own archive, does it make my life more legible—or make my memory dependent on another extractive system?',
+    zh: '如果我需要 AI 才能读懂自己庞大的档案，它是在让我的生活更清晰，还是让我的记忆依赖于另一个掠夺性的系统？',
+  },
+  {
+    en: 'What material and environmental costs are hidden behind making a digital memory searchable, immediate, and visually beautiful?',
+    zh: '当数字记忆变得可搜索、即时而美观时，背后隐藏了哪些物质与环境代价？',
+  },
+  {
+    en: 'Does turning daily life into counts, timelines, and patterns reproduce the same logic that financial markets use to assign value?',
+    zh: '把日常生活转化为数量、时间线与模式，是否复制了金融市场衡量和分配价值的逻辑？',
+  },
+  {
+    en: 'If technical or financial systems collapse, which parts of this archive would survive—and who would still be able to read them?',
+    zh: '如果技术系统或金融系统崩塌，这份档案中的哪些部分还会留下，又有谁仍然能够读取它们？',
+  },
+  {
+    en: 'What repeats across paper logs, institutional databases, platform exports, and AI: preservation, control, extraction, or all three?',
+    zh: '从纸质日志、机构数据库、平台导出到 AI，反复出现的究竟是保存、控制、掠夺，还是三者同时存在？',
+  },
+  {
+    en: 'Can the design let a viewer experience process, uncertainty, and missing information instead of rewarding only a clear outcome?',
+    zh: '设计能否让观看者经历过程、不确定性与缺失，而不是只奖励一个清晰的结果？',
+  },
+  {
+    en: 'Which part of my four years matters precisely because no system recorded it?',
+    zh: '我的纽约四年里，哪些部分恰恰因为没有被任何系统记录，才显得重要？',
   },
 ];
 
