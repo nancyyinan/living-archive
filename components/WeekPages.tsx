@@ -665,6 +665,67 @@ export function WeekFivePage({
   );
 }
 
+export function WeekSixPage() {
+  return (
+    <div className="week-six-page">
+      <WeekHeading
+        number="06"
+        date="OCT 08 2026"
+        isoDate="2026-10-08"
+        title="PROTOTYPE 1 / THE SAME RECORD"
+        description="An interactive field that asks what changes when recurring calendar traces are returned to the life around them."
+      />
+
+      <section
+        className="week-six-opening"
+        aria-labelledby="prototype-one-heading"
+      >
+        <div className="week-six-question">
+          <p>PROTOTYPE 01 / PERSONAL RECORDS / 2023—2026</p>
+          <h1 id="prototype-one-heading">
+            WHEN THE SAME RECORD IS RETURNED TO THE LIFE AROUND IT, IS IT STILL
+            THE SAME THING?
+          </h1>
+          <p>
+            The first view preserves 7,641 calendar events in their original
+            three-year field. Select a recurring phrase, then align every
+            occurrence as the same zero point in time to read the six hours
+            before and after it.
+          </p>
+        </div>
+
+        <a
+          className="week-six-prototype-card"
+          href={sitePath('/archive/week-06/prototype-01/index.html')}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open Prototype 1: The Same Record"
+        >
+          <div className="week-six-prototype-preview" aria-hidden="true">
+            <div className="prototype-time-labels">
+              <span>−6h</span>
+              <span>−3h</span>
+              <span>0</span>
+              <span>+3h</span>
+              <span>+6h</span>
+            </div>
+            <div className="prototype-lines">
+              {Array.from({ length: 38 }, (_, index) => (
+                <i key={index} />
+              ))}
+            </div>
+          </div>
+          <div className="collection-meta">
+            <span>01 / PROTOTYPE 1</span>
+            <span>APPLE CALENDAR / 7,641 RECORDS</span>
+            <span className="open-label">OPEN ↗</span>
+          </div>
+        </a>
+      </section>
+    </div>
+  );
+}
+
 function BracketStatement({ statement }: { statement: string }) {
   return (
     <p className="research-activity-statement">

@@ -283,7 +283,8 @@ img {
 .week-two-page,
 .week-three-page,
 .week-four-page,
-.week-five-page {
+.week-five-page,
+.week-six-page {
   min-height: calc(100vh - 48px);
   padding-bottom: 40px;
 }
@@ -291,6 +292,151 @@ img {
 .week-five-page {
   max-width: 100%;
   overflow-x: clip;
+}
+
+.week-six-opening {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
+  gap: 20px;
+  min-height: calc(100vh - 174px);
+  padding: 20px;
+}
+
+.week-six-question {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 580px;
+  padding: 22px;
+  border: 1px solid var(--border);
+}
+
+.week-six-question > p:first-child {
+  margin: 0;
+  color: var(--tertiary);
+  font:
+    10px/1.4 var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.06em;
+}
+
+.week-six-question h1 {
+  max-width: 760px;
+  margin: auto 0;
+  font-size: clamp(42px, 5vw, 78px);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.week-six-question > p:last-child {
+  max-width: 640px;
+  margin: 28px 0 0;
+  color: var(--secondary);
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.5;
+}
+
+.week-six-prototype-card {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-width: 0;
+  min-height: 580px;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.week-six-prototype-card:hover,
+.week-six-prototype-card:focus-visible {
+  outline: 1px solid var(--foreground);
+  outline-offset: -1px;
+}
+
+.week-six-prototype-card:hover .open-label,
+.week-six-prototype-card:focus-visible .open-label {
+  transform: translateX(4px);
+}
+
+.week-six-prototype-preview {
+  position: relative;
+  min-height: 0;
+  padding: 26px;
+  overflow: hidden;
+  background: var(--media-surface);
+}
+
+.prototype-time-labels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 18px;
+  color: var(--secondary);
+  font:
+    10px var(--font-geist-mono),
+    monospace;
+  text-align: center;
+}
+
+.prototype-time-labels span:nth-child(3) {
+  color: #eb6b2d;
+}
+
+.prototype-lines {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(38, minmax(3px, 1fr));
+  height: calc(100% - 30px);
+  min-height: 430px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.prototype-lines::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #eb6b2d;
+  content: '';
+}
+
+.prototype-lines i {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+}
+
+.prototype-lines i::before {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  width: 28%;
+  border-top: 1px solid var(--foreground);
+  opacity: 0.46;
+  content: '';
+}
+
+.prototype-lines i:nth-child(3n)::before {
+  left: 57%;
+  width: 30%;
+}
+.prototype-lines i:nth-child(4n)::before {
+  left: 21%;
+  width: 18%;
+}
+.prototype-lines i:nth-child(5n)::before {
+  left: 67%;
+  width: 20%;
+}
+.prototype-lines i:nth-child(7n)::before {
+  left: 5%;
+  width: 43%;
+}
+.prototype-lines i:nth-child(11n)::before {
+  left: 52%;
+  width: 12%;
+  opacity: 0.75;
 }
 .week-five-page .week-heading > div,
 .week-five-statement > header > div,
@@ -2947,6 +3093,23 @@ img {
     grid-template-columns: 1fr;
     padding-right: 12px;
     padding-left: 12px;
+  }
+  .week-six-opening {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+  .week-six-question,
+  .week-six-prototype-card {
+    min-height: 520px;
+  }
+  .week-six-question {
+    padding: 18px 12px;
+  }
+  .week-six-question h1 {
+    font-size: clamp(38px, 12vw, 64px);
+  }
+  .week-six-prototype-preview {
+    padding: 18px 12px;
   }
   .research-activities-opening {
     grid-template-columns: 64px minmax(0, 1fr);

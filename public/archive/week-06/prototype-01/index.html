@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>四年个人时间场 / How I Record Myself</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f2efe8'/%3E%3Cpath d='M7 5v22M12 9v14M17 3v26M22 11v10M27 6v20' stroke='%23eb6b2d' stroke-width='2'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="intro">
+        <p id="page-eyebrow" class="eyebrow">个人记录 / 2023—2026</p>
+        <div class="language-switch" role="group" aria-label="Language / 语言">
+          <button class="language-option is-active" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <h1 id="page-title">我并不是通过记录解释生活；我是在一次次记录中，与经过的时间建立关系。</h1>
+        <p id="page-lede" class="lede">四年里留下的每一条线都保留在这里。先看见整体，再靠近其中一天。</p>
+      </header>
+
+      <section class="project-question" aria-labelledby="project-question-title">
+        <p id="project-question-label" class="eyebrow">正在测试的问题</p>
+        <h2 id="project-question-title">当相同的记录被放回它前后的生活中，它还是同一件事吗？</h2>
+        <p id="project-question-note">选择一个反复出现的记录。先看它散落在三年中，再让每一次发生成为同一个时间零点。</p>
+      </section>
+
+      <section class="calendar-section" aria-labelledby="calendar-title">
+        <div class="section-head">
+          <div>
+            <h2 id="calendar-title">四年个人时间场</h2>
+            <p id="calendar-copy">横轴是日期，纵轴是一天中的时间。每条线是一项日历事件，线长是持续时间。</p>
+          </div>
+          <p class="calendar-total">Apple Calendar <span id="apple-count"></span></p>
+        </div>
+
+        <section class="trace-lens" aria-labelledby="trace-lens-label">
+          <div class="trace-lens-copy">
+            <p id="trace-lens-label" class="eyebrow">反复出现的记录</p>
+            <p id="motif-summary">选择一个反复出现的词。它会在完整时间场中被看见，其他生活仍留在背景里。</p>
+          </div>
+          <div id="motif-options" class="motif-options" role="group" aria-label="反复出现的记录"></div>
+        </section>
+
+        <section id="anchor-controls" class="anchor-controls" aria-labelledby="anchor-label" hidden>
+          <div class="anchor-copy">
+            <p id="anchor-label" class="eyebrow">观看方式</p>
+            <p id="anchor-instruction">先观察这条记录如何散落在三年中。</p>
+          </div>
+          <div>
+            <div id="view-options" class="view-options" role="group" aria-label="选择观看方式">
+              <button class="view-option is-active" type="button" data-view="field" aria-pressed="true">散落在三年中</button>
+              <button class="view-option" type="button" data-view="anchor" aria-pressed="false">以这条记录为中心</button>
+            </div>
+            <div id="anchor-legend" class="anchor-legend" hidden>
+              <span class="legend-anchor">所选记录 / 时间零点</span>
+              <span class="legend-context">前后六小时的其他记录</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="calendar-layout">
+          <div id="hour-axis" class="hour-axis" aria-hidden="true"></div>
+          <div id="calendar-scroll" class="canvas-scroll">
+            <div class="calendar-stage">
+              <canvas id="calendar-canvas" aria-label="Calendar events plotted by date and time of day"></canvas>
+              <div id="calendar-guide" class="calendar-guide" aria-hidden="true" hidden></div>
+              <div id="calendar-hover" class="calendar-hover" role="status" hidden></div>
+            </div>
+          </div>
+        </div>
+
+        <section class="detail" aria-live="polite">
+          <p id="calendar-detail-label" class="eyebrow">由我创建或保存在我的日历中</p>
+          <div>
+            <h3 id="calendar-detail-title">选择一项日历事件</h3>
+            <p id="calendar-detail-summary" class="detail-summary">点击时间场中的线查看标题、来源日历和时间。</p>
+            <dl id="calendar-facts" class="facts"></dl>
+            <div id="day-context" class="day-context" hidden>
+              <p id="day-context-intro" class="day-context-intro"></p>
+              <div id="day-context-list" class="day-context-list"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="archive-search" aria-labelledby="search-label">
+        <div class="search-control">
+          <label id="search-label" for="archive-search-input">搜索个人记录</label>
+          <div class="search-input-wrap">
+            <input
+              id="archive-search-input"
+              type="search"
+              autocomplete="off"
+              placeholder="搜索事件、日历或地点…"
+              aria-describedby="search-count"
+            />
+            <span id="search-count" aria-live="polite">Apple Calendar</span>
+          </div>
+        </div>
+        <div id="search-results" class="search-results" aria-live="polite" hidden></div>
+      </section>
+
+      <footer>
+        <p id="method-note"></p>
+      </footer>
+    </main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
