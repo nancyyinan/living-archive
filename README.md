@@ -10,6 +10,8 @@ Communication Design thesis archive for Yinan Xue.
 - `WEEK 03` follows three encounters with the institutional traces produced by a student ID.
 - `WEEK 04` presents two complete intergenerational archives through three possible research lenses, each set as an individual letter-size editorial sheet.
 - `WEEK 05` opens as a three-collection index for the 220-page 256 book, the New York Art Book Fair, and two research activities about institutional and self-kept records. The 256 detail page contains its project statement, finished-object photographs, seven equally weighted spreads, and two source sequences extracted from the project PDF. The Book Fair collection separates four book groups and fourteen zine groups; each numbered square opens its complete image set, followed by a 211-word communication-design reflection on the collection landing page. The research-activities page contains two complete activity statements, two interactive visualizations, and ten bilingual questions that emerged through the process.
+- `WEEK 06` presents the first interactive prototype, which aligns recurring calendar traces around a shared zero point in time.
+- `WEEK 07` records the decision to complete four inherited diary books and defines two measurable next steps: resolving a material system for the books and testing a comparison with four years of personal records.
 - Source metadata for Week 1 lives in `data/archive.ts`; the weekly index and writing for Weeks 2, 4, and 5 live in `data/weeks.ts` and `components/WeekPages.tsx`. Book Fair group metadata, image manifests, and the reflection draft live in `data/book-fair.ts`.
 
 ## Owner mode

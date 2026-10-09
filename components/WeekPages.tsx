@@ -726,6 +726,119 @@ export function WeekSixPage() {
   );
 }
 
+export function WeekSevenPage() {
+  return (
+    <article className="week-seven-page">
+      <WeekHeading
+        number="07"
+        date="OCT 09 2026"
+        isoDate="2026-10-09"
+        title="GROUP SHARE / TWO NEXT STEPS"
+        description="A decision about what I need to make, followed by two concrete actions for the next critique."
+      />
+
+      <section
+        className="week-seven-opening"
+        aria-labelledby="week-seven-heading"
+      >
+        <p>GROUP SHARE / DECISION / OCT 09</p>
+        <h1 id="week-seven-heading">
+          FOUR BOOKS, FOUR YEARS, AND THE DISTANCE BETWEEN THEM.
+        </h1>
+        <p>
+          This morning&apos;s conversation clarified what I most need to make. I
+          want to complete the four diary books my grandfather assembled, then
+          place them in a deliberate comparison with the four years I have
+          recorded myself. Some of his writing concerns politically sensitive
+          periods in China, and I may not be able to return to continue this
+          work there. Preserving and developing the books here is therefore not
+          only a thesis direction; it is personally urgent.
+        </p>
+      </section>
+
+      <figure className="week-seven-progress">
+        <img
+          src={sitePath('/archive/week-07/group-share/prototype-progress.png')}
+          alt="InDesign workspace showing a two-page spread from a low-fidelity diary-book prototype"
+        />
+        <figcaption>
+          <span>CURRENT WORK / 2.5 LOW-FIDELITY DIRECTIONS</span>
+          <span>DIARY SPREAD IN PROGRESS / OCT 09 2026</span>
+        </figcaption>
+      </figure>
+
+      <section
+        className="week-seven-next-steps"
+        aria-labelledby="next-steps-heading"
+      >
+        <header>
+          <span>02</span>
+          <div>
+            <p>FROM GROUP SHARE TO MAKING</p>
+            <h2 id="next-steps-heading">TWO NEXT STEPS</h2>
+          </div>
+        </header>
+
+        <ol>
+          <li>
+            <div className="week-seven-step-number">01</div>
+            <div className="week-seven-step-copy">
+              <p>FORM / FOUR INHERITED BOOKS</p>
+              <h3>RESOLVE ONE SYSTEM FOR THE FOUR DIARY BOOKS.</h3>
+              <p>
+                Audit the 2.5 existing low-fidelity prototypes against a
+                focused reference study of traditional Chinese diary books.
+                Choose one direction, then rebuild a representative 16-page
+                section so its grid, paper, typography, binding logic, chapter
+                openings, annotations, and image treatment can extend across
+                all four books.
+              </p>
+              <p className="week-seven-question">
+                How can the books carry the quiet rhythm of older Chinese
+                diaries without turning that history into decoration?
+              </p>
+            </div>
+            <div className="week-seven-deliverable">
+              <span>NEXT CRITIQUE</span>
+              <p>1 REFERENCE BOARD</p>
+              <p>1 DECISION MATRIX</p>
+              <p>1 REFINED 16-PAGE DUMMY</p>
+            </div>
+          </li>
+
+          <li>
+            <div className="week-seven-step-number">02</div>
+            <div className="week-seven-step-copy">
+              <p>COMPARISON / FOUR YEARS OF MY LIFE</p>
+              <h3>
+                BUILD A REPEATABLE COMPARISON BETWEEN HIS BOOKS AND MY YEARS.
+              </h3>
+              <p>
+                Make a four-year inventory of my diary entries, calendars,
+                photographs, objects, and platform records. Tag both archives
+                with the same five to seven themes, select 12 paired moments,
+                and test two structures—side-by-side and interleaved—to learn
+                which one reveals connection and difference without flattening
+                either life.
+              </p>
+              <p className="week-seven-question">
+                What becomes visible when the same theme is recorded by two
+                people, in two eras, through two different systems?
+              </p>
+            </div>
+            <div className="week-seven-deliverable">
+              <span>NEXT CRITIQUE</span>
+              <p>1 SHARED INDEX</p>
+              <p>12 PAIRED MOMENTS</p>
+              <p>2 COMPARISON MOCKUPS</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </article>
+  );
+}
+
 function BracketStatement({ statement }: { statement: string }) {
   return (
     <p className="research-activity-statement">
