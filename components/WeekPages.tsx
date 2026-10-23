@@ -694,33 +694,59 @@ export function WeekSixPage() {
           </p>
         </div>
 
-        <a
-          className="week-six-prototype-card"
-          href={sitePath('/archive/week-06/prototype-01/index.html')}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Open Prototype 1: The Same Record"
-        >
-          <div className="week-six-prototype-preview" aria-hidden="true">
-            <div className="prototype-time-labels">
-              <span>−6h</span>
-              <span>−3h</span>
-              <span>0</span>
-              <span>+3h</span>
-              <span>+6h</span>
+        <div className="week-six-prototype-stack">
+          <a
+            className="week-six-prototype-card"
+            href={sitePath('/archive/week-06/prototype-01/index.html')}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Prototype 1: The Same Record"
+          >
+            <div className="week-six-prototype-preview" aria-hidden="true">
+              <div className="prototype-time-labels">
+                <span>−6h</span>
+                <span>−3h</span>
+                <span>0</span>
+                <span>+3h</span>
+                <span>+6h</span>
+              </div>
+              <div className="prototype-lines">
+                {Array.from({ length: 38 }, (_, index) => (
+                  <i key={index} />
+                ))}
+              </div>
             </div>
-            <div className="prototype-lines">
-              {Array.from({ length: 38 }, (_, index) => (
-                <i key={index} />
-              ))}
+            <div className="collection-meta">
+              <span>01 / PROTOTYPE 1</span>
+              <span>APPLE CALENDAR / 7,641 RECORDS</span>
+              <span className="open-label">OPEN ↗</span>
             </div>
-          </div>
-          <div className="collection-meta">
-            <span>01 / PROTOTYPE 1</span>
-            <span>APPLE CALENDAR / 7,641 RECORDS</span>
-            <span className="open-label">OPEN ↗</span>
-          </div>
-        </a>
+          </a>
+
+          <a
+            className="week-six-prototype-card"
+            href={sitePath('/archive/week-06/prototype-02/index.html')}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Prototype 2: Living Through Public Time"
+          >
+            <div className="week-six-prototype-preview week-six-prototype-two-preview" aria-hidden="true">
+              <span>POLICY</span>
+              <span>AI / TECH</span>
+              <span>DIARY</span>
+              <div className="prototype-two-tracks">
+                {Array.from({ length: 42 }, (_, index) => (
+                  <i key={index} />
+                ))}
+              </div>
+            </div>
+            <div className="collection-meta">
+              <span>02 / PROTOTYPE 2</span>
+              <span>LIVING THROUGH PUBLIC TIME</span>
+              <span className="open-label">OPEN ↗</span>
+            </div>
+          </a>
+        </div>
       </section>
     </div>
   );

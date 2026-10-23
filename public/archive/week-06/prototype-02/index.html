@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A visual atlas of four years of everyday life in New York, read alongside international-student policy and AI history." />
+    <title>Living Through Public Time / 与大时代同时生活</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-lang="zh">
+    <header class="masthead">
+      <div class="identity">
+        <h1>
+          <span class="copy-zh">与大时代同时生活</span>
+          <span class="title-divider">/</span>
+          <span class="copy-en">Living Through Public Time</span>
+        </h1>
+      </div>
+
+      <div class="masthead-meta">
+        <dl class="stats" aria-label="Dataset summary">
+          <div><dt>7,641</dt><dd><span class="copy-zh">日历记录</span><span class="copy-en">calendar records</span></dd></div>
+          <div><dt>25</dt><dd><span class="copy-zh">日记摘录</span><span class="copy-en">diary fragments</span></dd></div>
+          <div><dt>21</dt><dd><span class="copy-zh">公共事件</span><span class="copy-en">public events</span></dd></div>
+        </dl>
+        <div class="language-switch" role="group" aria-label="Language / 语言">
+          <button class="is-active" type="button" data-language="zh"><span class="copy-zh">中文</span><span class="copy-en">Chinese</span></button>
+          <button type="button" data-language="en"><span class="copy-zh">英文</span><span class="copy-en">English</span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="infographic" aria-label="Interactive timeline infographic">
+        <div class="chart-controls">
+          <div class="control-block view-control">
+            <p><span class="copy-zh">图表方式</span><span class="copy-en">View</span></p>
+            <div class="segmented" role="group" aria-label="Visualization view">
+              <button type="button" data-view="atlas"><span class="copy-zh">生活图谱</span><span class="copy-en">Daily atlas</span></button>
+              <button class="is-active" type="button" data-view="matrix"><span class="copy-zh">月份矩阵</span><span class="copy-en">Month matrix</span></button>
+              <button type="button" data-view="bubbles"><span class="copy-zh">时间气泡</span><span class="copy-en">Time bubbles</span></button>
+              <button type="button" data-view="pulse"><span class="copy-zh">生活脉冲</span><span class="copy-en">Life pulse</span></button>
+            </div>
+          </div>
+
+          <div class="control-block zoom-control">
+            <p><span class="copy-zh">时间尺度</span><span class="copy-en">Scale</span></p>
+            <div class="segmented compact" role="group" aria-label="Timeline scale">
+              <button class="is-active" type="button" data-zoom="fit"><span class="copy-zh">四年</span><span class="copy-en">4 years</span></button>
+              <button type="button" data-zoom="month"><span class="copy-zh">月</span><span class="copy-en">month</span></button>
+              <button type="button" data-zoom="week"><span class="copy-zh">周</span><span class="copy-en">week</span></button>
+            </div>
+          </div>
+
+          <div class="control-block layer-control">
+            <p><span class="copy-zh">公共层</span><span class="copy-en">Public layers</span></p>
+            <div class="layer-buttons" role="group" aria-label="Public layers">
+              <button class="layer-policy is-active" type="button" data-layer="policy" aria-pressed="true"><i></i><span class="copy-zh">政策</span><span class="copy-en">Policy</span></button>
+              <button class="layer-ai is-active" type="button" data-layer="ai" aria-pressed="true"><i></i><span class="copy-zh">技术</span><span class="copy-en">AI / Tech</span></button>
+              <button class="layer-diary is-active" type="button" data-layer="diary" aria-pressed="true"><i></i><span class="copy-zh">日记</span><span class="copy-en">Diary</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-legend" id="category-legend" aria-label="Calendar categories"></div>
+
+        <div class="chart-frame">
+          <div id="chart-scroll" class="chart-scroll" tabindex="0" aria-label="Interactive timeline infographic">
+            <div id="chart-stage" class="chart-stage">
+              <canvas id="chart-canvas"></canvas>
+              <div id="marker-layer" class="marker-layer"></div>
+              <div id="chart-tooltip" class="chart-tooltip" role="status" hidden></div>
+            </div>
+          </div>
+          <p class="scroll-hint"><span class="copy-zh">拖动或横向滚动查看时间</span><span class="copy-en">Drag or scroll horizontally through time</span> ↔</p>
+        </div>
+
+        <section id="detail-panel" class="detail-panel" aria-live="polite">
+          <div class="detail-date">
+            <p id="detail-type">时间起点 / Starting point</p>
+            <time id="detail-date" datetime="2023-08-19">2023.08.19</time>
+          </div>
+          <div class="detail-copy">
+            <h3><span id="detail-title-zh">抵达纽约</span><span id="detail-title-en">Arriving in New York</span></h3>
+            <div class="parallel-copy">
+              <p id="detail-body-zh">“谢谢表哥。谢谢梅西。”</p>
+              <p id="detail-body-en">“Thank you, cousin. Thank you, Messi.”</p>
+            </div>
+          </div>
+          <div id="detail-meta" class="detail-meta"></div>
+        </section>
+
+      </section>
+    </main>
+
+    <script src="../prototype-01/data.js"></script>
+    <script src="timeline-data.js"></script>
+    <script src="translations.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
