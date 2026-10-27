@@ -15,10 +15,10 @@ export const archiveWeeks: ArchiveWeek[] = [
     number: '09',
     date: 'OCT 23 2026',
     isoDate: '2026-10-23',
-    title: 'PROTOTYPE 1 / CLASS PRESENTATION',
+    title: 'WHAT IF / PROTOTYPE 1',
     description:
-      'The 20-slide deck presented in class, documenting the two-part prototype and the questions leading toward Prototype 2.',
-    contents: '20 SLIDES / 2 PARTS / 1 FIGMA DECK',
+      'Nine possibilities transcribed from class feedback, followed by documentation of the Prototype 1 presentation.',
+    contents: '9 WHAT IFS / 20 SLIDES / 2 SECTIONS',
     href: '/week-09',
   },
   {

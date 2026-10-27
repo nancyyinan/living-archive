@@ -904,6 +904,45 @@ const weekNineSlides = [
   },
 ];
 
+const weekNineWhatIfs = [
+  {
+    theme: 'CONTEXT / AUDIENCE',
+    text: 'What if this was given to someone with no context? What would they do?',
+  },
+  {
+    theme: 'ARCHIVE / INNER LIFE',
+    text: 'What if you also included different elements in your archive? Not only records of what you did, but also your emotions or thoughts?',
+  },
+  {
+    theme: 'LANGUAGE / ACCESS',
+    text: 'What if there were English translations? I would like to understand and read the information on each page. Maybe a few parts could be translated.',
+  },
+  {
+    theme: 'QUALITATIVE / QUANTITATIVE',
+    text: 'Where are the intersections between qualitative and quantitative data? What if one is more important than the other?',
+  },
+  {
+    theme: 'FORM / RECORD KEEPING',
+    text: 'What if you used the original format of the record-keeping?',
+  },
+  {
+    theme: 'AI / TRANSPARENCY',
+    text: 'What if you included an AI navigator on the website so people could understand what you used AI for, why you used it, and how it affects your time schedule?',
+  },
+  {
+    theme: 'MATERIAL / TEXTURE',
+    text: 'What if you used paper with a grain rather than printing the texture?',
+  },
+  {
+    theme: 'TONE / COHERENCE',
+    text: 'What if you matched the tone and style of Part 1 and Part 2? The second part felt a little cold and analytical.',
+  },
+  {
+    theme: 'STRUCTURE / MERGE',
+    text: 'What if you merged Part 1 and Part 2?',
+  },
+];
+
 export function WeekNinePage() {
   return (
     <article className="week-nine-page">
@@ -911,57 +950,103 @@ export function WeekNinePage() {
         number="09"
         date="OCT 23 2026"
         isoDate="2026-10-23"
-        title="PROTOTYPE 1 / CLASS PRESENTATION"
-        description="Documentation of the 20-slide deck shown in class and the two directions it opened toward Prototype 2."
+        title="WHAT IF / PROTOTYPE 1"
+        description="Nine possibilities transcribed from class feedback, followed by documentation of the presentation shown in class."
       />
 
-      <section
-        className="week-nine-opening"
-        aria-labelledby="week-nine-heading"
-      >
-        <p>IN CLASS / PROTOTYPE 1 / OCT 23</p>
-        <h1 id="week-nine-heading">
-          WHAT CAN PERSONAL RECORDS TELL US ABOUT LIVING THROUGH HISTORICAL
-          CHANGE?
-        </h1>
-        <div className="week-nine-summary">
+      <section className="week-nine-what-if" aria-labelledby="what-if-heading">
+        <header className="week-nine-section-heading">
+          <span>01</span>
+          <div>
+            <p>PROTOTYPE 1 FEEDBACK / TRANSCRIBED</p>
+            <h2 id="what-if-heading">WHAT IF</h2>
+          </div>
           <p>
-            I presented Prototype 1 in two parts: four publications preserving
-            my grandfather&apos;s personal writings, and an interactive timeline
-            placing my New York records beside changes in international student
-            policy and AI.
+            Nine prompts from the class feedback session, transcribed from the
+            handwritten notes and lightly edited for spelling and punctuation.
           </p>
-          <p>
-            The final slides identify two directions to test next: the material
-            and binding system of the four publications, and a closer comparison
-            between specific public changes and my daily records.
-          </p>
-          <a
-            href="https://www.figma.com/deck/BLV5wsE9vc5X7ujIO69lXD"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>OPEN FIGMA DECK</span>
-            <span>20 SLIDES ↗</span>
-          </a>
-        </div>
+        </header>
+
+        <ol className="week-nine-feedback-list">
+          {weekNineWhatIfs.map((item, index) => (
+            <li key={item.theme}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <p>{item.theme}</p>
+                <blockquote>{item.text}</blockquote>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <aside className="week-nine-additional-notes">
+          <header>
+            <span>ADDITIONAL NOTES</span>
+            <p>Other comments included on the same feedback sheets.</p>
+          </header>
+          <div>
+            <blockquote>“Overall, love your design!”</blockquote>
+            <blockquote>
+              “I love how detailed and interactive the second part of your
+              project is.”
+            </blockquote>
+            <blockquote>
+              “My understanding: Part 1 uses original writing without
+              interpretation and becomes a publication linked to living through
+              the Chinese Revolution. Part 2 combines original writing,
+              Yinan&apos;s experience, and the AI revolution through data
+              visualization and interpretation.”
+            </blockquote>
+          </div>
+        </aside>
       </section>
 
       <section
         className="week-nine-presentation"
         aria-labelledby="week-nine-presentation-heading"
       >
-        <header>
-          <span>01</span>
+        <header className="week-nine-section-heading">
+          <span>02</span>
           <div>
-            <p>DOCUMENTATION / SELECTED SLIDES</p>
-            <h2 id="week-nine-presentation-heading">WHAT I SHOWED IN CLASS</h2>
+            <p>DOCUMENTATION / 20-SLIDE DECK</p>
+            <h2 id="week-nine-presentation-heading">
+              PROTOTYPE 1 / CLASS PRESENTATION
+            </h2>
           </div>
           <p>
             Six pages from the presentation trace the inquiry, the two-part
             prototype, and the next questions that emerged from it.
           </p>
         </header>
+
+        <div className="week-nine-opening">
+          <p>IN CLASS / PROTOTYPE 1 / OCT 23</p>
+          <h3>
+            WHAT CAN PERSONAL RECORDS TELL US ABOUT LIVING THROUGH HISTORICAL
+            CHANGE?
+          </h3>
+          <div className="week-nine-summary">
+            <p>
+              I presented Prototype 1 in two parts: four publications preserving
+              my grandfather&apos;s personal writings, and an interactive
+              timeline placing my New York records beside changes in
+              international student policy and AI.
+            </p>
+            <p>
+              The final slides identify two directions to test next: the
+              material and binding system of the four publications, and a closer
+              comparison between specific public changes and my daily records.
+            </p>
+            <a
+              href="https://www.figma.com/deck/BLV5wsE9vc5X7ujIO69lXD"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>OPEN FIGMA DECK</span>
+              <span>20 SLIDES ↗</span>
+            </a>
+          </div>
+        </div>
 
         <div className="week-nine-slide-grid">
           {weekNineSlides.map((slide) => (
