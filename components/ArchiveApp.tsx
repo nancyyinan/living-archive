@@ -15,6 +15,7 @@ import {
   WeekFiveResearchActivitiesPage,
   WeekSixPage,
   WeekSevenPage,
+  WeekNinePage,
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
@@ -302,6 +303,8 @@ export function ArchiveApp() {
     content = <WeekSixPage />;
   } else if (collection === 'week-07') {
     content = <WeekSevenPage />;
+  } else if (collection === 'week-09') {
+    content = <WeekNinePage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />

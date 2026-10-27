@@ -865,6 +865,123 @@ export function WeekSevenPage() {
   );
 }
 
+const weekNineSlides = [
+  {
+    file: '01-inquiry.jpg',
+    number: '01',
+    label: 'INQUIRY',
+    alt: 'Presentation title asking what personal records can tell us about living through historical change',
+  },
+  {
+    file: '02-two-records.jpg',
+    number: '02',
+    label: 'TWO RECORDS OF EVERYDAY LIFE',
+    alt: 'Grandfather\'s handwritten diaries beside a visual diary of life in New York',
+  },
+  {
+    file: '09-publications.jpg',
+    number: '09',
+    label: 'PUBLICATION PROTOTYPE',
+    alt: 'Four publication prototypes made from the grandfather\'s personal writings',
+  },
+  {
+    file: '16-website.jpg',
+    number: '16',
+    label: 'WEBSITE PROTOTYPE',
+    alt: 'Laptop mockup showing the Living Through Public Time interactive timeline',
+  },
+  {
+    file: '18-publication-next-step.jpg',
+    number: '18',
+    label: 'TOWARD PROTOTYPE 2 / PUBLICATIONS',
+    alt: 'Publication references for testing long-form reading, paper, and binding',
+  },
+  {
+    file: '19-website-next-step.jpg',
+    number: '19',
+    label: 'TOWARD PROTOTYPE 2 / WEBSITE',
+    alt: 'GPT-4o launch and an immigration policy update shown as public-time events to compare with personal records',
+  },
+];
+
+export function WeekNinePage() {
+  return (
+    <article className="week-nine-page">
+      <WeekHeading
+        number="09"
+        date="OCT 23 2026"
+        isoDate="2026-10-23"
+        title="PROTOTYPE 1 / CLASS PRESENTATION"
+        description="Documentation of the 20-slide deck shown in class and the two directions it opened toward Prototype 2."
+      />
+
+      <section
+        className="week-nine-opening"
+        aria-labelledby="week-nine-heading"
+      >
+        <p>IN CLASS / PROTOTYPE 1 / OCT 23</p>
+        <h1 id="week-nine-heading">
+          WHAT CAN PERSONAL RECORDS TELL US ABOUT LIVING THROUGH HISTORICAL
+          CHANGE?
+        </h1>
+        <div className="week-nine-summary">
+          <p>
+            I presented Prototype 1 in two parts: four publications preserving
+            my grandfather&apos;s personal writings, and an interactive timeline
+            placing my New York records beside changes in international student
+            policy and AI.
+          </p>
+          <p>
+            The final slides identify two directions to test next: the material
+            and binding system of the four publications, and a closer comparison
+            between specific public changes and my daily records.
+          </p>
+          <a
+            href="https://www.figma.com/deck/BLV5wsE9vc5X7ujIO69lXD"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>OPEN FIGMA DECK</span>
+            <span>20 SLIDES ↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section
+        className="week-nine-presentation"
+        aria-labelledby="week-nine-presentation-heading"
+      >
+        <header>
+          <span>01</span>
+          <div>
+            <p>DOCUMENTATION / SELECTED SLIDES</p>
+            <h2 id="week-nine-presentation-heading">WHAT I SHOWED IN CLASS</h2>
+          </div>
+          <p>
+            Six pages from the presentation trace the inquiry, the two-part
+            prototype, and the next questions that emerged from it.
+          </p>
+        </header>
+
+        <div className="week-nine-slide-grid">
+          {weekNineSlides.map((slide) => (
+            <figure key={slide.file}>
+              <img
+                src={sitePath(`/archive/week-09/presentation/${slide.file}`)}
+                alt={slide.alt}
+              />
+              <figcaption>
+                <span>SLIDE {slide.number}</span>
+                <span>{slide.label}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    </article>
+  );
+}
+
 function BracketStatement({ statement }: { statement: string }) {
   return (
     <p className="research-activity-statement">
