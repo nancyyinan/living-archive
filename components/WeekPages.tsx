@@ -943,7 +943,14 @@ const weekNineWhatIfs = [
   },
 ];
 
-export function WeekNinePage() {
+export function WeekNinePage({
+  onNavigate,
+}: Pick<WeekPageProps, 'onNavigate'>) {
+  const go = (path: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    onNavigate(path);
+  };
+
   return (
     <article className="week-nine-page">
       <WeekHeading
@@ -952,6 +959,65 @@ export function WeekNinePage() {
         isoDate="2026-10-23"
         title="WHAT IF / PROTOTYPE 1"
         description="Nine possibilities transcribed from class feedback, followed by documentation of the presentation shown in class."
+      />
+
+      <section
+        className="collection-grid week-nine-collection-grid"
+        aria-label="Week 9 sections"
+      >
+        <a
+          className="collection-card"
+          href={sitePath('/week-09/what-if')}
+          onClick={go('/week-09/what-if')}
+        >
+          <div className="collection-preview week-nine-what-if-preview">
+            {weekNineWhatIfs.map((item, index) => (
+              <div key={item.theme}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{item.theme}</p>
+              </div>
+            ))}
+          </div>
+          <div className="collection-meta">
+            <span>01 / WHAT IF</span>
+            <span>9 PROMPTS / 3 ADDITIONAL NOTES</span>
+            <span className="open-label">OPEN →</span>
+          </div>
+        </a>
+
+        <a
+          className="collection-card"
+          href={sitePath('/week-09/presentation')}
+          onClick={go('/week-09/presentation')}
+        >
+          <div className="collection-preview week-nine-presentation-preview">
+            <img
+              src={sitePath(
+                '/archive/week-09/presentation/02-two-records.jpg',
+              )}
+              alt="Prototype 1 presentation comparing two records of everyday life"
+            />
+          </div>
+          <div className="collection-meta">
+            <span>02 / PROTOTYPE 1 / CLASS PRESENTATION</span>
+            <span>20 SLIDES / FIGMA DECK</span>
+            <span className="open-label">OPEN →</span>
+          </div>
+        </a>
+      </section>
+    </article>
+  );
+}
+
+export function WeekNineWhatIfPage() {
+  return (
+    <article className="week-nine-page">
+      <WeekHeading
+        number="09 / 01"
+        date="OCT 23 2026"
+        isoDate="2026-10-23"
+        title="WHAT IF"
+        description="Nine possibilities transcribed from the Prototype 1 class feedback."
       />
 
       <section className="week-nine-what-if" aria-labelledby="what-if-heading">
@@ -1000,6 +1066,20 @@ export function WeekNinePage() {
           </div>
         </aside>
       </section>
+    </article>
+  );
+}
+
+export function WeekNinePresentationPage() {
+  return (
+    <article className="week-nine-page">
+      <WeekHeading
+        number="09 / 02"
+        date="OCT 23 2026"
+        isoDate="2026-10-23"
+        title="PROTOTYPE 1 / CLASS PRESENTATION"
+        description="Documentation of the presentation shown in class and the questions leading toward Prototype 2."
+      />
 
       <section
         className="week-nine-presentation"
