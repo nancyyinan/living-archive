@@ -12,6 +12,16 @@ export interface ArchiveWeek {
 
 export const archiveWeeks: ArchiveWeek[] = [
   {
+    number: '10',
+    date: 'OCT 29 2026',
+    isoDate: '2026-10-29',
+    title: 'RECORDING SYSTEMS / HISTORICAL LEGIBILITY',
+    description:
+      'Two readings on archival power and historical narrative, followed by a revised research question.',
+    contents: '2 ARTICLES / 2 CITATIONS / 1 RESEARCH QUESTION',
+    href: '/week-10',
+  },
+  {
     number: '09',
     date: 'OCT 23 2026',
     isoDate: '2026-10-23',

@@ -730,7 +730,10 @@ export function WeekSixPage() {
             rel="noreferrer"
             aria-label="Open Prototype 2: Living Through Public Time"
           >
-            <div className="week-six-prototype-preview week-six-prototype-two-preview" aria-hidden="true">
+            <div
+              className="week-six-prototype-preview week-six-prototype-two-preview"
+              aria-hidden="true"
+            >
               <span>POLICY</span>
               <span>AI / TECH</span>
               <span>DIARY</span>
@@ -812,12 +815,12 @@ export function WeekSevenPage() {
               <p>FORM / FOUR INHERITED BOOKS</p>
               <h3>RESOLVE ONE SYSTEM FOR THE FOUR DIARY BOOKS.</h3>
               <p>
-                Audit the 2.5 existing low-fidelity prototypes against a
-                focused reference study of traditional Chinese diary books.
-                Choose one direction, then rebuild a representative 16-page
-                section so its grid, paper, typography, binding logic, chapter
-                openings, annotations, and image treatment can extend across
-                all four books.
+                Audit the 2.5 existing low-fidelity prototypes against a focused
+                reference study of traditional Chinese diary books. Choose one
+                direction, then rebuild a representative 16-page section so its
+                grid, paper, typography, binding logic, chapter openings,
+                annotations, and image treatment can extend across all four
+                books.
               </p>
               <p className="week-seven-question">
                 How can the books carry the quiet rhythm of older Chinese
@@ -876,13 +879,13 @@ const weekNineSlides = [
     file: '02-two-records.jpg',
     number: '02',
     label: 'TWO RECORDS OF EVERYDAY LIFE',
-    alt: 'Grandfather\'s handwritten diaries beside a visual diary of life in New York',
+    alt: "Grandfather's handwritten diaries beside a visual diary of life in New York",
   },
   {
     file: '09-publications.jpg',
     number: '09',
     label: 'PUBLICATION PROTOTYPE',
-    alt: 'Four publication prototypes made from the grandfather\'s personal writings',
+    alt: "Four publication prototypes made from the grandfather's personal writings",
   },
   {
     file: '16-website.jpg',
@@ -992,9 +995,7 @@ export function WeekNinePage({
         >
           <div className="collection-preview week-nine-presentation-preview">
             <img
-              src={sitePath(
-                '/archive/week-09/presentation/02-two-records.jpg',
-              )}
+              src={sitePath('/archive/week-09/presentation/02-two-records.jpg')}
               alt="Prototype 1 presentation comparing two records of everyday life"
             />
           </div>
@@ -1147,16 +1148,141 @@ export function WeekNinePresentationPage() {
   );
 }
 
+const weekTenArticles = [
+  {
+    number: '01',
+    title: 'ARCHIVES, RECORDS, AND POWER: THE MAKING OF MODERN MEMORY',
+    authors: 'JOAN M. SCHWARTZ + TERRY COOK',
+    publication: 'ARCHIVAL SCIENCE / 2002',
+    href: 'https://doi.org/10.1007/BF02435628',
+    citation:
+      'Schwartz, J. M., & Cook, T. (2002). Archives, records, and power: The making of modern memory. Archival Science, 2(1-2), 1-19. https://doi.org/10.1007/BF02435628',
+    quote:
+      '“Through archives, the past is controlled. Certain stories are privileged and others marginalized.”',
+    page: 'P. 1',
+    response:
+      'This article could inform my experiment by treating selection, classification, and display as active forces that construct public memory, requiring me to make the criteria behind my political, medical, educational, and technological chronicle visible rather than presenting the archive as neutral.',
+  },
+  {
+    number: '02',
+    title: 'THE VALUE OF NARRATIVITY IN THE REPRESENTATION OF REALITY',
+    authors: 'HAYDEN WHITE',
+    publication: 'CRITICAL INQUIRY / 1980',
+    href: 'https://doi.org/10.1086/448086',
+    citation:
+      'White, H. (1980). The value of narrativity in the representation of reality. Critical Inquiry, 7(1), 5-27. https://doi.org/10.1086/448086',
+    quote:
+      '“Does the world really present itself to perception in the form of well-made stories?”',
+    page: 'P. 27',
+    response:
+      'This article challenges my experiment to show that chronology alone does not explain historical change, so the spatial work must reveal how editing, grouping, scale, and sequence turn a list of events into a particular historical narrative.',
+  },
+];
+
+export function WeekTenPage() {
+  return (
+    <article className="week-ten-page">
+      <WeekHeading
+        number="10"
+        date="OCT 29 2026"
+        isoDate="2026-10-29"
+        title="RECORDING SYSTEMS / HISTORICAL LEGIBILITY"
+        description="Two articles that reposition the archive as a system that actively constructs historical meaning."
+      />
+
+      <section
+        className="week-ten-question"
+        aria-labelledby="week-ten-question-heading"
+      >
+        <p>REVISED RESEARCH QUESTION</p>
+        <h1 id="week-ten-question-heading">
+          HOW DO SYSTEMS OF RECORDING SHAPE THE WAY HISTORICAL CHANGE BECOMES
+          LEGIBLE?
+        </h1>
+        <p>
+          The project is shifting from displaying the scale of a personal
+          archive toward examining how political, medical, educational, and
+          technological records construct different versions of historical
+          change.
+        </p>
+      </section>
+
+      <section className="week-ten-readings" aria-label="Two relevant articles">
+        {weekTenArticles.map((article) => (
+          <article className="week-ten-reading" key={article.number}>
+            <header>
+              <span>{article.number}</span>
+              <div>
+                <p>RELEVANT ARTICLE</p>
+                <h2>{article.title}</h2>
+              </div>
+              <div className="week-ten-source">
+                <p>{article.authors}</p>
+                <p>{article.publication}</p>
+                <a href={article.href} target="_blank" rel="noreferrer">
+                  OPEN SOURCE ↗
+                </a>
+              </div>
+            </header>
+
+            <div className="week-ten-reading-body">
+              <div className="week-ten-quote">
+                <p>KEY PASSAGE / {article.page}</p>
+                <blockquote>{article.quote}</blockquote>
+              </div>
+              <div className="week-ten-response">
+                <div>
+                  <p>CITATION / APA</p>
+                  <p>{article.citation}</p>
+                </div>
+                <div>
+                  <p>HOW IT COULD INFORM OR CHALLENGE MY EXPERIMENT</p>
+                  <p>{article.response}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="week-ten-implication">
+        <header>
+          <span>03</span>
+          <div>
+            <p>WORKING IMPLICATION / PROTOTYPE 2</p>
+            <h2>
+              THE CHRONICLE IS ONE RECORDING SYSTEM, NOT THE FINAL ANSWER.
+            </h2>
+          </div>
+        </header>
+        <div>
+          <p>
+            The next experiment will compare how government policy, news,
+            medical and educational records, technological release histories,
+            aggregated statistics, and first-person language make the same
+            historical period legible in different ways.
+          </p>
+          <blockquote>
+            WHAT VERSION OF HISTORICAL CHANGE DOES EACH SYSTEM MAKE VISIBLE?
+          </blockquote>
+        </div>
+      </section>
+    </article>
+  );
+}
+
 function BracketStatement({ statement }: { statement: string }) {
   return (
     <p className="research-activity-statement">
-      {statement.split(/(\[[^\]]+\])/g).map((part, index) =>
-        part.startsWith('[') ? (
-          <strong key={`${part}-${index}`}>{part}</strong>
-        ) : (
-          <span key={`${part}-${index}`}>{part}</span>
-        ),
-      )}
+      {statement
+        .split(/(\[[^\]]+\])/g)
+        .map((part, index) =>
+          part.startsWith('[') ? (
+            <strong key={`${part}-${index}`}>{part}</strong>
+          ) : (
+            <span key={`${part}-${index}`}>{part}</span>
+          ),
+        )}
     </p>
   );
 }
