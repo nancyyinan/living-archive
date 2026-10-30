@@ -1148,46 +1148,49 @@ export function WeekNinePresentationPage() {
   );
 }
 
-const weekTenArticles = [
+const weekNineArticles = [
   {
     number: '01',
-    title: 'ARCHIVES, RECORDS, AND POWER: THE MAKING OF MODERN MEMORY',
-    authors: 'JOAN M. SCHWARTZ + TERRY COOK',
-    publication: 'ARCHIVAL SCIENCE / 2002',
-    href: 'https://doi.org/10.1007/BF02435628',
+    catalogNumber: 'ARTICLE 07',
+    title:
+      'WHAT ARE WE ACTUALLY TALKING ABOUT? CONCEPTUALIZING DATA AS A GOVERNABLE OBJECT IN OVERLAPPING JURISDICTIONS',
+    authors: 'ANKE SOPHIA OBENDIEK',
+    publication: 'INTERNATIONAL STUDIES QUARTERLY / 2022',
+    href: 'https://doi.org/10.1093/isq/sqab080',
     citation:
-      'Schwartz, J. M., & Cook, T. (2002). Archives, records, and power: The making of modern memory. Archival Science, 2(1-2), 1-19. https://doi.org/10.1007/BF02435628',
-    quote:
-      '“Through archives, the past is controlled. Certain stories are privileged and others marginalized.”',
-    page: 'P. 1',
+      'Obendiek, A. S. (2022). What are we actually talking about? Conceptualizing data as a governable object in overlapping jurisdictions. International Studies Quarterly. https://doi.org/10.1093/isq/sqab080',
+    keyIdea:
+      'THE SAME THING CALLED DATA CAN TAKE RADICALLY DIFFERENT MEANINGS ACROSS INSTITUTIONAL CONTEXTS.',
+    focus: 'DATA / JURISDICTION / GOVERNANCE',
     response:
-      'This article could inform my experiment by treating selection, classification, and display as active forces that construct public memory, requiring me to make the criteria behind my political, medical, educational, and technological chronicle visible rather than presenting the archive as neutral.',
+      'Obendiek compares conflicts over data governance across medicine, national security, and commerce. Data may be treated as patient privacy and public research material, as sensitive intelligence or a security resource, or as an economic asset that can circulate and be traded. The article asks the project to show which institution is naming and governing each record—and how that decision shapes rights, resources, privacy, and access to historical information.',
   },
   {
     number: '02',
-    title: 'THE VALUE OF NARRATIVITY IN THE REPRESENTATION OF REALITY',
-    authors: 'HAYDEN WHITE',
-    publication: 'CRITICAL INQUIRY / 1980',
-    href: 'https://doi.org/10.1086/448086',
+    catalogNumber: 'ARTICLE 30',
+    title: 'VISIBILITY: A CATEGORY FOR THE SOCIAL SCIENCES',
+    authors: 'ANDREA BRIGHENTI',
+    publication: 'CURRENT SOCIOLOGY / 2007 / PP. 323–342',
+    href: 'https://doi.org/10.1177/0011392107076079',
     citation:
-      'White, H. (1980). The value of narrativity in the representation of reality. Critical Inquiry, 7(1), 5-27. https://doi.org/10.1086/448086',
-    quote:
-      '“Does the world really present itself to perception in the form of well-made stories?”',
-    page: 'P. 27',
+      'Brighenti, A. (2007). Visibility: A category for the social sciences. Current Sociology, 55(3), 323–342. https://doi.org/10.1177/0011392107076079',
+    keyIdea:
+      'VISIBILITY ALWAYS CARRIES A DOUBLE CONSEQUENCE: RECOGNITION AND CONTROL.',
+    focus: 'VISIBILITY / RECOGNITION / CONTROL',
     response:
-      'This article challenges my experiment to show that chronology alone does not explain historical change, so the spatial work must reveal how editing, grouping, scale, and sequence turn a list of events into a particular historical narrative.',
+      'Brighenti argues that visibility is neither natural nor automatically positive. Being visible can bring institutional recognition, but the same record can also make a person easier to observe and manage; invisibility can conceal or protect. This complicates the project’s aim of “making invisible histories visible” by requiring every act of disclosure to ask: visible to whom, through what system, and with what consequences?',
   },
 ];
 
-export function WeekTenPage() {
+export function WeekNineReadingPage() {
   return (
     <article className="week-ten-page">
       <WeekHeading
-        number="10"
+        number="09"
         date="OCT 29 2026"
         isoDate="2026-10-29"
-        title="RECORDING SYSTEMS / HISTORICAL LEGIBILITY"
-        description="Two articles that reposition the archive as a system that actively constructs historical meaning."
+        title="DATA / VISIBILITY / GOVERNANCE"
+        description="Two articles on how institutions define data and how visibility produces recognition and control."
       />
 
       <section
@@ -1196,24 +1199,22 @@ export function WeekTenPage() {
       >
         <p>REVISED RESEARCH QUESTION</p>
         <h1 id="week-ten-question-heading">
-          HOW DO SYSTEMS OF RECORDING SHAPE THE WAY HISTORICAL CHANGE BECOMES
-          LEGIBLE?
+          HOW DO RECORDING SYSTEMS MAKE HISTORIES VISIBLE—AND TO WHOM?
         </h1>
         <p>
-          The project is shifting from displaying the scale of a personal
-          archive toward examining how political, medical, educational, and
-          technological records construct different versions of historical
-          change.
+          Records do more than describe society. Across institutional contexts,
+          they can shape personal rights, resource allocation, privacy,
+          surveillance, and access to historical information.
         </p>
       </section>
 
       <section className="week-ten-readings" aria-label="Two relevant articles">
-        {weekTenArticles.map((article) => (
+        {weekNineArticles.map((article) => (
           <article className="week-ten-reading" key={article.number}>
             <header>
               <span>{article.number}</span>
               <div>
-                <p>RELEVANT ARTICLE</p>
+                <p>{article.catalogNumber} / RELEVANT READING</p>
                 <h2>{article.title}</h2>
               </div>
               <div className="week-ten-source">
@@ -1227,8 +1228,8 @@ export function WeekTenPage() {
 
             <div className="week-ten-reading-body">
               <div className="week-ten-quote">
-                <p>KEY PASSAGE / {article.page}</p>
-                <blockquote>{article.quote}</blockquote>
+                <p>KEY IDEA / {article.focus}</p>
+                <blockquote>{article.keyIdea}</blockquote>
               </div>
               <div className="week-ten-response">
                 <div>
@@ -1251,19 +1252,18 @@ export function WeekTenPage() {
           <div>
             <p>WORKING IMPLICATION / PROTOTYPE 2</p>
             <h2>
-              THE CHRONICLE IS ONE RECORDING SYSTEM, NOT THE FINAL ANSWER.
+              THE PROJECT CANNOT TREAT VISIBILITY AS AN UNCOMPLICATED GOOD.
             </h2>
           </div>
         </header>
         <div>
           <p>
-            The next experiment will compare how government policy, news,
-            medical and educational records, technological release histories,
-            aggregated statistics, and first-person language make the same
-            historical period legible in different ways.
+            The next experiment will track how the same record changes meaning
+            across medical, security, commercial, and archival contexts, while
+            showing how recognition and control are produced together.
           </p>
           <blockquote>
-            WHAT VERSION OF HISTORICAL CHANGE DOES EACH SYSTEM MAKE VISIBLE?
+            VISIBLE TO WHOM, THROUGH WHAT SYSTEM, AND WITH WHAT CONSEQUENCES?
           </blockquote>
         </div>
       </section>

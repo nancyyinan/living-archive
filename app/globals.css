@@ -3918,17 +3918,40 @@ img {
     display: grid;
   }
   .week-ten-question {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 12px;
-    min-height: 720px;
+    display: flex;
+    min-width: 0;
+    min-height: 680px;
+    flex-direction: column;
+    gap: 24px;
     padding: 24px 12px;
   }
+  .week-ten-page {
+    overflow-x: clip;
+  }
+  .week-ten-page .week-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    min-height: 0;
+  }
+  .week-ten-page .week-heading > span,
+  .week-ten-page .week-heading > div,
+  .week-ten-page .week-heading time {
+    grid-column: 1;
+  }
+  .week-ten-page .week-heading > div {
+    min-width: 0;
+  }
+  .week-ten-page .week-heading h1 {
+    overflow-wrap: anywhere;
+  }
   .week-ten-question h1 {
-    grid-column: 1 / -1;
-    font-size: clamp(42px, 12.5vw, 72px);
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: clamp(38px, 10.4vw, 56px);
   }
   .week-ten-question > p:last-child {
-    grid-column: 2;
+    max-width: 100%;
   }
   .week-ten-readings,
   .week-ten-implication {
@@ -3942,6 +3965,7 @@ img {
     padding: 32px 0;
   }
   .week-ten-reading h2 {
+    overflow-wrap: anywhere;
     font-size: clamp(30px, 9vw, 48px);
   }
   .week-ten-source {

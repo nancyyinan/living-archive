@@ -59,12 +59,9 @@ export function Header({
         <a href={sitePath('/week-09')} onClick={go('/week-09')}>
           WEEK 09
         </a>
-        <a href={sitePath('/week-10')} onClick={go('/week-10')}>
-          WEEK 10
-        </a>
       </nav>
       <div className="header-actions">
-        <span className="updated">UPDATED OCT 29 2026</span>
+        <span className="updated">UPDATED OCT 30 2026</span>
         <button
           className="text-button theme-trigger"
           onClick={onToggleTheme}
@@ -108,10 +105,7 @@ export function Header({
               WEEK 07 / OCT 09 2026
             </a>
             <a href={sitePath('/week-09')} onClick={go('/week-09')}>
-              WEEK 09 / OCT 23 2026
-            </a>
-            <a href={sitePath('/week-10')} onClick={go('/week-10')}>
-              WEEK 10 / OCT 29 2026
+              WEEK 09 / OCT 29 2026
             </a>
             <button className="text-button" onClick={onToggleTheme}>
               SWITCH TO {theme === 'dark' ? 'WHITE' : 'BLACK'} MODE

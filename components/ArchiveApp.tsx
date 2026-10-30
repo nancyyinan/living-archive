@@ -15,10 +15,7 @@ import {
   WeekFiveResearchActivitiesPage,
   WeekSixPage,
   WeekSevenPage,
-  WeekNinePage,
-  WeekNinePresentationPage,
-  WeekNineWhatIfPage,
-  WeekTenPage,
+  WeekNineReadingPage,
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
@@ -303,14 +300,8 @@ export function ArchiveApp() {
     content = <WeekSixPage />;
   } else if (collection === 'week-07') {
     content = <WeekSevenPage />;
-  } else if (collection === 'week-09' && detailId === 'what-if') {
-    content = <WeekNineWhatIfPage />;
-  } else if (collection === 'week-09' && detailId === 'presentation') {
-    content = <WeekNinePresentationPage />;
   } else if (collection === 'week-09') {
-    content = <WeekNinePage onNavigate={navigate} />;
-  } else if (collection === 'week-10') {
-    content = <WeekTenPage />;
+    content = <WeekNineReadingPage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />
