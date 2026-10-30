@@ -1185,9 +1185,9 @@ const weekNineArticles = [
       'WHAT ARE WE ACTUALLY TALKING ABOUT? CONCEPTUALIZING DATA AS A GOVERNABLE OBJECT IN OVERLAPPING JURISDICTIONS',
     authors: 'ANKE SOPHIA OBENDIEK',
     publication: 'INTERNATIONAL STUDIES QUARTERLY / 2022',
-    href: 'https://doi.org/10.1093/isq/sqab080',
+    href: 'https://search.library.newschool.edu/nde/fulldisplay?vid=01NYU_TNS:TNSNDE&tab=TNS_Local_Catalog_NDE&search_scope=NDE_MyInst_and_CI&offset=0&query=WHAT%20ARE%20WE%20ACTUALLY%20TALKING%20ABOUT%3F%20CONCEPTUALIZING%20DATA%20AS%20A%20GOVERNABLE%20OBJECT%20IN%20OVERLAPPING%20JURISDICTIONS&lang=en&docid=cdi_oup_primary_10_1093_isq_sqab080&adaptor=Primo%20Central&context=PC&isFrbr=true&isHighlightedRecord=false&state=',
     citation:
-      'Obendiek, A. S. (2022). What are we actually talking about? Conceptualizing data as a governable object in overlapping jurisdictions. International Studies Quarterly. https://doi.org/10.1093/isq/sqab080',
+      'Obendiek, Anke Sophia. “What Are We Actually Talking About? Conceptualizing Data as a Governable Object in Overlapping Jurisdictions.” International Studies Quarterly 66, no. 1 (2022): sqab080. https://doi.org/10.1093/isq/sqab080.',
     keyIdea:
       'THE SAME THING CALLED DATA CAN TAKE RADICALLY DIFFERENT MEANINGS ACROSS INSTITUTIONAL CONTEXTS.',
     focus: 'DATA / JURISDICTION / GOVERNANCE',
@@ -1200,9 +1200,9 @@ const weekNineArticles = [
     title: 'VISIBILITY: A CATEGORY FOR THE SOCIAL SCIENCES',
     authors: 'ANDREA BRIGHENTI',
     publication: 'CURRENT SOCIOLOGY / 2007 / PP. 323–342',
-    href: 'https://doi.org/10.1177/0011392107076079',
+    href: 'https://search.library.newschool.edu/nde/fulldisplay?vid=01NYU_TNS:TNSNDE&tab=TNS_Local_Catalog_NDE&search_scope=NDE_MyInst_and_CI&offset=0&query=VISIBILITY:%20A%20CATEGORY%20FOR%20THE%20SOCIAL%20SCIENCES&lang=en&docid=cdi_webofscience_primary_000247201100001&adaptor=Primo%20Central&context=PC&isFrbr=true&isHighlightedRecord=false&state=',
     citation:
-      'Brighenti, A. (2007). Visibility: A category for the social sciences. Current Sociology, 55(3), 323–342. https://doi.org/10.1177/0011392107076079',
+      'Brighenti, Andrea. “Visibility: A Category for the Social Sciences.” Current Sociology 55, no. 3 (2007): 323–42. https://doi.org/10.1177/0011392107076079.',
     keyIdea:
       'VISIBILITY ALWAYS CARRIES A DOUBLE CONSEQUENCE: RECOGNITION AND CONTROL.',
     focus: 'VISIBILITY / RECOGNITION / CONTROL',
@@ -1250,7 +1250,7 @@ export function WeekNineReadingPage() {
                 <p>{article.authors}</p>
                 <p>{article.publication}</p>
                 <a href={article.href} target="_blank" rel="noreferrer">
-                  OPEN SOURCE ↗
+                  OPEN VIA THE NEW SCHOOL ↗
                 </a>
               </div>
             </header>
@@ -1262,7 +1262,7 @@ export function WeekNineReadingPage() {
               </div>
               <div className="week-ten-response">
                 <div>
-                  <p>CITATION / APA</p>
+                  <p>CITATION / CHICAGO</p>
                   <p>{article.citation}</p>
                 </div>
                 <div>
