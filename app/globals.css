@@ -596,7 +596,7 @@ img {
 }
 
 .collection-grid.week-nine-collection-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .week-nine-what-if-preview {
@@ -641,6 +641,56 @@ img {
   height: 100%;
   border: 1px solid var(--border);
   object-fit: contain;
+}
+
+.week-nine-reading-preview {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.week-nine-reading-preview > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--background);
+}
+
+.week-nine-reading-preview header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.week-nine-reading-preview span {
+  font-size: clamp(24px, 2.5vw, 42px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.week-nine-reading-preview p {
+  max-width: 190px;
+  margin: 0;
+  color: var(--tertiary);
+  font:
+    9px/1.35 var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+.week-nine-reading-preview h3 {
+  max-width: 420px;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(18px, 1.7vw, 28px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 
 .week-nine-section-heading > span,
@@ -3863,6 +3913,9 @@ img {
   }
   .week-nine-what-if-preview > div {
     padding: 10px;
+  }
+  .week-nine-reading-preview > div {
+    padding: 12px;
   }
   .week-nine-section-heading > p {
     grid-column: 2;

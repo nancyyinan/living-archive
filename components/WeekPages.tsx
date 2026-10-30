@@ -961,7 +961,7 @@ export function WeekNinePage({
         date="OCT 23 2026"
         isoDate="2026-10-23"
         title="WHAT IF / PROTOTYPE 1"
-        description="Nine possibilities transcribed from class feedback, followed by documentation of the presentation shown in class."
+        description="Nine possibilities from class feedback, the Prototype 1 presentation, and two readings that revise the research question."
       />
 
       <section
@@ -1002,6 +1002,35 @@ export function WeekNinePage({
           <div className="collection-meta">
             <span>02 / PROTOTYPE 1 / CLASS PRESENTATION</span>
             <span>20 SLIDES / FIGMA DECK</span>
+            <span className="open-label">OPEN →</span>
+          </div>
+        </a>
+
+        <a
+          className="collection-card"
+          href={sitePath('/week-09/articles')}
+          onClick={go('/week-09/articles')}
+          aria-label="Open Data, Visibility, and Governance readings"
+        >
+          <div className="collection-preview week-nine-reading-preview">
+            <div>
+              <header>
+                <span>07</span>
+                <p>DATA / JURISDICTION / GOVERNANCE</p>
+              </header>
+              <h3>WHAT ARE WE ACTUALLY TALKING ABOUT?</h3>
+            </div>
+            <div>
+              <header>
+                <span>30</span>
+                <p>VISIBILITY / RECOGNITION / CONTROL</p>
+              </header>
+              <h3>VISIBILITY: A CATEGORY FOR THE SOCIAL SCIENCES</h3>
+            </div>
+          </div>
+          <div className="collection-meta">
+            <span>03 / DATA / VISIBILITY / GOVERNANCE</span>
+            <span>2 ARTICLES / 2 CONCEPTS / 1 RESEARCH QUESTION</span>
             <span className="open-label">OPEN →</span>
           </div>
         </a>
@@ -1186,7 +1215,7 @@ export function WeekNineReadingPage() {
   return (
     <article className="week-ten-page">
       <WeekHeading
-        number="09"
+        number="09 / 03"
         date="OCT 29 2026"
         isoDate="2026-10-29"
         title="DATA / VISIBILITY / GOVERNANCE"

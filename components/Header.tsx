@@ -105,7 +105,7 @@ export function Header({
               WEEK 07 / OCT 09 2026
             </a>
             <a href={sitePath('/week-09')} onClick={go('/week-09')}>
-              WEEK 09 / OCT 29 2026
+              WEEK 09 / OCT 23 2026
             </a>
             <button className="text-button" onClick={onToggleTheme}>
               SWITCH TO {theme === 'dark' ? 'WHITE' : 'BLACK'} MODE

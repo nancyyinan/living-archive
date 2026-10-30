@@ -13,12 +13,12 @@ export interface ArchiveWeek {
 export const archiveWeeks: ArchiveWeek[] = [
   {
     number: '09',
-    date: 'OCT 29 2026',
-    isoDate: '2026-10-29',
-    title: 'DATA / VISIBILITY / GOVERNANCE',
+    date: 'OCT 23 2026',
+    isoDate: '2026-10-23',
+    title: 'WHAT IF / PROTOTYPE 1 + READINGS',
     description:
-      'Two readings on how institutions define data and how visibility produces recognition and control.',
-    contents: '2 ARTICLES / 2 CONCEPTS / 1 RESEARCH QUESTION',
+      'Class feedback, the Prototype 1 presentation, and two readings on data governance and visibility.',
+    contents: '9 WHAT IFS / 20 SLIDES / 2 ARTICLES',
     href: '/week-09',
   },
   {
