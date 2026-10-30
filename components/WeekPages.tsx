@@ -1015,14 +1015,14 @@ export function WeekNinePage({
           <div className="collection-preview week-nine-reading-preview">
             <div>
               <header>
-                <span>07</span>
+                <span>01</span>
                 <p>DATA / JURISDICTION / GOVERNANCE</p>
               </header>
               <h3>WHAT ARE WE ACTUALLY TALKING ABOUT?</h3>
             </div>
             <div>
               <header>
-                <span>30</span>
+                <span>02</span>
                 <p>VISIBILITY / RECOGNITION / CONTROL</p>
               </header>
               <h3>VISIBILITY: A CATEGORY FOR THE SOCIAL SCIENCES</h3>
@@ -1180,7 +1180,7 @@ export function WeekNinePresentationPage() {
 const weekNineArticles = [
   {
     number: '01',
-    catalogNumber: 'ARTICLE 07',
+    catalogNumber: 'ARTICLE 01',
     title:
       'WHAT ARE WE ACTUALLY TALKING ABOUT? CONCEPTUALIZING DATA AS A GOVERNABLE OBJECT IN OVERLAPPING JURISDICTIONS',
     authors: 'ANKE SOPHIA OBENDIEK',
@@ -1196,7 +1196,7 @@ const weekNineArticles = [
   },
   {
     number: '02',
-    catalogNumber: 'ARTICLE 30',
+    catalogNumber: 'ARTICLE 02',
     title: 'VISIBILITY: A CATEGORY FOR THE SOCIAL SCIENCES',
     authors: 'ANDREA BRIGHENTI',
     publication: 'CURRENT SOCIOLOGY / 2007 / PP. 323–342',
