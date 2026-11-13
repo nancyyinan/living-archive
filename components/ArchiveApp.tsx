@@ -394,9 +394,12 @@ export function ArchiveApp() {
   }
 
   return (
-    <main className={`archive-shell ${ready ? 'is-ready' : ''}`}>
+    <main
+      className={`archive-shell ${ready ? 'is-ready' : ''} ${collection === 'week-13' ? 'is-week-13' : ''}`}
+    >
       <Header
         editMode={editMode}
+        scheduleMode={collection === 'week-13'}
         theme={theme}
         onAdd={() => openAdd()}
         onNavigate={navigate}

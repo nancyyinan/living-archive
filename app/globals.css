@@ -5840,3 +5840,120 @@ img {
     gap: 8px;
   }
 }
+
+/* Week 13 — readable type and sentence case */
+@media screen {
+  .archive-shell.is-week-13 .site-header {
+    min-height: 60px;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .archive-shell.is-week-13 .site-title {
+    font-size: 16px;
+  }
+
+  .archive-shell.is-week-13 .site-header nav {
+    gap: 18px;
+  }
+
+  .archive-shell.is-week-13 .text-button {
+    font-size: 14px;
+  }
+
+  .schedule-page-simple .schedule-hero-meta,
+  .schedule-page-simple .schedule-hero-title > p,
+  .schedule-page-simple .schedule-phase-nav span,
+  .schedule-page-simple .schedule-phase-nav small,
+  .schedule-page-simple .schedule-week-header > div > p,
+  .schedule-page-simple .schedule-week-header > time,
+  .schedule-page-simple .schedule-final-package header > span,
+  .schedule-page-simple .schedule-methodology header > span {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  .schedule-page-simple .schedule-phase-nav strong {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .schedule-page-simple .schedule-day summary {
+    min-height: 112px;
+  }
+
+  .schedule-page-simple .schedule-day-index,
+  .schedule-page-simple .schedule-day-date,
+  .schedule-page-simple .schedule-day-date time,
+  .schedule-page-simple .schedule-day-output,
+  .schedule-page-simple .schedule-day-output small,
+  .schedule-page-simple .schedule-day-details > span,
+  .schedule-page-simple .schedule-deliverables > span,
+  .schedule-page-simple .schedule-deliverables > p,
+  .schedule-page-simple .schedule-final-package li p,
+  .schedule-page-simple .schedule-methodology h3,
+  .schedule-page-simple .schedule-methodology li p {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  .schedule-page-simple .schedule-day summary h3 {
+    font-size: clamp(22px, 1.7vw, 29px);
+    letter-spacing: -0.025em;
+  }
+
+  .schedule-page-simple .schedule-day-details li {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .schedule-page-simple .schedule-final-package li,
+  .schedule-page-simple .schedule-methodology li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    padding: 16px 0;
+  }
+
+  .schedule-page-simple .schedule-final-package li > span,
+  .schedule-page-simple .schedule-methodology li > span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .archive-shell.is-week-13 .site-header {
+    grid-template-columns: 1fr auto;
+    font-size: 14px;
+  }
+
+  .archive-shell.is-week-13 .site-header nav,
+  .archive-shell.is-week-13 .header-actions > .updated,
+  .archive-shell.is-week-13 .header-actions > .theme-trigger,
+  .archive-shell.is-week-13 .header-actions > .mode-trigger,
+  .archive-shell.is-week-13 .header-actions > .add-trigger {
+    display: none;
+  }
+
+  .archive-shell.is-week-13 .mobile-index {
+    display: block;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .archive-shell.is-week-13 .site-header {
+    min-height: 56px;
+    font-size: 14px;
+  }
+
+  .archive-shell.is-week-13 .mobile-index,
+  .archive-shell.is-week-13 .mobile-index .text-button {
+    font-size: 14px;
+  }
+
+  .schedule-page-simple .schedule-day summary {
+    min-height: 126px;
+  }
+}

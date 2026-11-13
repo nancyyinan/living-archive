@@ -347,20 +347,31 @@ const methods = [
   },
 ];
 
+function sentenceCase(value: string) {
+  const normalized = value.toLocaleLowerCase('en-US');
+  const sentence = normalized.charAt(0).toLocaleUpperCase('en-US') + normalized.slice(1);
+
+  return sentence
+    .replace(/\b(ai)\b/gi, 'AI')
+    .replace(/\b(nov|dec|mon|tue|wed|thu|fri|sat|sun)\b/g, (word) =>
+      word.charAt(0).toUpperCase() + word.slice(1),
+    );
+}
+
 export function ThesisSchedulePage() {
   return (
     <article className="schedule-page schedule-page-simple">
       <header className="schedule-hero">
         <div className="schedule-hero-meta">
-          <span>WEEK 13 / RESEARCH PLAN</span>
-          <span>NOV 16—DEC 06 2026</span>
+          <span>Week 13 / Research plan</span>
+          <span>Nov 16—Dec 06 2026</span>
         </div>
         <div className="schedule-hero-title">
-          <p>THREE-WEEK THESIS RESEARCH SCHEDULE</p>
+          <p>Three-week thesis research schedule</p>
           <h1>
-            THREE WEEKS.
+            Three weeks.
             <br />
-            ONE CLEAR DIRECTION.
+            One clear direction.
           </h1>
         </div>
         <div className="schedule-hero-summary">
@@ -373,8 +384,8 @@ export function ThesisSchedulePage() {
           {scheduleWeeks.map((week) => (
             <a href={`#schedule-week-${week.number}`} key={week.number}>
               <span>{week.number}</span>
-              <strong>{week.phase}</strong>
-              <small>{week.dates}</small>
+              <strong>{sentenceCase(week.phase)}</strong>
+              <small>{sentenceCase(week.dates)}</small>
             </a>
           ))}
         </nav>
@@ -389,10 +400,10 @@ export function ThesisSchedulePage() {
           <header className="schedule-week-header">
             <span className="schedule-week-number">{week.number}</span>
             <div>
-              <p>{week.mode}</p>
-              <h2>{week.phase}</h2>
+              <p>{sentenceCase(week.mode)}</p>
+              <h2>{sentenceCase(week.phase)}</h2>
             </div>
-            <time>{week.dates} 2026</time>
+            <time>{sentenceCase(week.dates)} 2026</time>
             <p className="schedule-week-goal">{week.goal}</p>
           </header>
 
@@ -407,20 +418,20 @@ export function ThesisSchedulePage() {
                     {String(dayIndex + 1).padStart(2, '0')}
                   </span>
                   <span className="schedule-day-date">
-                    <span>{day.day}</span>
-                    <time>{day.date}</time>
+                    <span>{sentenceCase(day.day)}</span>
+                    <time>{sentenceCase(day.date)}</time>
                   </span>
-                  <h3>{day.title}</h3>
+                  <h3>{sentenceCase(day.title)}</h3>
                   <span className="schedule-day-output">
-                    <small>OUTPUT</small>
-                    {day.output}
+                    <small>Output</small>
+                    {sentenceCase(day.output)}
                   </span>
                   <span className="schedule-day-toggle" aria-hidden="true">
                     +
                   </span>
                 </summary>
                 <div className="schedule-day-details">
-                  <span>FOCUS</span>
+                  <span>Focus</span>
                   <ul>
                     {day.tasks.map((task) => (
                       <li key={task}>{task}</li>
@@ -432,8 +443,8 @@ export function ThesisSchedulePage() {
           </div>
 
           <aside className="schedule-deliverables">
-            <span>END OF WEEK {week.number} / DELIVERABLES</span>
-            <p>{week.deliverables.join(' · ')}</p>
+            <span>End of week {week.number} / Deliverables</span>
+            <p>{week.deliverables.map(sentenceCase).join(' · ')}</p>
           </aside>
         </section>
       ))}
@@ -441,8 +452,8 @@ export function ThesisSchedulePage() {
       <div className="schedule-closing">
         <section className="schedule-final-package">
           <header>
-            <span>DEC 06 / FINAL CHECKPOINT</span>
-            <h2>FINAL PACKAGE</h2>
+            <span>Dec 06 / Final checkpoint</span>
+            <h2>Final package</h2>
             <p>
               A credible, evidence-based direction ready for critique—not a
               finished thesis.
@@ -452,7 +463,7 @@ export function ThesisSchedulePage() {
             {finalPackage.map((item, index) => (
               <li key={item}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
-                <p>{item}</p>
+                <p>{sentenceCase(item)}</p>
               </li>
             ))}
           </ol>
@@ -460,15 +471,15 @@ export function ThesisSchedulePage() {
 
         <section className="schedule-methodology">
           <header>
-            <span>METHODOLOGY</span>
-            <h2>INVESTIGATE BEFORE VISUALIZING.</h2>
+            <span>Methodology</span>
+            <h2>Investigate before visualizing.</h2>
           </header>
           <ol>
             {methods.map((method, index) => (
               <li key={method.title}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <div>
-                  <h3>{method.title}</h3>
+                  <h3>{sentenceCase(method.title)}</h3>
                   <p>{method.text}</p>
                 </div>
               </li>
