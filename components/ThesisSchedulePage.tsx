@@ -349,7 +349,7 @@ const methods = [
 
 export function ThesisSchedulePage() {
   return (
-    <article className="schedule-page">
+    <article className="schedule-page schedule-page-simple">
       <header className="schedule-hero">
         <div className="schedule-hero-meta">
           <span>WEEK 13 / RESEARCH PLAN</span>
@@ -358,31 +358,16 @@ export function ThesisSchedulePage() {
         <div className="schedule-hero-title">
           <p>THREE-WEEK THESIS RESEARCH SCHEDULE</p>
           <h1>
-            FROM ABSTRACT IDEAS
+            THREE WEEKS.
             <br />
-            TO A TANGIBLE SUBJECT
+            ONE CLEAR DIRECTION.
           </h1>
         </div>
         <div className="schedule-hero-summary">
           <p>
-            The goal is not to finish a mature visualization prototype. It is
-            to identify a subject I genuinely care about, define the central
-            question, and test its research potential with real evidence.
+            Move from broad interests to one tangible subject, investigate it
+            with real evidence, and define a focused thesis direction.
           </p>
-          <dl>
-            <div>
-              <dt>DURATION</dt>
-              <dd>21 DAYS</dd>
-            </div>
-            <div>
-              <dt>PHASES</dt>
-              <dd>03</dd>
-            </div>
-            <div>
-              <dt>FINAL REVIEW</dt>
-              <dd>DEC 06</dd>
-            </div>
-          </dl>
         </div>
         <nav className="schedule-phase-nav" aria-label="Schedule phases">
           {scheduleWeeks.map((week) => (
@@ -409,110 +394,88 @@ export function ThesisSchedulePage() {
             </div>
             <time>{week.dates} 2026</time>
             <p className="schedule-week-goal">{week.goal}</p>
-            <blockquote>{week.question}</blockquote>
           </header>
 
           <div className="schedule-day-list">
             {week.days.map((day, dayIndex) => (
-              <article
+              <details
                 className={`schedule-day ${day.quiet ? 'is-quiet' : ''}`}
                 key={day.date}
               >
-                <div className="schedule-day-index">
-                  <span>{String(dayIndex + 1).padStart(2, '0')}</span>
-                  <i aria-hidden="true" />
-                </div>
-                <div className="schedule-day-date">
-                  <span>{day.day}</span>
-                  <time>{day.date}</time>
-                </div>
-                <div className="schedule-day-work">
+                <summary>
+                  <span className="schedule-day-index">
+                    {String(dayIndex + 1).padStart(2, '0')}
+                  </span>
+                  <span className="schedule-day-date">
+                    <span>{day.day}</span>
+                    <time>{day.date}</time>
+                  </span>
                   <h3>{day.title}</h3>
+                  <span className="schedule-day-output">
+                    <small>OUTPUT</small>
+                    {day.output}
+                  </span>
+                  <span className="schedule-day-toggle" aria-hidden="true">
+                    +
+                  </span>
+                </summary>
+                <div className="schedule-day-details">
+                  <span>FOCUS</span>
                   <ul>
                     {day.tasks.map((task) => (
                       <li key={task}>{task}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="schedule-day-output">
-                  <span>OUTPUT</span>
-                  <p>{day.output}</p>
-                </div>
-              </article>
+              </details>
             ))}
           </div>
 
           <aside className="schedule-deliverables">
-            <div>
-              <span>END OF WEEK {week.number}</span>
-              <h3>DELIVERABLES</h3>
-            </div>
-            <ol>
-              {week.deliverables.map((deliverable, index) => (
-                <li key={deliverable}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  {deliverable}
-                </li>
-              ))}
-            </ol>
+            <span>END OF WEEK {week.number} / DELIVERABLES</span>
+            <p>{week.deliverables.join(' · ')}</p>
           </aside>
         </section>
       ))}
 
-      <section className="schedule-final-package">
-        <header>
-          <span>DEC 06 / FINAL CHECKPOINT</span>
-          <h2>FINAL RESEARCH PACKAGE</h2>
-          <p>
-            Not a finished thesis. A credible, evidence-based direction ready
-            for critique and continued development.
-          </p>
-        </header>
-        <ol>
-          {finalPackage.map((item, index) => (
-            <li key={item}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <p>{item}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <div className="schedule-closing">
+        <section className="schedule-final-package">
+          <header>
+            <span>DEC 06 / FINAL CHECKPOINT</span>
+            <h2>FINAL PACKAGE</h2>
+            <p>
+              A credible, evidence-based direction ready for critique—not a
+              finished thesis.
+            </p>
+          </header>
+          <ol>
+            {finalPackage.map((item, index) => (
+              <li key={item}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-      <section className="schedule-methodology">
-        <header>
-          <span>METHODOLOGY</span>
-          <h2>INVESTIGATE BEFORE VISUALIZING.</h2>
-          <p>
-            What am I trying to understand—and what becomes visible when these
-            records are connected?
-          </p>
-        </header>
-        <ol>
-          {methods.map((method, index) => (
-            <li key={method.title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <div>
-                <h3>{method.title}</h3>
-                <p>{method.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <footer className="schedule-workflow-shift">
-        <span>WORKFLOW SHIFT</span>
-        <div className="schedule-before">
-          <small>BEFORE</small>
-          <p>COLLECT DATA → DESIGN → FIND RELATIONSHIPS → EXPLAIN</p>
-        </div>
-        <div className="schedule-after">
-          <small>NOW</small>
-          <p>
-            TANGIBLE SUBJECT → INVESTIGATION → RELATIONSHIPS → VISUALIZATION
-          </p>
-        </div>
-      </footer>
+        <section className="schedule-methodology">
+          <header>
+            <span>METHODOLOGY</span>
+            <h2>INVESTIGATE BEFORE VISUALIZING.</h2>
+          </header>
+          <ol>
+            {methods.map((method, index) => (
+              <li key={method.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3>{method.title}</h3>
+                  <p>{method.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
     </article>
   );
 }
