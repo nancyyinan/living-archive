@@ -420,6 +420,84 @@ img {
   height: 58px;
 }
 
+.week-twelve-prototype-stack {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.week-twelve-prototype-preview {
+  display: grid;
+  min-height: 0;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 22px;
+  padding: 26px;
+  overflow: hidden;
+  border-bottom: 1px solid #cbbdaf;
+  background: #f3eee4;
+  color: #35192b;
+}
+
+.week-twelve-prototype-preview header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #cbbdaf;
+}
+
+.week-twelve-prototype-preview header strong {
+  font-size: clamp(20px, 2vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.week-twelve-prototype-preview header span,
+.week-twelve-preview-copy span {
+  font:
+    9px/1.4 var(--font-geist-mono),
+    monospace;
+  letter-spacing: 0.08em;
+}
+
+.week-twelve-preview-copy p {
+  margin: 8px 0 0;
+  font-size: clamp(22px, 2.4vw, 38px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.week-twelve-preview-field {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-auto-rows: minmax(38px, 1fr);
+  gap: 7px;
+  align-content: stretch;
+}
+
+.week-twelve-preview-field i {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  background: #4a2039;
+  color: #f3eee4;
+  font:
+    9px/1 var(--font-geist-mono),
+    monospace;
+  font-style: normal;
+}
+
+.week-twelve-preview-field i:nth-child(4n + 1) {
+  background: #d5dc58;
+  color: #35192b;
+}
+
+.week-twelve-preview-field i:nth-child(4n + 3) {
+  background: #c96d50;
+}
+
+.week-twelve-preview-field i:nth-child(5n) {
+  background: #d05275;
+}
+
 .week-seven-opening {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr) minmax(300px, 0.66fr);

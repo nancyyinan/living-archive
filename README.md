@@ -13,6 +13,7 @@ Communication Design thesis archive for Yinan Xue.
 - `WEEK 06` presents the first interactive prototype, which aligns recurring calendar traces around a shared zero point in time.
 - `WEEK 07` records the decision to complete four inherited diary books and defines two measurable next steps: resolving a material system for the books and testing a comparison with four years of personal records.
 - `WEEK 09` keeps the nine “What if” prompts and Prototype 1 presentation as its first two sections, then adds two readings on data governance and visibility as a third section.
+- `WEEK 12` presents Policy, Otherwise: a nonlinear interface for reading 17 U.S. international-student policy records through chronology and policy relations.
 - Source metadata for Week 1 lives in `data/archive.ts`; the weekly index and writing for Weeks 2, 4, and 5 live in `data/weeks.ts` and `components/WeekPages.tsx`. Book Fair group metadata, image manifests, and the reflection draft live in `data/book-fair.ts`.
 
 ## Owner mode

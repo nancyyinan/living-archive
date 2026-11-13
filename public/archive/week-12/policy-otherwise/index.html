@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A relational chronology of U.S. policy affecting international students." />
+    <title>Policy, Otherwise — International Student Rules</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <button class="home-mark" id="resetView" type="button" aria-label="Reset view">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M5 14.5 16 5l11 9.5M8.5 13v14h15V13M13 27V17h6v10" />
+          </svg>
+        </button>
+        <div class="site-title">
+          <strong>POLICY, OTHERWISE</strong>
+          <span>RELATIONAL CHRONOLOGY</span>
+        </div>
+        <div class="collection-label">
+          <span>ACTIVE COLLECTION</span>
+          <strong>01 / INTERNATIONAL STUDENTS / U.S. / 2016—26</strong>
+        </div>
+        <div class="header-view-switch" role="group" aria-label="Choose a temporal view">
+          <button class="view-button is-active" type="button" data-view="relation">Relation</button>
+          <button class="view-button" type="button" data-view="time">Chronology</button>
+        </div>
+        <nav aria-label="Prototype navigation">
+          <button type="button" id="indexButton">Index <sup id="recordTotal">17</sup></button>
+          <button type="button" id="aboutButton">About</button>
+        </nav>
+      </header>
+
+      <main class="graph-stage" id="graphStage">
+        <div class="mode-context" aria-live="polite">
+          <span id="modeLabel">RELATION VIEW</span>
+          <p id="modeDescription">Policies sit near what they amend, restrict, expand, or reverse.</p>
+          <div class="effect-key" aria-label="Color represents this project's editorial reading of each policy record">
+            <b>COLOR = EDITORIAL EFFECT</b>
+            <ul>
+              <li><i class="expands"></i>Expands access</li>
+              <li><i class="restricts"></i>Restricts access</li>
+              <li><i class="procedural"></i>Changes procedure</li>
+              <li><i class="reverses"></i>Reverses / postpones</li>
+            </ul>
+          </div>
+        </div>
+
+        <svg id="graph" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="graphTitle graphDescription">
+          <title id="graphTitle">A relational map of dated records</title>
+          <desc id="graphDescription">Seventeen policy records can be reorganized as a relation network or a chronological matrix.</desc>
+          <defs>
+            <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+              <path d="M 34 0 L 0 0 0 34" fill="none" stroke="currentColor" stroke-width="0.7" />
+            </pattern>
+            <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="7" />
+            </filter>
+          </defs>
+          <rect class="grid-plane" width="1600" height="900" fill="url(#grid)"></rect>
+          <g id="axisLayer"></g>
+          <g id="edgeLayer"></g>
+          <g id="nodeLayer"></g>
+        </svg>
+
+        <div class="hover-card" id="hoverCard" hidden></div>
+
+        <p class="graph-instruction">Hover to identify · click to inspect · switch views above</p>
+      </main>
+
+      <aside class="drawer index-drawer" id="indexDrawer" aria-hidden="true">
+        <div class="drawer-header">
+          <div><span>U.S. / 2016—2026</span><h2>International student policy</h2></div>
+          <button class="drawer-close" type="button" data-close="indexDrawer" aria-label="Close index">×</button>
+        </div>
+        <div class="index-tools">
+          <label for="recordSearch">SEARCH</label>
+          <input id="recordSearch" type="search" placeholder="date, title, institution, keyword" />
+          <div class="index-filters" role="group" aria-label="Filter policy area">
+            <button class="index-filter is-active" type="button" data-filter="all">All</button>
+            <button class="index-filter" type="button" data-filter="entry">Entry</button>
+            <button class="index-filter" type="button" data-filter="status">Status</button>
+            <button class="index-filter" type="button" data-filter="study">Study</button>
+            <button class="index-filter" type="button" data-filter="work">Work</button>
+          </div>
+        </div>
+        <ol id="recordList" class="record-list"></ol>
+      </aside>
+
+      <aside class="drawer detail-drawer" id="detailDrawer" aria-hidden="true">
+        <div class="drawer-header compact">
+          <span id="detailCount">RECORD 00 / 17</span>
+          <button class="drawer-close" type="button" data-close="detailDrawer" aria-label="Close record">×</button>
+        </div>
+        <div id="detailContent" class="detail-content"></div>
+      </aside>
+
+      <aside class="drawer about-drawer" id="aboutDrawer" aria-hidden="true">
+        <div class="drawer-header">
+          <div>
+            <span>PROTOTYPE QUESTION</span>
+            <h2>How does a policy acquire meaning through what came before and what undid it?</h2>
+          </div>
+          <button class="drawer-close" type="button" data-close="aboutDrawer" aria-label="Close about">×</button>
+        </div>
+        <div class="about-content">
+          <p class="lead">This interface compares two readings of the same archive. <em>Chronology</em> shows when a rule appeared. <em>Relation</em> shows what it replaced, expanded, restricted, or reversed.</p>
+          <section>
+            <span>THE TEST COLLECTION</span>
+            <p>Seventeen primary records trace U.S. policy affecting international students from 2016 to 2026: entry and screening, maintenance of status, modes of study, work after graduation, and court intervention.</p>
+          </section>
+          <section>
+            <span>HOW TO READ THE GRAPH</span>
+            <p>Node position is an argument. In Relation view, policies sit near the documents they amend or answer. In Chronology view, records occupy separate policy rows and never cover one another. Color describes this project's editorial reading of what a record does; it is not an official legal classification.</p>
+          </section>
+          <section>
+            <span>NEXT TEST</span>
+            <p>The international-student collection tests whether a nonlinear timeline can reveal regulatory reversals that a conventional date list makes difficult to see.</p>
+          </section>
+        </div>
+      </aside>
+
+      <div class="scrim" id="scrim" hidden></div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

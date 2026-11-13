@@ -22,6 +22,7 @@ import {
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
+  WeekTwelvePage,
   WeekTwoPage,
 } from '@/components/WeekPages';
 import {
@@ -311,6 +312,8 @@ export function ArchiveApp() {
     content = <WeekNineReadingPage />;
   } else if (collection === 'week-09') {
     content = <WeekNinePage onNavigate={navigate} />;
+  } else if (collection === 'week-12') {
+    content = <WeekTwelvePage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />

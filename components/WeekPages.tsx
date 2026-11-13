@@ -1300,6 +1300,70 @@ export function WeekNineReadingPage() {
   );
 }
 
+export function WeekTwelvePage() {
+  return (
+    <article className="week-six-page week-twelve-page">
+      <WeekHeading
+        number="12"
+        date="NOV 12 2026"
+        isoDate="2026-11-12"
+        title="POLICY, OTHERWISE / NONLINEAR CHRONOLOGY"
+        description="A relational chronology of U.S. policy affecting international students from 2016 to 2026."
+      />
+
+      <section
+        className="week-six-opening week-twelve-opening"
+        aria-labelledby="week-twelve-heading"
+      >
+        <div className="week-six-question">
+          <p>PROTOTYPE / POLICY / INTERNATIONAL STUDENTS / 2016—2026</p>
+          <h1 id="week-twelve-heading">
+            HOW DOES A POLICY ACQUIRE MEANING THROUGH WHAT CAME BEFORE AND WHAT
+            UNDID IT?
+          </h1>
+          <p>
+            Seventeen primary records can be read in two ways. Chronology keeps
+            dates visible across entry, status, study, and work. Relation breaks
+            that sequence to show which rule expands, restricts, reintroduces,
+            withdraws, or postpones another.
+          </p>
+        </div>
+
+        <div className="week-six-prototype-stack week-twelve-prototype-stack">
+          <a
+            className="week-six-prototype-card"
+            href={sitePath('/archive/week-12/policy-otherwise/index.html')}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Policy, Otherwise interactive prototype"
+          >
+            <div className="week-twelve-prototype-preview" aria-hidden="true">
+              <header>
+                <strong>POLICY, OTHERWISE</strong>
+                <span>RELATION / CHRONOLOGY</span>
+              </header>
+              <div className="week-twelve-preview-copy">
+                <span>CHRONOLOGY VIEW</span>
+                <p>ONE ARCHIVE / TWO WAYS OF READING</p>
+              </div>
+              <div className="week-twelve-preview-field">
+                {Array.from({ length: 17 }, (_, index) => (
+                  <i key={index}>{String(index + 1).padStart(2, '0')}</i>
+                ))}
+              </div>
+            </div>
+            <div className="collection-meta">
+              <span>01 / INTERACTIVE PROTOTYPE</span>
+              <span>17 POLICY RECORDS / 2 VIEWS</span>
+              <span className="open-label">OPEN ↗</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </article>
+  );
+}
+
 function BracketStatement({ statement }: { statement: string }) {
   return (
     <p className="research-activity-statement">

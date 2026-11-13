@@ -12,6 +12,16 @@ export interface ArchiveWeek {
 
 export const archiveWeeks: ArchiveWeek[] = [
   {
+    number: '12',
+    date: 'NOV 12 2026',
+    isoDate: '2026-11-12',
+    title: 'POLICY, OTHERWISE / NONLINEAR CHRONOLOGY',
+    description:
+      'A relational chronology of U.S. policy affecting international students, read through sequence and policy effect.',
+    contents: '1 PROTOTYPE / 17 RECORDS / 2 WAYS OF READING',
+    href: '/week-12',
+  },
+  {
     number: '09',
     date: 'OCT 23 2026',
     isoDate: '2026-10-23',
