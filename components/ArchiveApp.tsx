@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { AddPanel } from '@/components/AddPanel';
 import { BrainstormViewer } from '@/components/BrainstormViewer';
 import { Header } from '@/components/Header';
+import { ThesisSchedulePage } from '@/components/ThesisSchedulePage';
 import {
   WeekFiveBookFairCategoryPage,
   WeekFiveBookFairGroupPage,
@@ -314,6 +315,8 @@ export function ArchiveApp() {
     content = <WeekNinePage onNavigate={navigate} />;
   } else if (collection === 'week-12') {
     content = <WeekTwelvePage />;
+  } else if (collection === 'week-13') {
+    content = <ThesisSchedulePage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />

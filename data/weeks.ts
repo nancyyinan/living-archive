@@ -12,6 +12,16 @@ export interface ArchiveWeek {
 
 export const archiveWeeks: ArchiveWeek[] = [
   {
+    number: '13',
+    date: 'NOV 13 2026',
+    isoDate: '2026-11-13',
+    title: 'THREE-WEEK THESIS RESEARCH SCHEDULE',
+    description:
+      'A 21-day path from abstract interests to a tangible, evidence-based thesis direction.',
+    contents: '3 PHASES / 21 DAYS / 12 FINAL DELIVERABLES',
+    href: '/week-13',
+  },
+  {
     number: '12',
     date: 'NOV 12 2026',
     isoDate: '2026-11-12',
