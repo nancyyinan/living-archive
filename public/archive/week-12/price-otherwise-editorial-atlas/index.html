@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive editorial atlas of the systems behind U.S. egg prices, February–April 2025." />
+    <title>Price, Otherwise — Editorial Data Atlas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="project-mark" id="resetView" type="button" aria-label="Reset atlas"><span>02</span><i></i></button>
+        <a class="wordmark" href="#workspace"><strong>Price, Otherwise</strong><small>The hidden systems behind an everyday price</small></a>
+        <div class="view-switch" role="group" aria-label="Choose a view">
+          <button class="view-button is-active" type="button" data-view="relation">Relation</button>
+          <button class="view-button" type="button" data-view="time">Chronology</button>
+        </div>
+        <nav aria-label="Research navigation">
+          <button type="button" id="indexButton">Index <sup id="recordTotal">11</sup></button>
+          <button type="button" id="sourcesButton">Sources <sup id="sourceTotal">6</sup></button>
+          <button type="button" id="aboutButton">About</button>
+        </nav>
+      </header>
+
+      <main class="workspace" id="workspace">
+        <section class="field" aria-labelledby="fieldTitle">
+          <div class="field-heading"><span id="modeLabel">RELATION ATLAS</span><h1 id="fieldTitle">An everyday price is a field of relations.</h1></div>
+          <div class="field-viewport" id="fieldViewport" tabindex="0" aria-label="Scrollable economic data atlas">
+            <div class="field-scene" id="fieldScene">
+              <svg class="atlas-lines" id="connectionLayer" aria-hidden="true"></svg>
+              <div class="upper-layer" id="upperLayer" aria-label="Economic relationship layer"></div>
+              <div class="timeline-layer" id="timelineLayer" aria-label="Chronological evidence layer"></div>
+            </div>
+          </div>
+          <div class="atlas-key" aria-label="Evidence categories">
+            <span><i class="supply"></i>Supply</span><span><i class="wholesale"></i>NY wholesale</span><span><i class="retail"></i>U.S. retail</span><span><i class="mechanism"></i>Mechanism</span>
+          </div>
+        </section>
+
+        <aside class="inspector is-collapsed" id="inspector" aria-live="polite" aria-hidden="true">
+          <div class="inspector-topline"><span id="detailCount">SELECT A POINT</span><button id="closeInspector" type="button" aria-label="Close evidence detail">×</button></div>
+          <div id="detailContent" class="detail-content"></div>
+        </aside>
+
+        <section class="overlay-panel" id="indexPanel" aria-hidden="true">
+          <header><div><span>ALL RECORDS / FEB—APR 2025</span><h2>Evidence index</h2></div><button type="button" data-close-panel aria-label="Close index">×</button></header>
+          <div class="overlay-tools">
+            <input id="recordSearch" type="search" placeholder="Search the evidence" autocomplete="off" />
+            <div class="filter-group" role="group" aria-label="Filter evidence">
+              <button class="filter-button is-active" type="button" data-filter="all">All</button><button class="filter-button" type="button" data-filter="supply">Supply</button><button class="filter-button" type="button" data-filter="wholesale">Wholesale</button><button class="filter-button" type="button" data-filter="retail">Retail</button><button class="filter-button" type="button" data-filter="mechanism">Mechanism</button>
+            </div>
+          </div>
+          <div class="overlay-grid" id="recordList"></div>
+        </section>
+
+        <section class="overlay-panel" id="sourcesPanel" aria-hidden="true">
+          <header><div><span>PRIMARY + FEDERAL EVIDENCE</span><h2>Source library</h2></div><button type="button" data-close-panel aria-label="Close sources">×</button></header>
+          <div class="source-grid" id="sourceList"></div>
+        </section>
+
+        <section class="overlay-panel about-panel" id="aboutPanel" aria-hidden="true">
+          <header><div><span>VISUAL STUDY / EDITORIAL ATLAS</span><h2>Reading price as a system</h2></div><button type="button" data-close-panel aria-label="Close about">×</button></header>
+          <div class="about-grid">
+            <p class="about-lead">The upper field groups economic evidence by market role. Every curved projection leads to the same record on the lower chronology.</p>
+            <article><span>COMPARISON</span><p>Terracotta marks New York wholesale benchmarks. Blue marks the BLS U.S. city average retail series. Their geographic and statistical definitions remain distinct.</p></article>
+            <article><span>RELATIONS</span><p>Fine paths encode only relationships documented in the research dataset. Selecting a point reveals the exact verb, supporting note, and evidence source.</p></article>
+            <article><span>LIMIT</span><p>Sequence and visual proximity do not prove causation. The atlas does not calculate retailer margins or invent observations between monthly values.</p></article>
+          </div>
+        </section>
+
+        <div class="scrim" id="scrim" hidden></div>
+        <div class="quiet-prompt">Select any point to inspect its evidence</div>
+      </main>
+    </div>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reveal the systems behind an egg and stitch source-backed relationships into a personal data map.">
+  <title>Egg, Otherwise — Stitching the Unseen</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <button class="brand" data-view="explore" aria-label="Return to Explore">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span><strong>Egg, Otherwise</strong><small>Stitching the unseen</small></span>
+    </button>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <button class="nav-link is-active" data-view="explore">Explore</button>
+      <button class="nav-link" data-action="threads">My Threads <span class="count-pill" id="thread-count">0</span></button>
+      <button class="nav-link" data-view="stitch">Stitch</button>
+      <button class="nav-link" data-view="egg">My Egg</button>
+      <button class="nav-link" data-view="about">About</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view explore-view is-active" id="view-explore" aria-labelledby="explore-title">
+      <div class="discovery-stage">
+        <div class="discovery-copy">
+          <h1 id="explore-title">What lies behind an egg?</h1>
+          <p id="explore-instruction">Click the egg to begin.</p>
+        </div>
+
+        <div class="atlas-wrap" id="atlas-wrap">
+          <div class="atlas-orbit orbit-one" aria-hidden="true"></div>
+          <div class="atlas-orbit orbit-two" aria-hidden="true"></div>
+          <svg class="atlas-lines" viewBox="0 0 800 650" preserveAspectRatio="none" aria-hidden="true">
+            <g><line x1="400" y1="325" x2="400" y2="72"/><line x1="400" y1="325" x2="665" y2="198"/><line x1="400" y1="325" x2="665" y2="475"/><line x1="400" y1="325" x2="400" y2="585"/><line x1="400" y1="325" x2="135" y2="475"/><line x1="400" y1="325" x2="135" y2="198"/></g>
+          </svg>
+          <button class="egg-core" id="egg-trigger" data-action="open-atlas" aria-label="Reveal the systems behind the egg">
+            <svg viewBox="0 0 150 190" aria-hidden="true"><path d="M75 6C49 6 15 62 15 118c0 38 27 66 60 66s60-28 60-66C135 62 101 6 75 6Z"/></svg>
+            <strong>Begin here</strong>
+            <span>Click the egg</span>
+          </button>
+          <div id="atlas-categories"></div>
+        </div>
+
+        <aside class="category-discovery" id="category-discovery" aria-live="polite" hidden>
+          <span class="category-symbol" id="context-symbol"></span>
+          <div><p id="context-label"></p><h2 id="context-question"></h2></div>
+          <button class="primary-button" id="reveal-records" data-action="reveal-records">Open this layer</button>
+        </aside>
+
+        <div class="atlas-records" id="atlas-records" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
+    <section class="view stitch-view" id="view-stitch" aria-labelledby="stitch-title">
+      <div class="stitch-page-heading">
+        <div><h1 id="stitch-title">Connect what you discover</h1><p id="stitch-guidance">Choose a thread to reveal its supported connections.</p></div>
+        <button class="quiet-button" data-view="explore">Explore more data</button>
+      </div>
+
+      <div class="stitch-workspace">
+        <aside class="thread-sidebar tool-panel">
+          <div class="panel-heading"><h2>My Threads</h2><span id="thread-sidebar-count">0 collected</span></div>
+          <div id="thread-tools" class="thread-tools"></div>
+        </aside>
+
+        <div class="canvas-column">
+          <div class="canvas-topline">
+            <span id="canvas-status">Choose a thread to begin.</span>
+            <label class="toggle-control"><input type="checkbox" id="guide-toggle" checked><span></span>Show guides</label>
+          </div>
+          <div class="canvas-shell" id="canvas-shell">
+            <canvas id="stitch-canvas" aria-label="Egg-shaped data relationship embroidery canvas"></canvas>
+            <div class="empty-canvas-message" id="empty-canvas-message">
+              <strong>No data threads yet.</strong>
+              <p>Collect a sourced record before building a relationship.</p>
+              <button class="small-button" data-view="explore">Explore the egg</button>
+            </div>
+          </div>
+          <div class="canvas-toolbar" role="toolbar" aria-label="Canvas actions">
+            <button data-action="undo" id="undo-button">Undo</button>
+            <button data-action="clear" id="clear-button">Reset canvas</button>
+            <span class="toolbar-note">Positions organize categories and time; they are not measured coordinates.</span>
+            <span id="relationship-total">0 relationships</span>
+            <button data-action="export">Save PNG</button>
+            <button class="primary-button" data-view="egg">View My Egg</button>
+          </div>
+        </div>
+
+        <aside class="record-sidebar tool-panel" id="stitch-inspector">
+          <div class="panel-heading"><h2>Live discovery</h2><span id="live-progress">0 explored</span></div>
+          <div id="inspector-content" class="inspector-content"><div class="inspector-placeholder"><p>Select a record to see what it connects to.</p></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view egg-view" id="view-egg" aria-labelledby="egg-title">
+      <div class="reflection-layout">
+        <div class="reflection-art">
+          <div class="reflection-heading"><h1 id="egg-title">My Egg</h1><p>A map of the records and relationships you chose to explore.</p></div>
+          <div class="final-canvas-shell"><canvas id="final-canvas" aria-label="Completed relationship embroidery"></canvas></div>
+          <div class="final-actions"><button class="primary-button" data-view="stitch">Continue exploring</button><button data-action="export">Save as PNG</button></div>
+        </div>
+        <aside class="reflection-summary">
+          <h2 id="reflection-heading">Your map is waiting for its first connection.</h2>
+          <p id="reflection-copy" class="reflection-copy"></p>
+          <div class="stat-grid" id="summary-stats"></div>
+          <section class="summary-section"><h3>Discoveries</h3><div id="discovery-summary"></div></section>
+          <section class="summary-section"><h3>Relationships stitched</h3><div id="relationship-summary"></div></section>
+          <section class="summary-section"><h3>Records explored</h3><div id="data-represented"></div></section>
+          <section class="summary-section"><h3>Sources</h3><div id="source-summary"></div></section>
+          <button class="text-button danger-link" data-action="reset-all">Reset the entire journey</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view about-view" id="view-about" aria-labelledby="about-title">
+      <div class="about-hero"><h1 id="about-title">A stitch is an act of connecting information.</h1><p>The embroidery grows as the visitor moves from broad possibilities toward specific, source-backed relationships.</p></div>
+      <div class="about-grid">
+        <article><h2>Research question</h2><p>How can participatory data visualization help people construct an understanding of the hidden systems behind an everyday object?</p></article>
+        <article><h2>Interaction rule</h2><p>Data determines which connections are available. The visitor determines which supported paths to pursue.</p></article>
+        <article><h2>Spatial rule</h2><p>Anchors are arranged by thematic sector, process stage, and—where applicable—chronological order. Their positions are not measured quantities.</p></article>
+        <article><h2>Evidence rule</h2><p>Observed comparisons, documented mechanisms, shared contexts, and unsupported pairs remain visually and textually distinct.</p></article>
+      </div>
+      <div class="source-index"><h2>Source families</h2><p>USDA ERS · USDA NASS · USDA AMS · U.S. Bureau of Labor Statistics · FDA · Penn State Extension · Smithsonian Institution · Japan Ministry of Agriculture, Forestry and Fisheries</p></div>
+    </section>
+  </main>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="record-drawer" id="record-drawer" aria-hidden="true" aria-labelledby="drawer-title"><button class="drawer-close" data-action="close-drawer" aria-label="Close record">×</button><div id="drawer-content"></div></aside>
+  <aside class="threads-drawer" id="threads-drawer" aria-hidden="true" aria-labelledby="threads-title">
+    <button class="drawer-close" data-action="close-threads" aria-label="Close threads">×</button>
+    <h2 id="threads-title">My Threads</h2>
+    <p class="drawer-intro">Each thread is a sourced record. Relationships become available only when the required records have been collected.</p>
+    <div id="threads-drawer-list"></div>
+    <button class="primary-button full-button" data-view="stitch">Open the relationship canvas</button>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

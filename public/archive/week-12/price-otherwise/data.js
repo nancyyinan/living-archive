@@ -1,0 +1,91 @@
+const PRICE_OTHERWISE_DATA = {
+  sources: [
+    { id: "ers-note", agency: "USDA Economic Research Service", title: "Retail egg prices fall, following declining wholesale prices", date: "2025-06-03", coverage: "Price movement, retail lag, and HPAI losses", url: "https://www.ers.usda.gov/data-products/charts-of-note/112677" },
+    { id: "ers-may", agency: "USDA Economic Research Service", title: "Livestock, Dairy, and Poultry Outlook: May 2025", date: "2025-05-16", coverage: "Monthly New York wholesale and national retail prices", url: "https://ers.usda.gov/sites/default/files/_laserfiche/outlooks/112616/LDP-M-371.pdf?v=85906" },
+    { id: "ers-march", agency: "USDA Economic Research Service", title: "Livestock, Dairy, and Poultry Outlook: March 2025", date: "2025-03-18", coverage: "Layer inventory, HPAI losses, replacement time", url: "https://www.ers.usda.gov/media/10705/ldp-m-369.pdf" },
+    { id: "bls-fred", agency: "U.S. Bureau of Labor Statistics via FRED", title: "Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average", date: "Monthly series", coverage: "U.S. city average retail price, not seasonally adjusted", url: "https://fred.stlouisfed.org/series/APU0000708111" },
+    { id: "ams-feb", agency: "USDA Agricultural Marketing Service", title: "Egg Markets Overview — February 28, 2025", date: "2025-02-28", coverage: "Weekly New York cartoned large-white wholesale snapshot", url: "https://mymarketnews.ams.usda.gov/filerepo/sites/default/files/3725/2025-02-28/1200497/ams_3725_00065.pdf" },
+    { id: "crs", agency: "Congressional Research Service", title: "U.S. Egg Production and Retail Prices (IF12949)", date: "2025-07-03", coverage: "HPAI response, flock losses, production, and prices", url: "https://www.congress.gov/crs_external_products/IF/PDF/IF12949/IF12949.4.pdf" },
+  ],
+  records: [
+    {
+      id: "hpai-wave", dateLabel: "Mid-Oct 2024 — early Mar 2025", month: "2025-02", title: "HPAI wave reaches laying flocks", category: "supply", type: "Supply disruption", value: "50.7 million", unit: "egg-laying hens depopulated", geography: "United States",
+      definition: "USDA ERS estimate of laying hens removed during the HPAI wave spanning mid-October 2024 through early March 2025.",
+      summary: "Confirmed HPAI in a commercial flock can lead to depopulation of the affected flock. This wave removed productive birds while seasonal demand was strong.",
+      limitation: "This total is not a monthly loss value and does not quantify how much any retail price changed. Timing, location, inventory, demand, contracts, and replacement capacity also matter.",
+      sourceIds: ["ers-note", "ers-march", "crs"], keywords: "HPAI avian influenza depopulation birds flock losses supply",
+    },
+    {
+      id: "layer-inventory", dateLabel: "01 Feb 2025", month: "2025-02", title: "Table-egg layer inventory", category: "supply", type: "Inventory observation", value: "291.5 million", unit: "table-egg layers; 5.8% below a year earlier", geography: "United States",
+      definition: "The number of hens in the productive table-egg laying flock on the first day of the month.",
+      summary: "USDA described this as the lowest February inventory since November 2015, indicating constrained productive capacity at the start of the study window.",
+      limitation: "A first-of-month stock is not monthly egg production. Lay rate, bird age, flock composition, and restocking also affect output.",
+      sourceIds: ["ers-march"], keywords: "inventory layers hens productive capacity supply February",
+    },
+    {
+      id: "supply-pressure", dateLabel: "Feb — Apr 2025", month: "2025-02", title: "Tight supply meets changing demand", category: "mechanism", type: "Market mechanism", value: "Context, not a series", unit: "interpretive relationship", geography: "U.S. egg market",
+      definition: "A research label for the interaction of limited inventories, seasonal demand, and available replacement capacity.",
+      summary: "ERS reports that tight supplies and strong demand contributed to high prices, then declining demand and a pause in new HPAI confirmations accompanied the early-March wholesale decline.",
+      limitation: "This node synthesizes agency reporting. It is not a measured variable and should not be read as a complete causal model.",
+      sourceIds: ["ers-note", "ers-march"], keywords: "demand supply pressure seasonal inventory pause confirmations mechanism",
+    },
+    {
+      id: "wholesale-feb", dateLabel: "Feb 2025 monthly average", month: "2025-02", title: "New York wholesale — February", category: "wholesale", type: "Price observation", value: "$8.20", numericValue: 8.2, unit: "per dozen large eggs", geography: "New York wholesale benchmark",
+      definition: "USDA ERS monthly average of the New York wholesale price for large eggs, compiled from USDA AMS market data.", summary: "The wholesale series reached its high point in this three-month study window.",
+      limitation: "This is a wholesale benchmark, not the price paid by every retailer or consumer. Its product definition and geography differ from the BLS national retail series.", sourceIds: ["ers-note", "ers-may", "ams-feb"], keywords: "February New York wholesale large eggs monthly average peak",
+    },
+    {
+      id: "retail-feb", dateLabel: "Feb 2025 monthly average", month: "2025-02", title: "U.S. retail — February", category: "retail", type: "Price observation", value: "$5.897", numericValue: 5.897, unit: "per dozen Grade A large eggs", geography: "U.S. city average",
+      definition: "BLS average consumer price for a dozen large white Grade A chicken eggs across urban areas priced for the CPI; not seasonally adjusted.", summary: "The national retail average rose in February while the wholesale benchmark was at its study-window peak.",
+      limitation: "BLS says average prices best describe a month's price level. The series combines organic, non-organic, cage-free, free-range, and traditional eggs and is not geographically matched to New York wholesale.", sourceIds: ["bls-fred", "ers-may"], keywords: "February retail BLS FRED US city average Grade A large",
+    },
+    {
+      id: "wholesale-mar", dateLabel: "Mar 2025 monthly average", month: "2025-03", title: "New York wholesale — March", category: "wholesale", type: "Price observation", value: "$5.34", numericValue: 5.34, unit: "per dozen large eggs", geography: "New York wholesale benchmark",
+      definition: "USDA ERS monthly average of the New York wholesale price for large eggs, compiled from USDA AMS market data.", summary: "The benchmark dropped sharply. ERS describes the early-month decline alongside weaker demand and a pause in new HPAI confirmations.",
+      limitation: "The project brief rounded this to about $5.33; the May ERS chart displays $5.34. The accompanying conditions do not prove a single cause.", sourceIds: ["ers-note", "ers-may"], keywords: "March New York wholesale decline 5.34 5.33",
+    },
+    {
+      id: "retail-mar", dateLabel: "Mar 2025 monthly average", month: "2025-03", title: "U.S. retail — March", category: "retail", type: "Price observation", value: "$6.227", numericValue: 6.227, unit: "per dozen Grade A large eggs", geography: "U.S. city average",
+      definition: "BLS average consumer price for a dozen large white Grade A chicken eggs across urban areas priced for the CPI; not seasonally adjusted.", summary: "Retail reached its study-window peak one month after the New York wholesale peak, while wholesale was already lower.",
+      limitation: "The one-month visual offset is descriptive, not proof of fixed pass-through. The series differ in geography, market stage, product mix, and collection method.", sourceIds: ["bls-fred", "ers-note", "crs"], keywords: "March retail peak BLS FRED U.S. city average lag",
+    },
+    {
+      id: "wholesale-apr", dateLabel: "Apr 2025 monthly average", month: "2025-04", title: "New York wholesale — April", category: "wholesale", type: "Price observation", value: "$3.74", numericValue: 3.74, unit: "per dozen large eggs", geography: "New York wholesale benchmark",
+      definition: "USDA ERS monthly average of the New York wholesale price for large eggs, compiled from USDA AMS market data.", summary: "The monthly average was less than half February's level. ERS notes lower seasonal demand despite low inventories.",
+      limitation: "A lower wholesale benchmark does not imply an immediate or equal retail change, and it does not mean supply constraints disappeared.", sourceIds: ["ers-note", "ers-may"], keywords: "April New York wholesale 3.74 seasonal demand low inventories",
+    },
+    {
+      id: "retail-apr", dateLabel: "Apr 2025 monthly average", month: "2025-04", title: "U.S. retail — April", category: "retail", type: "Price observation", value: "$5.122", numericValue: 5.122, unit: "per dozen Grade A large eggs", geography: "U.S. city average",
+      definition: "BLS average consumer price for a dozen large white Grade A chicken eggs across urban areas priced for the CPI; not seasonally adjusted.", summary: "The national retail average turned downward, but remained above the February-to-April wholesale benchmark.",
+      limitation: "The gap is not a retailer-margin calculation. Wholesale and retail observations cover different markets and omit other supply-chain costs.", sourceIds: ["bls-fred", "ers-note", "ers-may"], keywords: "April retail BLS FRED decline 5.122",
+    },
+    {
+      id: "retail-pricing", dateLabel: "Across the study window", month: "2025-03", title: "Contracts and pricing strategies mute movement", category: "mechanism", type: "Price transmission", value: "Variable delay", unit: "directional relationship", geography: "Retail egg market",
+      definition: "Retail prices respond through contracts, inventory decisions, competition, promotions, and other costs rather than a one-to-one formula.", summary: "ERS says these mechanisms can mute short-term wholesale fluctuations; retail changes tend to lag wholesale direction and may remain elevated longer.",
+      limitation: "The sources do not estimate one universal lag length or a pass-through coefficient for these three observations.", sourceIds: ["ers-note"], keywords: "contracts pricing strategies retail lag pass through margin mechanism",
+    },
+    {
+      id: "replacement-time", dateLabel: "Mar 2025 outlook", month: "2025-03", title: "Replacing productive hens takes time", category: "mechanism", type: "Biological delay", value: "Recovery is delayed", unit: "production constraint", geography: "United States",
+      definition: "A flock cannot return instantly after depopulation; pullets must be available, mature, and enter productive laying flocks.", summary: "ERS reported above-average replacement-pullet supply but still expected the industry to require time to rebuild the laying flock.",
+      limitation: "This supports the existence of a recovery delay, not a precise date when supply or prices normalize.", sourceIds: ["ers-march"], keywords: "replacement pullets biology recovery delay production capacity",
+    },
+  ],
+  relations: [
+    ["hpai-wave", "layer-inventory", "reduces", "USDA links HPAI depopulation to fewer productive layers."],
+    ["layer-inventory", "supply-pressure", "constrains", "Lower productive inventory is one component of tight supply."],
+    ["replacement-time", "supply-pressure", "prolongs", "Restocking productive capacity takes time."],
+    ["supply-pressure", "wholesale-feb", "coincides with", "ERS reports tight supply and strong demand alongside the February high."],
+    ["wholesale-feb", "wholesale-mar", "falls before", "The wholesale monthly average turns down from February to March."],
+    ["wholesale-mar", "wholesale-apr", "continues downward", "The wholesale monthly average falls again in April."],
+    ["retail-feb", "retail-mar", "rises into", "The retail average reaches its local peak in March."],
+    ["retail-mar", "retail-apr", "turns downward", "The retail average declines in April."],
+    ["wholesale-feb", "retail-mar", "precedes", "The wholesale peak occurs one month before the retail peak; sequence is not proof."],
+    ["retail-pricing", "retail-mar", "may delay", "ERS says pricing strategies and contracts can mute movement."],
+    ["retail-pricing", "retail-apr", "may keep elevated", "ERS says retail prices can decline more slowly."],
+  ].map(([from, to, verb, note]) => ({ from, to, verb, note })),
+  relationLayout: {
+    "hpai-wave": [230, 265], "layer-inventory": [410, 330], "replacement-time": [275, 610], "supply-pressure": [545, 500],
+    "wholesale-feb": [745, 245], "wholesale-mar": [855, 405], "wholesale-apr": [790, 620],
+    "retail-feb": [1080, 250], "retail-mar": [1245, 390], "retail-apr": [1180, 620], "retail-pricing": [1450, 500],
+  },
+};

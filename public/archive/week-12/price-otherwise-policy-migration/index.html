@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A relational chronology of the supply events, wholesale observations, retail observations, and market mechanisms behind U.S. egg prices in early 2025." />
+    <title>Price, Otherwise — Relational Egg Price Archive</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <button class="home-mark" id="resetView" type="button" aria-label="Reset view">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M5 14.5 16 5l11 9.5M8.5 13v14h15V13M13 27V17h6v10" />
+          </svg>
+        </button>
+        <div class="site-title">
+          <strong>PRICE, OTHERWISE</strong>
+          <span>RELATIONAL CHRONOLOGY</span>
+        </div>
+        <div class="collection-label">
+          <span>ACTIVE COLLECTION</span>
+          <strong>01 / TABLE EGGS / U.S. / FEB—APR 2025</strong>
+        </div>
+        <div class="header-view-switch" role="group" aria-label="Choose a temporal view">
+          <button class="view-button is-active" type="button" data-view="relation">Relation</button>
+          <button class="view-button" type="button" data-view="time">Chronology</button>
+        </div>
+        <nav aria-label="Prototype navigation">
+          <button type="button" id="indexButton">Index <sup id="recordTotal">11</sup></button>
+          <button type="button" id="aboutButton">About</button>
+        </nav>
+      </header>
+
+      <main class="graph-stage" id="graphStage">
+        <div class="mode-context" aria-live="polite">
+          <span id="modeLabel">RELATION VIEW</span>
+          <p id="modeDescription">Records sit near the events, prices, and mechanisms they document or observe.</p>
+          <div class="category-key" aria-label="Color represents record type">
+            <b>COLOR = RECORD TYPE</b>
+            <ul>
+              <li><i class="supply"></i>Supply</li>
+              <li><i class="wholesale"></i>Wholesale</li>
+              <li><i class="retail"></i>Retail</li>
+              <li><i class="mechanism"></i>Mechanism</li>
+            </ul>
+          </div>
+          <div class="relation-key" aria-label="Line style represents evidence status">
+            <b>LINE = EVIDENCE STATUS</b>
+            <ul>
+              <li><i class="documented"></i>Documented mechanism</li>
+              <li><i class="observed"></i>Observed sequence</li>
+            </ul>
+          </div>
+        </div>
+
+        <svg id="graph" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="graphTitle graphDescription">
+          <title id="graphTitle">A relational map of egg price records</title>
+          <desc id="graphDescription">Eleven verified economic records can be reorganized as a relation network or a chronological matrix.</desc>
+          <defs>
+            <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+              <path d="M 34 0 L 0 0 0 34" fill="none" stroke="currentColor" stroke-width="0.7" />
+            </pattern>
+            <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="7" />
+            </filter>
+          </defs>
+          <rect class="grid-plane" width="1600" height="900" fill="url(#grid)"></rect>
+          <g id="axisLayer"></g>
+          <g id="trajectoryLayer"></g>
+          <g id="edgeLayer"></g>
+          <g id="nodeLayer"></g>
+        </svg>
+
+        <div class="hover-card" id="hoverCard" hidden></div>
+        <p class="graph-instruction">Hover to identify · click to inspect · switch views above</p>
+      </main>
+
+      <aside class="drawer index-drawer" id="indexDrawer" aria-hidden="true">
+        <div class="drawer-header">
+          <div><span>U.S. / FEB—APR 2025</span><h2>Egg price evidence</h2></div>
+          <button class="drawer-close" type="button" data-close="indexDrawer" aria-label="Close index">×</button>
+        </div>
+        <div class="index-tools">
+          <label for="recordSearch">SEARCH</label>
+          <input id="recordSearch" type="search" placeholder="date, record, value, source, keyword" />
+          <div class="index-filters" role="group" aria-label="Filter record type">
+            <button class="index-filter is-active" type="button" data-filter="all">All</button>
+            <button class="index-filter" type="button" data-filter="supply">Supply</button>
+            <button class="index-filter" type="button" data-filter="wholesale">Wholesale</button>
+            <button class="index-filter" type="button" data-filter="retail">Retail</button>
+            <button class="index-filter" type="button" data-filter="mechanism">Mechanism</button>
+          </div>
+        </div>
+        <ol id="recordList" class="record-list"></ol>
+      </aside>
+
+      <aside class="drawer detail-drawer" id="detailDrawer" aria-hidden="true">
+        <div class="drawer-header compact">
+          <span id="detailCount">RECORD 00 / 11</span>
+          <button class="drawer-close" type="button" data-close="detailDrawer" aria-label="Close record">×</button>
+        </div>
+        <div id="detailContent" class="detail-content"></div>
+      </aside>
+
+      <aside class="drawer about-drawer" id="aboutDrawer" aria-hidden="true">
+        <div class="drawer-header">
+          <div>
+            <span>PROTOTYPE QUESTION</span>
+            <h2>How does an everyday price acquire meaning through the records around it?</h2>
+          </div>
+          <button class="drawer-close" type="button" data-close="aboutDrawer" aria-label="Close about">×</button>
+        </div>
+        <div class="about-content">
+          <p class="lead">An everyday price is not an isolated number. It is a visible moment within several interconnected economic histories.</p>
+          <section>
+            <span>TWO READINGS OF ONE ARCHIVE</span>
+            <p><em>Chronology</em> asks when the records appeared. <em>Relation</em> asks how supply events, wholesale observations, retail observations, and documented market mechanisms might be connected.</p>
+          </section>
+          <section>
+            <span>EVIDENCE STATUS</span>
+            <p>Solid connections encode mechanisms described by USDA. Dashed connections encode observed temporal sequence. Sequence does not prove causality. No unverified hypothesis is encoded as a connection in this collection.</p>
+          </section>
+          <section>
+            <span>COMPARABILITY LIMIT</span>
+            <p>The New York wholesale benchmark and BLS U.S. city-average retail series differ in geography, product scope, and collection method. Their gap is not a retailer-margin calculation.</p>
+          </section>
+          <section>
+            <span>SOURCES</span>
+            <p>USDA Economic Research Service, USDA Agricultural Marketing Service, and U.S. Bureau of Labor Statistics. Every record links back to its supporting evidence.</p>
+          </section>
+        </div>
+      </aside>
+
+      <div class="scrim" id="scrim" hidden></div>
+    </div>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

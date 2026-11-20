@@ -12,6 +12,16 @@ export interface ArchiveWeek {
 
 export const archiveWeeks: ArchiveWeek[] = [
   {
+    number: '14',
+    date: 'NOV 20 2026',
+    isoDate: '2026-11-20',
+    title: 'EGG, OTHERWISE / STITCHING THE UNSEEN',
+    description:
+      'A participatory data-embroidery prototype for exploring the hidden systems behind an everyday egg.',
+    contents: '1 PROTOTYPE / 14 RECORDS / 7 RELATIONSHIPS',
+    href: '/week-14',
+  },
+  {
     number: '13',
     date: 'NOV 13 2026',
     isoDate: '2026-11-13',

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive evidence workspace for the systems behind U.S. egg prices, February–April 2025." />
+    <title>Price, Otherwise — The Hidden Systems Behind an Everyday Price</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="project-switch" id="resetView" type="button" aria-label="Reset workspace"><i></i><span>Project 02</span></button>
+        <a class="wordmark" href="#workspace"><strong>PRICE, OTHERWISE</strong><small>THE HIDDEN SYSTEMS BEHIND AN EVERYDAY PRICE</small></a>
+        <div class="view-switch" role="group" aria-label="Choose a view">
+          <button class="view-button is-active" type="button" data-view="relation">Relation</button>
+          <button class="view-button" type="button" data-view="time">Chronology</button>
+        </div>
+        <nav aria-label="Research workspace navigation">
+          <button type="button" id="indexButton">Index <sup id="recordTotal">11</sup></button>
+          <button type="button" id="sourcesButton">Sources <sup id="sourceTotal">6</sup></button>
+          <button type="button" id="aboutButton">About</button>
+        </nav>
+      </header>
+
+      <main class="workspace" id="workspace">
+        <section class="field" aria-labelledby="fieldTitle">
+          <div class="field-heading">
+            <span id="modeLabel">RELATION FIELD</span>
+            <h1 id="fieldTitle">One price is a field of evidence.</h1>
+          </div>
+          <div class="field-viewport" id="fieldViewport" tabindex="0" aria-label="Scrollable evidence field">
+            <div class="field-scene" id="fieldScene">
+              <div class="ambient-field" id="ambientField" aria-hidden="true"></div>
+              <svg class="connection-layer" id="connectionLayer" aria-hidden="true"></svg>
+              <div id="cardLayer"></div>
+            </div>
+          </div>
+          <div class="field-key" aria-label="Evidence categories">
+            <span><i class="supply"></i>Supply</span><span><i class="wholesale"></i>Wholesale</span><span><i class="retail"></i>Retail</span><span><i class="mechanism"></i>Mechanism</span>
+          </div>
+        </section>
+
+        <aside class="inspector is-collapsed" id="inspector" aria-live="polite" aria-hidden="true">
+          <div class="inspector-topline"><span id="detailCount">EVIDENCE / SELECT A RECORD</span><button id="closeInspector" type="button" aria-label="Collapse evidence panel">×</button></div>
+          <div id="detailContent" class="detail-content"></div>
+        </aside>
+
+        <section class="overlay-panel" id="indexPanel" aria-hidden="true">
+          <header><div><span>ALL RECORDS / FEB—APR 2025</span><h2>Evidence index</h2></div><button type="button" data-close-panel aria-label="Close index">×</button></header>
+          <div class="overlay-grid" id="recordList"></div>
+        </section>
+
+        <section class="overlay-panel" id="sourcesPanel" aria-hidden="true">
+          <header><div><span>PRIMARY + FEDERAL EVIDENCE</span><h2>Source library</h2></div><button type="button" data-close-panel aria-label="Close sources">×</button></header>
+          <div class="source-grid" id="sourceList"></div>
+        </section>
+
+        <section class="overlay-panel about-panel" id="aboutPanel" aria-hidden="true">
+          <header><div><span>RESEARCH PROTOTYPE 02</span><h2>How can a price show the system behind it?</h2></div><button type="button" data-close-panel aria-label="Close about">×</button></header>
+          <div class="about-grid">
+            <p class="about-lead">This interface treats price as a research object rather than a single number. Relation shows evidence as a spatial field. Chronology aligns two unlike price series while keeping their definitions visible.</p>
+            <article><span>COMPARISON</span><p>Terracotta records are New York wholesale benchmarks for large eggs. Blue records are BLS U.S. city average retail prices for Grade A large eggs. They differ in geography, market stage, and product definition.</p></article>
+            <article><span>CAUSAL CAUTION</span><p>Connections preserve qualified language from the sources: coincides with, contributed to, may delay. Sequence is not presented as proof.</p></article>
+            <article><span>BOUNDARY</span><p>The first study window covers February–April 2025. The system is an evidence interface, not a retailer-margin calculator or complete causal model.</p></article>
+          </div>
+        </section>
+
+        <div class="scrim" id="scrim" hidden></div>
+        <div class="research-bar">
+          <span>ASK THE FIELD</span>
+          <input id="recordSearch" type="search" placeholder="Search a price, date, source, or mechanism" autocomplete="off" />
+          <div class="filter-group" role="group" aria-label="Filter evidence">
+            <button class="filter-button is-active" type="button" data-filter="all">All</button><button class="filter-button" type="button" data-filter="supply">Supply</button><button class="filter-button" type="button" data-filter="wholesale">Wholesale</button><button class="filter-button" type="button" data-filter="retail">Retail</button><button class="filter-button" type="button" data-filter="mechanism">Mechanism</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

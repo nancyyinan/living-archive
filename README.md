@@ -14,6 +14,16 @@ Communication Design thesis archive for Yinan Xue.
 - `WEEK 07` records the decision to complete four inherited diary books and defines two measurable next steps: resolving a material system for the books and testing a comparison with four years of personal records.
 - `WEEK 09` keeps the nine “What if” prompts and Prototype 1 presentation as its first two sections, then adds two readings on data governance and visibility as a third section.
 - `WEEK 12` presents Policy, Otherwise: a nonlinear interface for reading 17 U.S. international-student policy records through chronology and policy relations.
+- `WEEK 12` also includes Price, Otherwise: a source-backed relation and chronology interface for examining U.S. egg prices from February through April 2025 without treating sequence as proof of causation.
+- `WEEK 13` turns a three-week thesis research schedule into a 21-day working page with phases, tasks, and deliverables.
+- `WEEK 14` presents Egg, Otherwise: a participatory data-embroidery prototype in which exploring 14 sourced records unlocks seven documented relationships that can be stitched into a personal evidence map.
+
+### Price, Otherwise framing
+
+- **Research question:** How can interactive data visualization reveal the relationships, delays, and uncertainties hidden behind an everyday price?
+- **Perspective:** Treat the retail price as a visible surface, then look backward through the market stages, delays, and evidence that give it form.
+- **Proposition:** An everyday price is not a single fact. It is a visible surface shaped by systems behind it.
+- **Visual system:** A minimal warm-white field with prismatic color layers and an autoplay sequence. One record comes forward at a time while the relation network, evidence context, and category distinctions remain visible.
 - Source metadata for Week 1 lives in `data/archive.ts`; the weekly index and writing for Weeks 2, 4, and 5 live in `data/weeks.ts` and `components/WeekPages.tsx`. Book Fair group metadata, image manifests, and the reflection draft live in `data/book-fair.ts`.
 
 ## Owner mode

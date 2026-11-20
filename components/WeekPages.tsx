@@ -1332,6 +1332,73 @@ export function WeekTwelvePage() {
         <div className="week-six-prototype-stack week-twelve-prototype-stack">
           <a
             className="week-six-prototype-card"
+            href={sitePath(
+              '/archive/week-12/price-otherwise-policy-migration/index.html',
+            )}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Price, Otherwise original-design migration"
+          >
+            <div
+              className="week-twelve-prototype-preview price-original-preview"
+              aria-hidden="true"
+            >
+              <header>
+                <strong>PRICE, OTHERWISE</strong>
+                <span>RELATION / CHRONOLOGY</span>
+              </header>
+              <div className="week-twelve-preview-copy">
+                <span>ORIGINAL-DESIGN MIGRATION / FEB—APR 2025</span>
+                <p>ONE PRICE / SEVERAL INTERCONNECTED HISTORIES</p>
+              </div>
+              <div className="price-original-preview-field">
+                {Array.from({ length: 11 }, (_, index) => (
+                  <i key={index} />
+                ))}
+              </div>
+            </div>
+            <div className="collection-meta">
+              <span>03 / INDEPENDENT ITERATION</span>
+              <span>11 VERIFIED RECORDS / 2 VIEWS</span>
+              <span className="open-label">OPEN ↗</span>
+            </div>
+          </a>
+
+          <a
+            className="week-six-prototype-card"
+            href={sitePath('/archive/week-12/price-otherwise/index.html')}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Price, Otherwise interactive prototype"
+          >
+            <div
+              className="week-twelve-prototype-preview price-otherwise-preview"
+              aria-hidden="true"
+            >
+              <header>
+                <strong>PRICE, OTHERWISE</strong>
+                <span>RELATION / CHRONOLOGY</span>
+              </header>
+              <div className="week-twelve-preview-copy">
+                <span>PROTOTYPE 2 / FEB—APR 2025</span>
+                <p>THE HIDDEN SYSTEMS BEHIND AN EVERYDAY PRICE</p>
+              </div>
+              <div className="price-otherwise-preview-field">
+                <i className="supply" />
+                <i className="wholesale" />
+                <i className="retail" />
+                <i className="mechanism" />
+              </div>
+            </div>
+            <div className="collection-meta">
+              <span>02 / INTERACTIVE PROTOTYPE</span>
+              <span>11 EVIDENCE RECORDS / 6 SOURCES</span>
+              <span className="open-label">OPEN ↗</span>
+            </div>
+          </a>
+
+          <a
+            className="week-six-prototype-card"
             href={sitePath('/archive/week-12/policy-otherwise/index.html')}
             target="_blank"
             rel="noreferrer"
@@ -1359,6 +1426,89 @@ export function WeekTwelvePage() {
             </div>
           </a>
         </div>
+      </section>
+    </article>
+  );
+}
+
+export function WeekFourteenPage() {
+  return (
+    <article className="week-six-page week-fourteen-page">
+      <WeekHeading
+        number="14"
+        date="NOV 20 2026"
+        isoDate="2026-11-20"
+        title="EGG, OTHERWISE / STITCHING THE UNSEEN"
+        description="A participatory data-embroidery prototype for exploring the hidden systems behind an everyday egg."
+      />
+
+      <section
+        className="week-six-opening week-fourteen-opening"
+        aria-labelledby="week-fourteen-heading"
+      >
+        <div className="week-six-question week-fourteen-question">
+          <p>PROTOTYPE 2 / DATA EMBROIDERY / PARTICIPATORY VISUALIZATION</p>
+          <h1 id="week-fourteen-heading">
+            WHAT IF THE INVISIBLE SYSTEMS BEHIND AN EGG COULD BE STITCHED INTO
+            VIEW?
+          </h1>
+          <p>
+            The experience begins with one familiar object. Exploring its
+            biological, economic, cultural, and material systems unlocks
+            source-backed threads. The visitor then stitches documented
+            relationships—not arbitrary marks—into a personal map of the
+            information they chose to follow.
+          </p>
+          <dl className="week-fourteen-rules">
+            <div>
+              <dt>DATA</dt>
+              <dd>Determines which connections are available.</dd>
+            </div>
+            <div>
+              <dt>VISITOR</dt>
+              <dd>Chooses which supported paths to pursue.</dd>
+            </div>
+            <div>
+              <dt>EMBROIDERY</dt>
+              <dd>Records the resulting path through the evidence.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <a
+          className="week-six-prototype-card week-fourteen-prototype-card"
+          href={sitePath('/archive/week-14/egg-otherwise/index.html')}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open Egg, Otherwise interactive prototype"
+        >
+          <div className="week-fourteen-prototype-preview" aria-hidden="true">
+            <header>
+              <span className="week-fourteen-brand-mark" />
+              <div>
+                <strong>Egg, Otherwise</strong>
+                <span>Stitching the unseen</span>
+              </div>
+            </header>
+            <div className="week-fourteen-preview-copy">
+              <h2>What lies behind an egg?</h2>
+              <p>Explore a system, collect its evidence, then stitch a valid connection.</p>
+            </div>
+            <div className="week-fourteen-atlas">
+              <span className="week-fourteen-egg" />
+              {['Origin', 'Production', 'Journey', 'Economy', 'Nutrition', 'Culture'].map(
+                (category) => (
+                  <i key={category}>{category}</i>
+                ),
+              )}
+            </div>
+          </div>
+          <div className="collection-meta">
+            <span>01 / INTERACTIVE PROTOTYPE</span>
+            <span>14 SOURCED RECORDS / 7 RELATIONSHIPS</span>
+            <span className="open-label">OPEN SITE</span>
+          </div>
+        </a>
       </section>
     </article>
   );

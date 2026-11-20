@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A kinetic visual atlas comparing observed U.S. egg wholesale and retail prices, February–April 2025." />
+    <title>Price, Otherwise — Kinetic Atlas Study</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="study-shell">
+      <header class="study-header">
+        <div class="identity">
+          <strong>PRICE, OTHERWISE</strong>
+          <span>VISUAL STUDY 01</span>
+        </div>
+        <p>KINETIC DATA × VISUAL ATLAS</p>
+        <button id="evidenceButton" type="button">Evidence</button>
+      </header>
+
+      <main class="visualization" aria-labelledby="studyTitle">
+        <h1 id="studyTitle" class="sr-only">Wholesale and retail egg prices, February through April 2025</h1>
+
+        <div class="chart-meta" aria-hidden="true">
+          <span>USD / DOZEN</span>
+          <span>THREE OBSERVED MONTHLY AVERAGES</span>
+        </div>
+
+        <section class="chart-stage" aria-label="Interactive price comparison">
+          <svg id="priceChart" viewBox="0 0 1200 600" role="img" aria-labelledby="chartTitle chartDescription">
+            <title id="chartTitle">New York wholesale and U.S. urban retail egg prices</title>
+            <desc id="chartDescription">Three observed monthly averages from February, March, and April 2025 on one shared zero-to-nine-dollar price axis. Use the month scrubber to select an observation.</desc>
+          </svg>
+        </section>
+
+        <section class="scrub-section" aria-label="Choose an observed month">
+          <div class="scrub-readout">
+            <span>OBSERVED MONTH</span>
+            <output id="monthOutput" for="monthScrubber">February 2025</output>
+          </div>
+          <input id="monthScrubber" type="range" min="0" max="2" step="1" value="0" aria-label="Observed month, February to April 2025" />
+          <div class="month-ticks" aria-hidden="true"><span>FEB</span><span>MAR</span><span>APR</span></div>
+        </section>
+
+        <footer class="study-note">
+          <span>Shared price axis. Observations snap to reported months only.</span>
+          <span>Different geography and market stage; distance is not a retail margin.</span>
+        </footer>
+        <p id="liveDescription" class="sr-only" aria-live="polite"></p>
+      </main>
+    </div>
+
+    <dialog id="evidenceDialog" aria-labelledby="evidenceTitle">
+      <form method="dialog" class="dialog-frame">
+        <button class="dialog-close" value="close" aria-label="Close evidence">Close</button>
+        <div id="evidenceContent"></div>
+      </form>
+    </dialog>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

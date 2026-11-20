@@ -1,0 +1,92 @@
+const PRICE_OTHERWISE_DATA = {
+  months: [
+    {
+      id: "feb",
+      short: "FEB",
+      label: "February 2025",
+      wholesale: 8.2,
+      retail: 5.897,
+      observation: "Wholesale is at the study-window high; retail is lower.",
+    },
+    {
+      id: "mar",
+      short: "MAR",
+      label: "March 2025",
+      wholesale: 5.34,
+      retail: 6.227,
+      observation: "From February to March, wholesale fell while retail rose.",
+    },
+    {
+      id: "apr",
+      short: "APR",
+      label: "April 2025",
+      wholesale: 3.74,
+      retail: 5.122,
+      observation: "Both series are lower than March; retail remains above wholesale.",
+    },
+  ],
+  series: {
+    wholesale: {
+      label: "New York wholesale",
+      geography: "New York wholesale benchmark",
+      product: "Large eggs",
+      definition: "USDA ERS monthly average of the New York wholesale price for large eggs, compiled from USDA AMS market data.",
+      limitation: "This is a New York wholesale benchmark, not the price paid by every retailer or consumer. It is not geographically or statistically identical to the national retail series.",
+      sourceIds: ["ers-may", "ers-note"],
+    },
+    retail: {
+      label: "U.S. urban average retail",
+      geography: "U.S. city average",
+      product: "Grade A large eggs",
+      definition: "BLS average consumer price for a dozen large white Grade A chicken eggs across urban areas priced for the CPI; not seasonally adjusted.",
+      limitation: "The retail series combines multiple locations and production types. Its distance from the wholesale series is not a retailer-margin calculation.",
+      sourceIds: ["bls-fred", "ers-note"],
+    },
+  },
+  relations: {
+    observed: {
+      status: "Observed temporal relationship",
+      label: "OPPOSING MOVEMENT / FEB → MAR",
+      note: "Wholesale fell from February to March while retail rose. This temporal sequence is observed; it does not establish causation.",
+      limitation: "The two series differ in geography, market stage, product mix, and collection method. Their sequence is descriptive, not proof of price transmission.",
+      sourceIds: ["ers-may", "bls-fred"],
+    },
+    documented: {
+      status: "Documented economic mechanism",
+      label: "CONTRACTS / PRICING STRATEGIES",
+      note: "USDA ERS documents that contracts and pricing strategies can mute or delay movement from wholesale to retail prices.",
+      limitation: "The source supports a variable mechanism, not a universal lag length or a fixed pass-through coefficient.",
+      sourceIds: ["ers-note"],
+    },
+    hypothesis: {
+      status: "Unverified hypothesis",
+      label: "FIXED ONE-MONTH PASS-THROUGH?",
+      note: "A fixed one-month wholesale-to-retail pass-through is a hypothesis, not a finding established by these three observations.",
+      limitation: "Three monthly observations cannot identify a stable lag or isolate other supply, demand, contracting, and pricing factors.",
+      sourceIds: ["ers-note", "ers-may", "bls-fred"],
+    },
+  },
+  sources: [
+    {
+      id: "ers-may",
+      agency: "USDA Economic Research Service",
+      title: "Livestock, Dairy, and Poultry Outlook: May 2025",
+      coverage: "Monthly New York wholesale and national retail prices",
+      url: "https://ers.usda.gov/sites/default/files/_laserfiche/outlooks/112616/LDP-M-371.pdf?v=85906",
+    },
+    {
+      id: "bls-fred",
+      agency: "U.S. Bureau of Labor Statistics via FRED",
+      title: "Average Price: Eggs, Grade A, Large (Cost per Dozen) in U.S. City Average",
+      coverage: "U.S. city average retail price, not seasonally adjusted",
+      url: "https://fred.stlouisfed.org/series/APU0000708111",
+    },
+    {
+      id: "ers-note",
+      agency: "USDA Economic Research Service",
+      title: "Retail egg prices fall, following declining wholesale prices",
+      coverage: "Price movement, retail lag, and comparison limits",
+      url: "https://www.ers.usda.gov/data-products/charts-of-note/112677",
+    },
+  ],
+};

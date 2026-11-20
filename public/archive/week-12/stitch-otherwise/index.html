@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A visual study and observation schema for twenty-four cross-stitches." />
+    <title>Stitch, Otherwise — Visual Data Study</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="project-mark" id="resetView" type="button" aria-label="Reset study"><span>03</span><i></i></button>
+        <a class="wordmark" href="#workspace"><strong>Stitch, Otherwise</strong><small>One stitch is more than a mark</small></a>
+        <div class="view-switch" role="group" aria-label="Choose a view">
+          <button class="view-button is-active" type="button" data-view="relation">Relation</button>
+          <button class="view-button" type="button" data-view="time">Chronology</button>
+        </div>
+        <nav aria-label="Study navigation">
+          <button type="button" id="indexButton">Index <sup id="recordTotal">24</sup></button>
+          <button type="button" id="schemaButton">Schema <sup id="fieldTotal">17</sup></button>
+          <button type="button" id="aboutButton">About</button>
+        </nav>
+      </header>
+
+      <main class="workspace" id="workspace">
+        <section class="field" aria-labelledby="fieldTitle">
+          <div class="field-heading">
+            <span id="modeLabel">RELATION / DATA TEMPLATE</span>
+            <h1 id="fieldTitle">One stitch is more than a mark.</h1>
+            <p id="fieldNote">24 planned capture slots · 0 observed</p>
+          </div>
+          <div class="field-viewport" id="fieldViewport" tabindex="0" aria-label="Scrollable stitch data study">
+            <div class="field-scene" id="fieldScene">
+              <svg class="atlas-lines" id="connectionLayer" aria-hidden="true"></svg>
+              <div class="schema-layer" id="schemaLayer" aria-label="Measurement schema layer"></div>
+              <div class="action-layer" id="actionLayer" aria-label="Planned cross-stitch units"></div>
+              <div class="timeline-layer" id="timelineLayer" aria-label="Planned capture sequence"></div>
+            </div>
+          </div>
+          <div class="atlas-key" aria-label="Visual key">
+            <span><i class="action"></i>Planned X</span><span><i class="schema"></i>Schema field</span><span><b></b>Schema connection</span><span><em></em>Observed connection</span>
+          </div>
+        </section>
+
+        <aside class="inspector is-collapsed" id="inspector" aria-live="polite" aria-hidden="true">
+          <div class="inspector-topline"><span id="detailCount">SELECT AN X</span><button id="closeInspector" type="button" aria-label="Close observation detail">×</button></div>
+          <div id="detailContent" class="detail-content"></div>
+        </aside>
+
+        <section class="overlay-panel" id="indexPanel" aria-hidden="true">
+          <header><div><span>PLANNED SAMPLE / 24 UNITS</span><h2>Observation index</h2></div><button type="button" data-close-panel aria-label="Close index">×</button></header>
+          <div class="index-grid" id="recordList"></div>
+        </section>
+
+        <section class="overlay-panel" id="schemaPanel" aria-hidden="true">
+          <header><div><span>MEASUREMENT STRUCTURE / NO RESULTS YET</span><h2>Data schema</h2></div><button type="button" data-close-panel aria-label="Close schema">×</button></header>
+          <div class="schema-table" id="schemaList"></div>
+        </section>
+
+        <section class="overlay-panel about-panel" id="aboutPanel" aria-hidden="true">
+          <header><div><span>VISUAL STUDY / PROTOTYPE</span><h2>Testing one stitch as data</h2></div><button type="button" data-close-panel aria-label="Close about">×</button></header>
+          <div class="about-grid">
+            <p class="about-lead">Each X is one planned observation unit. The study asks whether repetitive making can be read through action, time, material, interruption, and correction.</p>
+            <article><span>WHAT IS REAL</span><p>The sample size, identifiers, planned capture slots, and field definitions are the experiment structure.</p></article>
+            <article><span>WHAT IS MISSING</span><p>No stitches have been observed yet. Empty time, material, and correction fields are shown as missing—not as zero.</p></article>
+            <article><span>HOW TO CONTINUE</span><p>Complete 20–30 stitches while logging each record. The visualization can then position points using actual sequence, completion time, duration, and rework.</p></article>
+          </div>
+        </section>
+
+        <div class="scrim" id="scrim" hidden></div>
+        <div class="quiet-prompt">Select an X to inspect its empty observation record</div>
+      </main>
+    </div>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

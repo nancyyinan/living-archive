@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Policy, Otherwise / Price, Otherwise — visual comparison</title>
+    <style>
+      :root { --paper: #f3eee4; --ink: #35192b; --rule: #cbbdaf; }
+      * { box-sizing: border-box; }
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+      main { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
+      section { position: relative; min-width: 0; overflow: hidden; border-right: 1px solid var(--ink); }
+      section:last-child { border-right: 0; }
+      header { position: absolute; z-index: 2; inset: 0 0 auto; height: 42px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid var(--rule); background: rgba(243,238,228,.96); }
+      header strong { font: 17px Georgia, "Times New Roman", serif; font-weight: 400; }
+      header span { font-size: 9px; font-weight: 700; letter-spacing: .1em; }
+      .viewport { position: absolute; inset: 42px 0 0; overflow: hidden; }
+      iframe { width: 200%; height: 200%; border: 0; transform: scale(.5); transform-origin: left top; background: var(--paper); }
+      @media (max-width: 800px) {
+        main { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+        section { border-right: 0; border-bottom: 1px solid var(--ink); }
+        section:last-child { border-bottom: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <header><strong>Policy, Otherwise</strong><span>ORIGINAL / AUTHORITATIVE REFERENCE</span></header>
+        <div class="viewport"><iframe src="../policy-otherwise/index.html" title="Original Policy, Otherwise"></iframe></div>
+      </section>
+      <section>
+        <header><strong>Price, Otherwise</strong><span>NEW / ORIGINAL-DESIGN MIGRATION</span></header>
+        <div class="viewport"><iframe src="./index.html" title="New Price, Otherwise"></iframe></div>
+      </section>
+    </main>
+  </body>
+</html>

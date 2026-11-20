@@ -23,6 +23,7 @@ import {
   WeekFourPage,
   WeekOnePage,
   WeekThreePage,
+  WeekFourteenPage,
   WeekTwelvePage,
   WeekTwoPage,
 } from '@/components/WeekPages';
@@ -317,6 +318,8 @@ export function ArchiveApp() {
     content = <WeekTwelvePage />;
   } else if (collection === 'week-13') {
     content = <ThesisSchedulePage />;
+  } else if (collection === 'week-14') {
+    content = <WeekFourteenPage />;
   } else if (collection === 'brainstorm' && brainstorm) {
     content = (
       <BrainstormViewer key={itemMedia(brainstorm)} item={brainstorm} />

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive evidence workspace for the systems behind U.S. egg prices, February–April 2025." />
+    <title>Price, Otherwise — The Hidden Systems Behind an Everyday Price</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="project-switch" id="resetView" type="button" aria-label="Reset exhibition"><i></i><span>Exhibition 02</span></button>
+        <a class="wordmark" href="#workspace"><strong>PRICE, OTHERWISE</strong><small>THE HIDDEN SYSTEMS BEHIND AN EVERYDAY PRICE</small></a>
+        <div class="view-switch" role="group" aria-label="Choose a view">
+          <button class="view-button is-active" type="button" data-view="relation">Relation</button>
+          <button class="view-button" type="button" data-view="time">Chronology</button>
+        </div>
+        <nav aria-label="Research workspace navigation">
+          <button type="button" id="indexButton">Index <sup id="recordTotal">11</sup></button>
+          <button type="button" id="sourcesButton">Sources <sup id="sourceTotal">6</sup></button>
+          <button type="button" id="aboutButton">About</button>
+        </nav>
+      </header>
+
+      <main class="workspace is-relation" id="workspace">
+        <section class="field" aria-labelledby="fieldTitle">
+          <div class="field-heading">
+            <span id="modeLabel">RELATION VIEW / AUTOPLAY</span>
+            <h1 id="fieldTitle">One price comes forward.<br />The system stays in view.</h1>
+            <p id="modeDescription">Move from the retail surface backward through wholesale mediation, supply conditions, and delay.</p>
+            <blockquote class="field-proposition"><span>PROPOSITION</span> An everyday price is not a single fact. It is a visible surface shaped by systems behind it.</blockquote>
+          </div>
+          <div class="field-viewport" id="fieldViewport" tabindex="0" aria-label="Scrollable evidence field">
+            <div class="field-scene" id="fieldScene">
+              <p class="gallery-caption" id="sequenceLabel" aria-live="polite">NOW PLAYING · 07 / 11</p>
+              <div class="display-architecture" aria-hidden="true">
+                <div class="relation-zones">
+                  <div><span>BACKSTAGE</span><small>SUPPLY / BIOLOGICAL TIME</small></div>
+                  <div><span>MEDIATION</span><small>WHOLESALE / CONTRACTS</small></div>
+                  <div><span>STOREFRONT</span><small>CONSUMER-VISIBLE PRICE</small></div>
+                </div>
+                <div class="window-bays">
+                  <i><span>WINDOW 01</span></i><i><span>WINDOW 02</span></i><i><span>WINDOW 03</span></i>
+                </div>
+              </div>
+              <div class="ambient-field" id="ambientField" aria-hidden="true"></div>
+              <svg class="connection-layer" id="connectionLayer" aria-hidden="true"></svg>
+              <div id="cardLayer"></div>
+            </div>
+          </div>
+          <div class="field-key" aria-label="Evidence categories">
+            <span><i class="supply"></i>Supply</span><span><i class="wholesale"></i>Wholesale</span><span><i class="retail"></i>Retail</span><span><i class="mechanism"></i>Mechanism</span>
+          </div>
+          <p class="field-instruction">Drag the field · select a record · follow its relations</p>
+          <div class="playback" aria-label="Autoplay controls">
+            <button id="previousRecord" type="button" aria-label="Previous record">Previous</button>
+            <button id="togglePlayback" type="button" aria-pressed="true">Pause</button>
+            <button id="nextRecord" type="button" aria-label="Next record">Next</button>
+            <i class="playback-progress" aria-hidden="true"><b></b></i>
+          </div>
+        </section>
+
+        <aside class="inspector" id="inspector" aria-live="polite">
+          <div class="inspector-topline"><span id="detailCount">EVIDENCE LABEL · 07 / 11</span><button id="closeInspector" type="button" aria-label="Collapse evidence panel">×</button></div>
+          <div id="detailContent" class="detail-content"></div>
+        </aside>
+
+        <section class="overlay-panel" id="indexPanel" aria-hidden="true">
+          <header><div><span>ALL RECORDS / FEB—APR 2025</span><h2>Evidence index</h2></div><button type="button" data-close-panel aria-label="Close index">×</button></header>
+          <div class="overlay-grid" id="recordList"></div>
+        </section>
+
+        <section class="overlay-panel" id="sourcesPanel" aria-hidden="true">
+          <header><div><span>PRIMARY + FEDERAL EVIDENCE</span><h2>Source library</h2></div><button type="button" data-close-panel aria-label="Close sources">×</button></header>
+          <div class="source-grid" id="sourceList"></div>
+        </section>
+
+        <section class="overlay-panel about-panel" id="aboutPanel" aria-hidden="true">
+          <header><div><span>RESEARCH PROTOTYPE 02</span><h2>How can a price show the system behind it?</h2></div><button type="button" data-close-panel aria-label="Close about">×</button></header>
+          <div class="about-grid">
+            <article class="about-statement research-question"><span>RESEARCH QUESTION</span><p>How can interactive data visualization reveal the relationships, delays, and uncertainties hidden behind an everyday price?</p></article>
+            <article class="about-statement perspective"><span>PERSPECTIVE</span><p>Treat the retail price as a visible surface, then look backward through the market stages, delays, and evidence that give it form.</p></article>
+            <article class="about-statement proposition"><span>PROPOSITION</span><p>An everyday price is not a single fact. It is a visible surface shaped by systems behind it.</p></article>
+            <article><span>METHOD</span><p>Relation arranges records from backstage supply to storefront price. Chronology turns February, March, and April into three adjacent windows while keeping wholesale and retail definitions distinct.</p></article>
+            <article><span>CAUSAL CAUTION</span><p>Connections preserve qualified language from the sources: coincides with, contributed to, may delay. Sequence is not presented as proof.</p></article>
+            <article><span>BOUNDARY</span><p>The first study window covers February–April 2025. This is an evidence interface, not a retailer-margin calculator or complete causal model.</p></article>
+          </div>
+        </section>
+
+        <div class="scrim" id="scrim" hidden></div>
+        <div class="research-bar">
+          <span>SEARCH THE RECORDS</span>
+          <input id="recordSearch" type="search" placeholder="Search a price, date, source, or mechanism" autocomplete="off" />
+          <div class="filter-group" role="group" aria-label="Filter evidence">
+            <button class="filter-button is-active" type="button" data-filter="all">All</button><button class="filter-button" type="button" data-filter="supply">Supply</button><button class="filter-button" type="button" data-filter="wholesale">Wholesale</button><button class="filter-button" type="button" data-filter="retail">Retail</button><button class="filter-button" type="button" data-filter="mechanism">Mechanism</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
